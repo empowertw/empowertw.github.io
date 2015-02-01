@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+{% load staticfiles %} <!-- New line -->
+<html>
+<!--頭-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>410還權於民·重返立院</title>
+    <script src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/react-0.12.2.js"></script>
+    <script src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/JSXTransformer-0.12.2.js"></script>
+    <script src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/jquery-2.1.3.min.js"></script>
+    <script src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/showdown.min.js"></script>
+
+    <!--<link rel="stylesheet" href="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/foundation.css" />-->
+    <!--網格用法：class="large-4 medium-4 small-4 columns"-->
+
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+</head>
+
+<!--頁首-->
+
+
+<style>
+    .head-full-screen-width {
+        /*background-color: green;*/
+        background-color: #ffffff;
+    }
+    .head-full-content {
+        width:1024px; margin-left:auto; margin-right:auto;
+        background-color: #ffffff;
+        height:168px;
+        padding-top: 15px;
+    }
+    @media screen and (max-width: 1024px) {
+        .head-full-content {
+            width:100%; margin-left:auto; margin-right:auto;
+            /*background-color:red;*/
+            padding-right: 15px;
+            padding-left: 15px;
+            /*height:200px;*/
+        }
+    }
+    @media screen and (max-width: 950px) {
+        .head-full-content {
+            width:930px; margin-left:auto; margin-right:auto;
+            /*background-color:blue;*/
+            padding-right: 15px;
+            padding-left: 15px;
+            /*height:200px;*/
+        }
+    }
+        .head-img {
+            width:420px; float:left; vertical-align:middle;padding-right: 0px;
+        }
+        .head-header {
+            width:480px; display:inline-block; color:#905d5c; font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+            float: right;
+            /*background-color:#fff;*/
+            /*height: 500px;*/
+        }
+        .head-ul {
+            list-style-type:none; padding-left: 0px;margin: 0px;
+            clear: left;
+        }
+        .head-nav-full-top {
+            text-decoration: none;
+            margin-left: 10px;
+            margin-right: 0px;
+            -moz-border-radius: 0.8em 0.8em 0.8em 0.8em;
+            border-radius: 0.8em 0.8em 0.8em 0.8em;  /*standards-compliant: (IE)*/
+            text-align: center;
+            font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+            background-color: #ecdbd1;color: #905d5c; height: 50px; float:right;
+		}
+        .head-nav-action-li {
+            width: 150px;
+        }
+        .head-nav-claim-li {
+            width: 150px;
+            background-color: #6c2626;color: #ffffff;
+        }
+        .head-nav-statement-li {
+            width: 130px;
+        }
+        .head-nav-h1 {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .head-nav-full-bottom {
+            text-decoration: none;
+            margin-left: 10px;
+            margin-right: 0px;
+            -moz-border-radius: 0.8em 0.8em 0.8em 0.8em;
+            border-radius: 0.8em 0.8em 0.8em 0.8em;  /*standards-compliant: (IE)*/
+            text-align: center;
+            font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+            height: 70px; float:right;
+            padding-top: 15px;
+		}
+        .head-nav-alias-li {
+            margin-top: 0px;
+            width: 150px;
+        }
+        .head-nav-people-li {
+            margin-top: 0px;
+            width: 150px;
+        }
+        .head-nav-flyingV-li {
+            margin-top: 0px;
+            width: 130px;
+        }
+        .head-nav-img {
+            border-color: #ffffff;
+        }
+</style>
+
+<div class="head-full-screen-width" style="">
+		<div class="head-full-content" style="">
+                <img src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/410.svg" alt="410還權於民·重返立院" id="410logo" style="" class="head-img"/>
+				<header class="head-header" style="">
+						<ul class="head-ul" style="">
+                                <a href="../action/"><li class="head-nav-full-top head-nav-action-li" style=""><h1 class="head-nav-h1" style="">我們的行動</h1></li></a>
+								<a href="../claim/"><li class="head-nav-full-top head-nav-claim-li" style=""><h1 class="head-nav-h1" style="">我們的訴求</h1></li></a>
+                                <a href="../statement/"><li class="head-nav-full-top head-nav-statement-li" style="margin-left: 0px;"><h1 class="head-nav-h1" style="">行動聲明</h1></li></a>
+						</ul>
+				</header>
+                <header class="head-header" style="">
+						<ul class="head-ul" style="">
+                                <a href="../people/"><li class="head-nav-full-bottom head-nav-people-li" style=""><img class="head-nav-img" src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/people.svg"
+                                                                                                                alt="公民聲援牆"/></li></a>
+								<a href="../alias/"><li class="head-nav-full-bottom head-nav-alias-li" style=""><img class="head-nav-img" src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/alias.svg"
+                                                                                                                alt="立委表態牆"/></li></a>
+                                <a href="../flyingV/"><li class="head-nav-full-bottom head-nav-flyingV-li" style=""><img class="head-nav-img" src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/flyingv.svg"
+                                                                                                                alt="flyingV"/></li></a>
+						</ul>
+				</header>
+
+		</div>
+</div>
+
+<!--頁中-->
+
+<style>
+    .party-full-screen-width {
+        background-color:#EBDBD0;
+        width: 100%;
+    }
+    .party-full-content {
+        width:1024px;
+        margin-left:auto; margin-right:auto;
+        /*background-color:green;*/
+        padding-top: 15px;
+        background-color: #ecdbd1;background-image: url(https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/hand.svg);background-position: left bottom;background-repeat: no-repeat;
+    }
+    @media screen and (max-width: 1024px) {
+        .party-full-content {
+            width:100%; margin-left:auto; margin-right:auto;
+            /*background-color:red;*/
+            background-color:#EBDBD0;
+            padding-right: 15px;
+            padding-left: 15px;
+            background-color: #ecdbd1;background-image: url(https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/hand.svg);background-position: right bottom;background-repeat: no-repeat;
+        }
+    }
+    @media screen and (max-width: 930px) {
+        .party-full-content {
+            width:930px; margin-left:auto; margin-right:auto;
+            /*background-color:blue;*/
+            background-color:#EBDBD0;
+            padding-right: 15px;
+            padding-left: 15px;
+            background-color: #ecdbd1;background-image: url(https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/hand.svg);background-position: right bottom;background-repeat: no-repeat;
+        }
+    }
+    .party-h1 {
+        width:28%;display:inline-block;padding-left:2%;padding-top:25px;padding-bottom: 0px;color: #905d5c;font-size: 40px;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;vertical-align: top;
+        /*text-align: right;display: inline-block; color: #905d5c;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;*/
+    }
+    .party-ol {
+        width:62%;display:inline-block;padding-left:5%;padding-bottom:0px;color: #905d5c;font-size: 20px;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;vertical-align: top;
+    }
+    .party-h3 {
+        font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        padding-left: 0px;
+        margin-bottom: 10px;
+        margin-top: 0px;
+    }
+    .party-li {
+        font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    }
+    @media screen and (min-width: 1024px) {
+    }
+    @media screen and (max-width: 1024px) {
+        .party-h1 {
+            width:80%;
+            margin-left: 4%;
+            margin-right: 4%;
+        }
+        .party-ol {
+            width:80%;
+            margin-left: 4%;
+            margin-right: 4%;
+        }
+    }
+    @media screen and (max-width: 930px) {
+    }
+</style>
+
+<div class="party-full-screen-width" style="">
+		<div class="party-full-content" style="">
+                <h1 class="party-h1" style="">一、補正公投法</h1>
+                <ol class="party-ol" style="">
+                        <li class="party-li" style=""><h3 class="party-h3" style="margin-top: 25px;">擴大全國性公民投票之適用範圍，包括對外締結的條約及協議</h3></li>
+                        <li class="party-li" style=""><h3 class="party-h3" style="">廢除公投審議委員會之設置</h3>
+                        <li class="party-li" style=""><h3 class="party-h3" style="">公民投票提案門檻降至萬分之一</h3>
+                        <li class="party-li" style=""><h3 class="party-h3" style="">公民投票連署門檻降至百分之一點五</h3>
+                        <li class="party-li" style=""><h3 class="party-h3" style="">建立電子提案及連署系統</h3>
+                        <li class="party-li" style=""><h3 class="party-h3" style="">廢除百分之五十投票門檻，改採簡單多數決</h3>
+                </ol>
+                <h1 class="party-h1" style="margin-top: 10px;">二、修改選罷法</h1>
+                <ol class="party-ol" style="">
+                        <li class="party-li" style=""><h3 class="party-h3" style="margin-top: 5px;">罷免提案門檻降至百分之一。刪除軍公職不得提議之規定</h3></li>
+                        <li class="party-li" style=""><h3 class="party-h3" style="">罷免連署門檻降至百分之十，連署期間延長為三個月</h3>
+                        <li class="party-li" style=""><h3 class="party-h3" style="">建立電子提案及連署系統</h3>
+                        <li class="party-li" style=""><h3 class="party-h3" style="">廢除50%投票門檻，改採簡單多數決</h3>
+                        <li class="party-li" style=""><h3 class="party-h3" style="margin-bottom: 75px;">廢除「罷免不得宣傳」、「不得與選舉同時舉行」、「一頁多位連署人」、「母法未定之填寫欄位」等各項不合理程序限制</h3>
+                </ol>
+        </div>
+</div>
+
+<!--頁尾-->
+
+<style>
+    .leg-full-screen-width {
+        background-color: #fff;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .leg-full-content {
+        width:1024px; margin-left:auto; margin-right:auto;
+        height:68px;
+        background-color: #fff;
+    }
+    @media screen and (max-width: 1024px) {
+        .leg-full-content {
+            width:100%; margin-left:auto; margin-right:auto;
+        }
+
+    }
+    @media screen and (max-width: 930px) {
+        .leg-full-content {
+            width:930px; margin-left:auto; margin-right:auto;
+        }
+
+    }
+    footer {
+        color: #905d5c;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        text-align: center;
+        background-color: #fff;
+    }
+    .leg-h3 {
+        font-size: 18px;
+        background-color: #fff;
+    }
+</style>
+<div class="leg-full-screen-width" style="">
+		<div class="leg-full-content" style="">
+                <footer style="">
+						<h3 class="leg-h3" style="">聯絡所：島國前進丨電話：02-2358-1008410丨地址：台北市中正區仁愛路二段34號2樓之一<br />E-mail：empowwer.taiwan@gmail.com丨410還權於民·重返立院</h3>
+				</footer>
+        </div>
+</div>
+</body>
+</html>
