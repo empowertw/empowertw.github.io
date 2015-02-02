@@ -207,19 +207,38 @@
         margin-top: 0px;
         color: #905d5c;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     }
-    .party-sidebar-button
+    .party-sidebar-button-normal
     {
         background: none; outline: 0;border: none;padding: 0;
         padding-top: 5px;padding-bottom: 5px;font-size: 20px;
         font-weight: bold;
         display:inline-block;width: 100px;text-align: center; margin-left: 10px;
         margin-bottom: 10px;
+        height: 40px;
+    }
+    .party-sidebar-button-origin
+    {
+        background: none; outline: 0;border: none;padding: 0;
+        padding-top: 5px;padding-bottom: 5px;font-size: 14px;
+        font-weight: bold;
+        display:inline-block;width: 100px;text-align: center; margin-left: 10px;
+        margin-bottom: 10px;
+        height: 40px;
+    }
+    .party-sidebar-button-foreign
+    {
+        background: none; outline: 0;border: none;padding: 0;
+        padding-top: 5px;padding-bottom: 5px;font-size: 12px;
+        font-weight: bold;
+        display:inline-block;width: 100px;text-align: center; margin-left: 10px;
+        margin-bottom: 10px;
+        height: 40px;
     }
     .party-sidebar-button-selected {
-        background-color: #AC917E;color: #FFFFFF;
+        background-color: #D5BFB1;color: #8F5C5B;
     }
     .party-sidebar-button-unselected {
-        background-color: #D5BFB1;color: #8F5C5B;
+        background-color: #AC917E;color: #FFFFFF;
     }
     @media screen and (max-width: 1024px) {
         .party-sidebar {
@@ -230,7 +249,15 @@
             margin-right: 10px;
             /*background-color: midnightblue;*/
         }
-        .party-sidebar-button
+        .party-sidebar-button-normal
+        {
+            display:inline-block;width: 100px;text-align: center;
+        }
+        .party-sidebar-button-origin
+        {
+            display:inline-block;width: 100px;text-align: center;
+        }
+        .party-sidebar-button-foreign
         {
             display:inline-block;width: 100px;text-align: center;
         }
@@ -1255,11 +1282,56 @@
         },
         loadCommentsFromServer: function() {
             var b = [
-                {"classString":"party-sidebar-button party-sidebar-button-selected", "value":"→已表態", "category":"agree", "compare":"1"},
-                {"classString":"party-sidebar-button party-sidebar-button-selected", "value":"未表態", "category":"agree", "compare":"0"}
+                {"classString":"party-sidebar-button-normal", "value":"已表態", "category":"agree", "compare":"1"},
+                {"classString":"party-sidebar-button-normal", "value":"未表態", "category":"agree", "compare":"0"},
+                {"classString":"party-sidebar-button-normal", "value":"全國", "category":"location", "compare":"全國"},
+                {"classString":"party-sidebar-button-normal", "value":"台北市", "category":"location", "compare":"台北市"},
+                {"classString":"party-sidebar-button-normal", "value":"新北市", "category":"location", "compare":"新北市"},
+                {"classString":"party-sidebar-button-normal", "value":"台中市", "category":"location", "compare":"台中市"},
+                {"classString":"party-sidebar-button-normal", "value":"台南市", "category":"location", "compare":"台南市"},
+                {"classString":"party-sidebar-button-normal", "value":"高雄市", "category":"location", "compare":"高雄市"},
+                {"classString":"party-sidebar-button-normal", "value":"桃園縣", "category":"location", "compare":"桃園縣"},
+                {"classString":"party-sidebar-button-normal", "value":"新竹市", "category":"location", "compare":"新竹市"},
+                {"classString":"party-sidebar-button-normal", "value":"新竹縣", "category":"location", "compare":"新竹縣"},
+                {"classString":"party-sidebar-button-normal", "value":"苗栗縣", "category":"location", "compare":"苗栗縣"},
+                {"classString":"party-sidebar-button-normal", "value":"彰化縣", "category":"location", "compare":"彰化縣"},
+                {"classString":"party-sidebar-button-normal", "value":"雲林縣", "category":"location", "compare":"雲林縣"},
+                {"classString":"party-sidebar-button-normal", "value":"嘉義市", "category":"location", "compare":"嘉義市"},
+                {"classString":"party-sidebar-button-normal", "value":"嘉義縣", "category":"location", "compare":"嘉義縣"},
+                {"classString":"party-sidebar-button-normal", "value":"屏東縣", "category":"location", "compare":"屏東縣"},
+                {"classString":"party-sidebar-button-normal", "value":"南投縣", "category":"location", "compare":"南投縣"},
+                {"classString":"party-sidebar-button-normal", "value":"宜蘭縣", "category":"location", "compare":"宜蘭縣"},
+                {"classString":"party-sidebar-button-normal", "value":"花蓮縣", "category":"location", "compare":"花蓮縣"},
+                {"classString":"party-sidebar-button-normal", "value":"台東縣", "category":"location", "compare":"台東縣"},
+                {"classString":"party-sidebar-button-normal", "value":"澎湖縣", "category":"location", "compare":"澎湖縣"},
+                {"classString":"party-sidebar-button-normal", "value":"金門縣", "category":"location", "compare":"金門縣"},
+                {"classString":"party-sidebar-button-normal", "value":"連江縣", "category":"location", "compare":"連江縣"},
+                {"classString":"party-sidebar-button-normal", "value":"不分區", "category":"location", "compare":"不分區"},
+                {"classString":"party-sidebar-button-origin", "value":"山地原住民", "category":"location", "compare":"山地原住民"},
+                {"classString":"party-sidebar-button-origin", "value":"平地原住民", "category":"location", "compare":"平地原住民"},
+                {"classString":"party-sidebar-button-foreign", "value":"僑居國外國民", "category":"location", "compare":"僑居國外國民"}
             ];
-            var location = $.cookie('location');
             var agree = $.cookie('agree');
+            if (agree.localeCompare("1") == 0) {
+                b[0].value = "→" + b[0].value;
+                b[0].classString += " party-sidebar-button-unselected";
+                b[1].classString += " party-sidebar-button-selected";
+            } else {
+                b[0].classString += " party-sidebar-button-selected";
+                b[1].value = "→" + b[1].value;
+                b[1].classString += " party-sidebar-button-unselected";
+            }
+            var location = $.cookie('location');
+            var buttonEach;
+            var tmpCompare;
+            for (var i = 2; i < b.length; i++) {
+                if (b[i].compare.localeCompare(location) == 0) {
+                    b[i].value = "→" + b[i].value;
+                    b[i].classString += " party-sidebar-button-unselected";
+                } else {
+                    b[i].classString += " party-sidebar-button-selected";
+                }
+            }
             var sum = 0;
             var total = 0;
 //                        alert("FetchData");
@@ -1288,7 +1360,7 @@
                         }
                         if (d[i].location.localeCompare(location) == 0 && d[i].agree.localeCompare(agree) == 0) {
                             d[i].classWithDisplay = "alias-member-full";
-                        } else if (location.localeCompare("0") == 0 && d[i].agree.localeCompare(agree) == 0) {
+                        } else if (location.localeCompare("全國") == 0 && d[i].agree.localeCompare(agree) == 0) {
                             d[i].classWithDisplay = "alias-member-full";
                         } else {
                             d[i].classWithDisplay = "alias-member-full-none";
@@ -1298,7 +1370,7 @@
                             if (d[i].agree.localeCompare("1") == 0) {
                                 sum = sum + 1;
                             }
-                        } else if (location.localeCompare("0") == 0) {
+                        } else if (location.localeCompare("全國") == 0) {
                             total = total + 1;
                             if (d[i].agree.localeCompare("1") == 0) {
                                 sum = sum + 1;
@@ -1337,34 +1409,6 @@
                                 <h3 className="party-sidebar-h3">最新表態率：{this.state.sum}/{this.state.total}</h3>
 
                                 {partySidebarButtonMap}
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="→已表態" onClick={this.handleClick.bind(this, "agree", "1")} />
-                                <input className="party-sidebar-button party-sidebar-button-unselected" type="button" value="未表態" onClick={this.handleClick.bind(this ,"agree", "0")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="全國" onClick={this.handleClick.bind(this, "location", "0")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="台北市" onClick={this.handleClick.bind(this, "location", "台北市")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="新北市" onClick={this.handleClick.bind(this, "location", "新北市")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="台中市" onClick={this.handleClick.bind(this, "location", "台中市")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="台南市" onClick={this.handleClick.bind(this, "location", "台南市")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="高雄市" onClick={this.handleClick.bind(this, "location", "高雄市")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="桃園縣" onClick={this.handleClick.bind(this, "location", "桃園縣")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="新竹市" onClick={this.handleClick.bind(this, "location", "新竹市")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="新竹縣" onClick={this.handleClick.bind(this, "location", "新竹縣")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="苗栗縣" onClick={this.handleClick.bind(this, "location", "苗栗縣")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="彰化縣" onClick={this.handleClick.bind(this, "location", "彰化縣")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="雲林縣" onClick={this.handleClick.bind(this, "location", "雲林縣")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="嘉義市" onClick={this.handleClick.bind(this, "location", "嘉義市")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="嘉義縣" onClick={this.handleClick.bind(this, "location", "嘉義縣")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="屏東縣" onClick={this.handleClick.bind(this, "location", "屏東縣")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="南投縣" onClick={this.handleClick.bind(this, "location", "南投縣")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="宜蘭縣" onClick={this.handleClick.bind(this, "location", "宜蘭縣")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="花蓮縣" onClick={this.handleClick.bind(this, "location", "花蓮縣")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="台東縣" onClick={this.handleClick.bind(this, "location", "台東縣")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="澎湖縣" onClick={this.handleClick.bind(this, "location", "澎湖縣")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="金門縣" onClick={this.handleClick.bind(this, "location", "金門縣")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="連江縣" onClick={this.handleClick.bind(this, "location", "連江縣")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="不分區" onClick={this.handleClick.bind(this, "location", "不分區")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="山地原住民" onClick={this.handleClick.bind(this, "location", "山地原住民")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="平地原住民" onClick={this.handleClick.bind(this, "location", "平地原住民")} />
-                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="僑居國外國民" onClick={this.handleClick.bind(this, "location", "僑居國外國民")} />
                             </div>
                         </div>
                         <div className="party-content">
