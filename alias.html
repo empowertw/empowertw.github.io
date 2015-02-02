@@ -143,11 +143,11 @@
         <header class="head-header" style="">
             <ul class="head-ul" style="">
                 <a href="../people.html"><li class="head-nav-full-bottom head-nav-people-li" style=""><img class="head-nav-img" src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/people.svg"
-                                                                                                       alt="公民聲援牆"/></li></a>
+                                                                                                           alt="公民聲援牆"/></li></a>
                 <a href="../alias.html"><li class="head-nav-full-bottom head-nav-alias-li" style=""><img class="head-nav-img" src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/alias-selected.svg"
-                                                                                                     alt="立委表態牆"/></li></a>
+                                                                                                         alt="立委表態牆"/></li></a>
                 <a href="../flyingv.html"><li class="head-nav-full-bottom head-nav-flyingV-li" style=""><img class="head-nav-img" src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/flyingv.svg"
-                                                                                                         alt="flyingV"/></li></a>
+                                                                                                             alt="flyingV"/></li></a>
             </ul>
         </header>
 
@@ -236,7 +236,6 @@
         }
     }
     @media screen and (max-width: 930px) {
-
     }
     /*頁中的立委欄*/
     .party-content {
@@ -251,7 +250,6 @@
         /*background-color: greenyellow;*/
         padding-bottom: 140px;
     }
-
     @media screen and (max-width: 1024px) {
         .party-content {
             width: 900px;
@@ -268,7 +266,6 @@
     }
     @media screen and (max-width: 930px) {
     }
-
 </style>
 
 <!--立委牆css-->
@@ -1081,7 +1078,7 @@
 <!--立委牆-->
 
 <script type="text/jsx">
-    var C = React.createClass({
+    var AliasMemberFull = React.createClass({
         render: function() {
             return (
                     <div className={this.props.classWithDisplay}>
@@ -1099,7 +1096,7 @@
         render: function() {
             var commentNodes = this.props.d.map(function (d) {
                 return (
-                        <C name={d.name} agree={d.agree} party={d.party} id={d.id} location={d.location} src={d.src} partySrc={d.partySrc} nameClass={d.nameClass} classWithDisplay={d.classWithDisplay}/>
+                        <AliasMemberFull name={d.name} agree={d.agree} party={d.party} id={d.id} location={d.location} src={d.src} partySrc={d.partySrc} nameClass={d.nameClass} classWithDisplay={d.classWithDisplay}/>
                 );
             });
             return (
@@ -1267,13 +1264,11 @@
         .leg-full-content {
             width:100%; margin-left:auto; margin-right:auto;
         }
-
     }
     @media screen and (max-width: 930px) {
         .leg-full-content {
             width:930px; margin-left:auto; margin-right:auto;
         }
-
     }
     footer {
         color: #905d5c;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
@@ -1288,7 +1283,7 @@
 <div class="leg-full-screen-width" style="">
     <div class="leg-full-content" style="">
         <footer style="">
-                <h3 class="leg-h3" style="">聯絡所：島國前進丨電話：02-2358-1008丨地址：台北市中正區仁愛路二段34號2樓之一<br />E-mail：empower.taiwan@gmail.com丨410還權於民·重返立院</h3>
+            <h3 class="leg-h3" style="">聯絡所：島國前進丨電話：02-2358-1008丨地址：台北市中正區仁愛路二段34號2樓之一<br />E-mail：empower.taiwan@gmail.com丨410還權於民·重返立院</h3>
         </footer>
     </div>
 </div>
