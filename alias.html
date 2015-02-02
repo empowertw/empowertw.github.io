@@ -1081,7 +1081,7 @@
 <!--立委牆-->
 
 <script type="text/jsx">
-    var C = React.createClass({
+    var AliasMemberFull = React.createClass({
         render: function() {
             return (
                     <div className={this.props.classWithDisplay}>
@@ -1099,7 +1099,7 @@
         render: function() {
             var commentNodes = this.props.d.map(function (d) {
                 return (
-                        <C name={d.name} agree={d.agree} party={d.party} id={d.id} location={d.location} src={d.src} partySrc={d.partySrc} nameClass={d.nameClass} classWithDisplay={d.classWithDisplay}/>
+                        <AliasMemberFull name={d.name} agree={d.agree} party={d.party} id={d.id} location={d.location} src={d.src} partySrc={d.partySrc} nameClass={d.nameClass} classWithDisplay={d.classWithDisplay}/>
                 );
             });
             return (
