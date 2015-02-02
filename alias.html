@@ -1317,7 +1317,7 @@
             this.loadCommentsFromServer();
         },
         render: function() {
-            var commentNodes = this.state.d.map(function (d) {
+            var aliasMemberFullMap = this.state.d.map(function (d) {
                 return (
                         <AliasMemberFull name={d.name} agree={d.agree} party={d.party} id={d.id} location={d.location} src={d.src} partySrc={d.partySrc} nameClass={d.nameClass} classWithDisplay={d.classWithDisplay}/>
                 );
@@ -1360,7 +1360,7 @@
                             </div>
                         </div>
                         <div className="party-content">
-                            {commentNodes}
+                            {aliasMemberFullMap}
                         </div>
                     </div>
             );
