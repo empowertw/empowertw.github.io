@@ -1266,7 +1266,7 @@
             if (agree == null || agree == null || agree == null) {
                 $.cookie("agree", "0");
             }
-            console.log( "agree: " + $.cookie("agree") + ";location:" + $.cookie("location") );
+//            console.log( "agree: " + $.cookie("agree") + ";location:" + $.cookie("location") );
 
             $.ajax({
                 url: this.props.url,
@@ -1282,8 +1282,6 @@
                         } else {
                             d[i].nameClass = "alias-image-name";
                         }
-                        console.log( "agree: " + agree + ";location:" + location );
-                        console.log( "agree: " + agree + ";location:" + location );
                         if (d[i].location.localeCompare(location) == 0 && d[i].agree.localeCompare(agree) == 0) {
                             d[i].classWithDisplay = "alias-member-full";
                         } else if (location.localeCompare("0") == 0 && d[i].agree.localeCompare(agree) == 0) {
