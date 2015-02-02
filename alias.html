@@ -1311,6 +1311,14 @@
                 {"classString":"party-sidebar-button-origin", "value":"平地原住民", "category":"location", "compare":"平地原住民"},
                 {"classString":"party-sidebar-button-foreign", "value":"僑居國外國民", "category":"location", "compare":"僑居國外國民"}
             ];
+            // 當cookie不存在時進行初始化
+            if (location == null || location == null || location == null) {
+                $.cookie("location", "全國");
+            }
+            if (agree == null || agree == null || agree == null) {
+                $.cookie("agree", "0");
+            }
+//            console.log( "agree: " + $.cookie("agree") + ";location:" + $.cookie("location") );
             var agree = $.cookie('agree');
             if (agree.localeCompare("1") == 0) {
                 b[0].value = "→" + b[0].value;
@@ -1335,14 +1343,6 @@
             var sum = 0;
             var total = 0;
 //                        alert("FetchData");
-            // 當cookie不存在時進行初始化
-            if (location == null || location == null || location == null) {
-                $.cookie("location", "0");
-            }
-            if (agree == null || agree == null || agree == null) {
-                $.cookie("agree", "0");
-            }
-//            console.log( "agree: " + $.cookie("agree") + ";location:" + $.cookie("location") );
 
             $.ajax({
                 url: this.props.url,
