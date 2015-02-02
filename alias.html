@@ -1326,9 +1326,9 @@
             });
             var partySidebarButtonMap = this.state.b.map(function (b) {
                 return (
-                        <input classname={b.className} ></input>
-                )
-            })
+                        <input className={b.classString} type="button" value={b.value}  onClick={this.handleClick.bind(this, b.category, b.compare)} />
+                );
+            }.bind(this))
             return (
                     <div>
                         <div className="party-sidebar">
