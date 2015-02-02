@@ -1254,6 +1254,10 @@
             this.loadCommentsFromServer();
         },
         loadCommentsFromServer: function() {
+            var b = [
+                {"classString":"party-sidebar-button party-sidebar-button-selected", "value":"→已表態", "category":"agree", "compare":"1"},
+                {"classString":"party-sidebar-button party-sidebar-button-selected", "value":"未表態", "category":"agree", "compare":"0"}
+            ];
             var location = $.cookie('location');
             var agree = $.cookie('agree');
             var sum = 0;
@@ -1301,7 +1305,7 @@
                             }
                         }
                     });
-                    this.setState({d: d, sum: sum, total: total});
+                    this.setState({d: d, sum: sum, total: total, b: b});
                 }.bind(this),
                 error: function(xhr, status, err) {
                     console.error(this.props.url, status, err.toString());
@@ -1309,7 +1313,7 @@
             });
         },
         getInitialState: function() {
-            return {d: [], sum: 0, total: 0};
+            return {d: [], sum: 0, total: 0, b: []};
         },
         componentDidMount: function() {
             this.loadCommentsFromServer();
