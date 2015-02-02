@@ -1324,6 +1324,11 @@
                         <AliasMemberFull name={d.name} agree={d.agree} party={d.party} id={d.id} location={d.location} src={d.src} partySrc={d.partySrc} nameClass={d.nameClass} classWithDisplay={d.classWithDisplay}/>
                 );
             });
+            var partySidebarButtonMap = this.state.b.map(function (b) {
+                return (
+                        <input classname={b.className} ></input>
+                )
+            })
             return (
                     <div>
                         <div className="party-sidebar">
@@ -1331,6 +1336,7 @@
                                 <h1 className="party-sidebar-h1">立委表態牆</h1>
                                 <h3 className="party-sidebar-h3">最新表態率：{this.state.sum}/{this.state.total}</h3>
 
+                                {partySidebarButtonMap}
                                 <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="→已表態" onClick={this.handleClick.bind(this, "agree", "1")} />
                                 <input className="party-sidebar-button party-sidebar-button-unselected" type="button" value="未表態" onClick={this.handleClick.bind(this ,"agree", "0")} />
                                 <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="全國" onClick={this.handleClick.bind(this, "location", "0")} />
