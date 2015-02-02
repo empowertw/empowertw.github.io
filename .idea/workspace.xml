@@ -34,10 +34,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="people.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="people.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/people.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28428093" vertical-offset="1635" max-vertical-offset="4185">
+            <state vertical-scroll-proportion="58.25" vertical-offset="3288" max-vertical-offset="4185">
               <caret line="126" column="81" selection-start-line="126" selection-start-column="81" selection-end-line="126" selection-end-column="81" />
               <folding>
                 <element signature="n#style#0;n#li#0;n#a#2;n#ul#0;n#header#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
@@ -88,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="flyingv.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="flyingv.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/flyingv.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.75" vertical-offset="1575" max-vertical-offset="4185">
-              <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.38698012" vertical-offset="3146" max-vertical-offset="4185">
+              <caret line="224" column="54" selection-start-line="224" selection-start-column="54" selection-end-line="224" selection-end-column="54" />
               <folding>
                 <element signature="n#style#0;n#li#0;n#a#2;n#ul#0;n#header#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#html#0;n#!!top" expanded="true" />
@@ -115,8 +115,8 @@
         <option value="$PROJECT_DIR$/claim.html" />
         <option value="$PROJECT_DIR$/alias.html" />
         <option value="$PROJECT_DIR$/action.html" />
-        <option value="$PROJECT_DIR$/flyingv.html" />
         <option value="$PROJECT_DIR$/people.html" />
+        <option value="$PROJECT_DIR$/flyingv.html" />
       </list>
     </option>
   </component>
@@ -124,7 +124,7 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-66" />
+    <option name="x" value="179" />
     <option name="y" value="22" />
     <option name="width" value="1920" />
     <option name="height" value="1054" />
@@ -195,11 +195,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-66" y="22" width="1920" height="1054" extended-state="6" />
+    <frame x="179" y="22" width="1920" height="1054" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952183" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32952183" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -335,18 +335,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flyingv.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.75" vertical-offset="1575" max-vertical-offset="4185">
-          <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#li#0;n#a#2;n#ul#0;n#header#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ol#0;n#div#0;n#div#1;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/action.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-22.5" vertical-offset="1545" max-vertical-offset="4245">
@@ -357,8 +345,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/people.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28428093" vertical-offset="1635" max-vertical-offset="4185">
+        <state vertical-scroll-proportion="58.25" vertical-offset="3288" max-vertical-offset="4185">
           <caret line="126" column="81" selection-start-line="126" selection-start-column="81" selection-end-line="126" selection-end-column="81" />
+          <folding>
+            <element signature="n#style#0;n#li#0;n#a#2;n#ul#0;n#header#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ol#0;n#div#0;n#div#1;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flyingv.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38698012" vertical-offset="3146" max-vertical-offset="4185">
+          <caret line="224" column="54" selection-start-line="224" selection-start-column="54" selection-end-line="224" selection-end-column="54" />
           <folding>
             <element signature="n#style#0;n#li#0;n#a#2;n#ul#0;n#header#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#html#0;n#!!top" expanded="true" />
