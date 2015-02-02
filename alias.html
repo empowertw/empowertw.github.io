@@ -1078,6 +1078,7 @@
 <!--立委牆-->
 
 <script type="text/jsx">
+    /*
     var AliasMemberFull = React.createClass({
         render: function() {
             return (
@@ -1226,23 +1227,149 @@
     React.render(
             <FetchData url="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/congressmember.json"/>,
             document.getElementById('party-full-content')
+    );*/
+    var AliasMemberFull = React.createClass({
+        render: function() {
+            return (
+                    <div className={this.props.classWithDisplay}>
+                        <div className="alias-image-background">
+                            <img src={this.props.src} alt="" className="alias-image-photo"/>
+                        </div>
+                        <img src={this.props.partySrc} alt="" className="alias-image-party"/>
+                        <h3 className={this.props.nameClass}>{this.props.name}</h3>
+                    </div>
+
+            );
+        }
+    });
+    var FetchData = React.createClass({
+        handleClick: function(agreeOrLocation, value) {
+            console.log(agreeOrLocation);
+            console.log(value);
+            if (agreeOrLocation.localeCompare("agree") == 0) {
+                $.cookie("agree", value);
+            } else {
+                $.cookie("location", value);
+            }
+            this.loadCommentsFromServer();
+        },
+        loadCommentsFromServer: function() {
+            var location = $.cookie('location');
+            var agree = $.cookie('agree');
+            var sum = 0;
+            var total = 0;
+//                        alert("FetchData");
+            // 當cookie不存在時進行初始化
+            if (location == null || location == null || location == null) {
+                $.cookie("location", "0");
+            }
+            if (agree == null || agree == null || agree == null) {
+                $.cookie("agree", "0");
+            }
+            console.log( "agree: " + $.cookie("agree") + ";location:" + $.cookie("location") );
+
+            $.ajax({
+                url: this.props.url,
+                dataType: 'json',
+                success: function(d) {
+                    $.each(d, function(i) {
+                        d[i].src = "https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/" + d[i].name + ".png";
+                        d[i].partySrc = "https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/" + d[i].party + ".svg";
+                        if (d[i].name.localeCompare("鄭天財Sra．Kacaw") == 0) {
+                            d[i].nameClass = "alias-image-name-chen";
+                        } else if (d[i].name.localeCompare("高金素梅") == 0) {
+                            d[i].nameClass = "alias-image-name-kao";
+                        } else {
+                            d[i].nameClass = "alias-image-name";
+                        }
+                        console.log( "agree: " + agree + ";location:" + location );
+                        console.log( "agree: " + agree + ";location:" + location );
+                        if (d[i].location.localeCompare(location) == 0 && d[i].agree.localeCompare(agree) == 0) {
+                            d[i].classWithDisplay = "alias-member-full";
+                        } else if (location.localeCompare("0") == 0 && d[i].agree.localeCompare(agree) == 0) {
+                            d[i].classWithDisplay = "alias-member-full";
+                        } else {
+                            d[i].classWithDisplay = "alias-member-full-none";
+                        }
+                        if (d[i].location.localeCompare(location) == 0) {
+                            total = total + 1;
+                            if (d[i].agree.localeCompare("1") == 0) {
+                                sum = sum + 1;
+                            }
+                        } else if (location.localeCompare("0") == 0) {
+                            total = total + 1;
+                            if (d[i].agree.localeCompare("1") == 0) {
+                                sum = sum + 1;
+                            }
+                        }
+                    });
+                    this.setState({d: d, sum: sum, total: total});
+                }.bind(this),
+                error: function(xhr, status, err) {
+                    console.error(this.props.url, status, err.toString());
+                }.bind(this)
+            });
+        },
+        getInitialState: function() {
+            return {d: [], sum: 0, total: 0};
+        },
+        componentDidMount: function() {
+            this.loadCommentsFromServer();
+        },
+        render: function() {
+            var commentNodes = this.state.d.map(function (d) {
+                return (
+                        <AliasMemberFull name={d.name} agree={d.agree} party={d.party} id={d.id} location={d.location} src={d.src} partySrc={d.partySrc} nameClass={d.nameClass} classWithDisplay={d.classWithDisplay}/>
+                );
+            });
+            return (
+                    <div>
+                        <div className="party-sidebar">
+                            <div>
+                                <h1 className="party-sidebar-h1">立委表態牆</h1>
+                                <h3 className="party-sidebar-h3">最新表態率：{this.state.sum}/{this.state.total}</h3>
+
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="→已表態" onClick={this.handleClick.bind(this, "agree", "1")} />
+                                <input className="party-sidebar-button party-sidebar-button-unselected" type="button" value="未表態" onClick={this.handleClick.bind(this ,"agree", "0")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="全國" onClick={this.handleClick.bind(this, "location", "0")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="台北市" onClick={this.handleClick.bind(this, "location", "台北市")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="新北市" onClick={this.handleClick.bind(this, "location", "新北市")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="台中市" onClick={this.handleClick.bind(this, "location", "台中市")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="台南市" onClick={this.handleClick.bind(this, "location", "台南市")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="高雄市" onClick={this.handleClick.bind(this, "location", "高雄市")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="桃園縣" onClick={this.handleClick.bind(this, "location", "桃園縣")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="新竹市" onClick={this.handleClick.bind(this, "location", "新竹市")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="新竹縣" onClick={this.handleClick.bind(this, "location", "新竹縣")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="苗栗縣" onClick={this.handleClick.bind(this, "location", "苗栗縣")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="彰化縣" onClick={this.handleClick.bind(this, "location", "彰化縣")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="雲林縣" onClick={this.handleClick.bind(this, "location", "雲林縣")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="嘉義市" onClick={this.handleClick.bind(this, "location", "嘉義市")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="嘉義縣" onClick={this.handleClick.bind(this, "location", "嘉義縣")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="屏東縣" onClick={this.handleClick.bind(this, "location", "屏東縣")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="南投縣" onClick={this.handleClick.bind(this, "location", "南投縣")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="宜蘭縣" onClick={this.handleClick.bind(this, "location", "宜蘭縣")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="花蓮縣" onClick={this.handleClick.bind(this, "location", "花蓮縣")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="台東縣" onClick={this.handleClick.bind(this, "location", "台東縣")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="澎湖縣" onClick={this.handleClick.bind(this, "location", "澎湖縣")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="金門縣" onClick={this.handleClick.bind(this, "location", "金門縣")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="連江縣" onClick={this.handleClick.bind(this, "location", "連江縣")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="不分區" onClick={this.handleClick.bind(this, "location", "不分區")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="山地原住民" onClick={this.handleClick.bind(this, "location", "山地原住民")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="平地原住民" onClick={this.handleClick.bind(this, "location", "平地原住民")} />
+                                <input className="party-sidebar-button party-sidebar-button-selected" type="button" value="僑居國外國民" onClick={this.handleClick.bind(this, "location", "僑居國外國民")} />
+                            </div>
+                        </div>
+                        <div className="party-content">
+                            {commentNodes}
+                        </div>
+                    </div>
+            );
+        }
+    });
+    React.render(
+            <FetchData url="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/congressmember.json"/>,
+            document.getElementById('party-full-content')
     );
-    function locationButtonClick(inputLocation) {
-        alert(inputLocation);
-        $.cookie("location", inputLocation);
-        React.render(
-                <FetchData url="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/congressmember.json" />,
-                document.getElementById('party-content')
-        );
-    }
-    function agreeButtonClick(inputAgree) {
-        alert(inputAgree);
-        $.cookie("agree", inputAgree);
-        React.render(
-                <FetchData url="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/congressmember.json" />,
-                document.getElementById('party-content')
-        );
-    }
 </script>
 
 <!--立委按鈕-->
