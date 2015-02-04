@@ -11,7 +11,11 @@
     <!--<script src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/jquery-1.11.2.min.js"></script>-->
     <script src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/showdown.min.js"></script>
     <script src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/jquery.cookie.js"></script>
-    <script src="http://backbonejs.org/backbone.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <!--<script src="http://backbonejs.org/backbone.js"></script>-->
+
+
     <!--<script src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/backbone-min.js"></script>-->
     <!--<script src="http://fb.me/react-js-fiddle-integration.js"></script>-->
 
@@ -413,6 +417,10 @@
     }
     @media screen and (max-width: 930px) {
     }
+    .stop-scrolling {
+        height: 100%;
+        overflow: hidden;
+    }
 </style>
 
 <div class="party-full-screen-width" style="">
@@ -436,10 +444,6 @@
             <!--</button>-->
         </div>
         <div class="party-content" id="party-content" style="">
-            <!--<div class="alias-member-full" data-reactid=".0.1j">-->
-            <!--<div class="alias-image-background" data-reactid=".0.1j.0">-->
-            <!--<img src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/陳雪生.png" alt="" class="alias-image-photo" data-reactid=".0.1j.0.0">-->
-            <!--</div>-->
             <!--<img src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/無黨籍.svg" alt="" class="alias-image-party" data-reactid=".0.1j.1">-->
             <!--<h3 class="alias-image-name" data-reactid=".0.1j.2">陳雪生</h3>-->
             <!--</div>-->
@@ -1254,7 +1258,7 @@
             <FetchData url="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/congressmember.json"/>,
             document.getElementById('party-full-content')
     );*/
-    var AliasMemberFull = React.createClass({
+    var AliasMemberFullNotAgree = React.createClass({
         render: function() {
             return (
                     <div className={this.props.classWithDisplay}>
@@ -1264,8 +1268,22 @@
                         <img src={this.props.partySrc} alt="" className="alias-image-party"/>
                         <h3 className={this.props.nameClass}>{this.props.name}</h3>
                     </div>
-
             );
+        }
+    });
+    var AliasMemberFullAgree = React.createClass({
+        render: function() {
+            return (
+                <div className={this.props.classWithDisplay + " opener"} title={this.props.id}>
+                    <div className="alias-image-background">
+                        <img src={this.props.src} alt="" className="alias-image-photo"/>
+                    </div>
+                    <img src={this.props.partySrc} alt="" className="alias-image-party"/>
+                    <h3 className={this.props.nameClass}>{this.props.name}</h3>
+                    <div id={this.props.id} className="dialog" title={this.props.name + " 立委承諾書"}><img src={"https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/" + this.props.name + "承諾書.jpg"} alt=""/></div>
+                </div>
+            );
+            d[i].src = "https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/" + d[i].name + ".png";
         }
     });
     var FetchData = React.createClass({
@@ -1322,9 +1340,6 @@
                 $.cookie("agree", "0");
                 agree = "0";
             }
-//            console.log( "agree: " + $.cookie("agree") + ";location:" + $.cookie("location") );
-
-//            alert("FetchData");
             if (agree.localeCompare("1") == 0) {
                 b[0].value = "→" + b[0].value;
                 b[0].classString += " party-sidebar-button-unselected";
@@ -1334,9 +1349,6 @@
                 b[1].value = "→" + b[1].value;
                 b[1].classString += " party-sidebar-button-unselected";
             }
-
-            var buttonEach;
-            var tmpCompare;
             for (var i = 2; i < b.length; i++) {
                 if (b[i].compare.localeCompare(location) == 0) {
                     b[i].value = "→" + b[i].value;
@@ -1394,8 +1406,34 @@
         componentDidMount: function() {
             this.loadCommentsFromServer();
         },
+        componentDidUpdate: function() {
+            //debug
+            if (this.state.total == 107) {
+//                alert(this.state.total);
+                $(".dialog").dialog({
+                    autoOpen: false,
+                    width: 'auto',
+                    modal: true,
+                    open: function () {
+                        $('body').addClass('stop-scrolling');
+                    },
+                    close: function () {
+                        $('body').removeClass('stop-scrolling');
+                    }
+                });
+                $(".opener").click(function () {
+                    $('#' + $(this).attr('title')).dialog("open");
+                });
+            }
+        },
         render: function() {
             var aliasMemberFullMap = this.state.d.map(function (d) {
+                var AliasMemberFull;
+                if (d.agree.localeCompare("1") === 0) {
+                    AliasMemberFull = AliasMemberFullAgree;
+                } else {
+                    AliasMemberFull = AliasMemberFullNotAgree;
+                }
                 return (
                         <AliasMemberFull name={d.name} agree={d.agree} party={d.party} id={d.id} location={d.location} src={d.src} partySrc={d.partySrc} nameClass={d.nameClass} classWithDisplay={d.classWithDisplay}/>
                 );
@@ -1404,7 +1442,7 @@
                 return (
                         <input className={b.classString} type="button" value={b.value}  onClick={this.handleClick.bind(this, b.category, b.compare)} />
                 );
-            }.bind(this))
+            }.bind(this));
             return (
                     <div>
                         <div className="party-sidebar">
