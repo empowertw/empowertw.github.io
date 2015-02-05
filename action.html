@@ -8,7 +8,16 @@
     <script src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/react-0.12.2.js"></script>
     <script src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/JSXTransformer-0.12.2.js"></script>
     <script src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/jquery-2.1.3.min.js"></script>
+    <!--<script src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/jquery-1.11.2.min.js"></script>-->
     <script src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/showdown.min.js"></script>
+    <script src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/jquery.cookie.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="//www.parsecdn.com/js/parse-1.3.4.min.js"></script>
+    <!--<script src="http://backbonejs.org/backbone.js"></script>-->
+
+    <!--<script src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/backbone-min.js"></script>-->
+    <!--<script src="http://fb.me/react-js-fiddle-integration.js"></script>-->
 
     <!--<link rel="stylesheet" href="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/foundation.css" />-->
     <!--網格用法：class="large-4 medium-4 small-4 columns"-->
@@ -191,10 +200,12 @@
     .party-h1 {
         width:45%;display:inline-block;padding-left:50%;padding-top:25px;padding-bottom: 0px;color: #905d5c;font-size: 40px;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;vertical-align: top;
         margin-bottom: 0px;
+        margin-top: 0px;
     }
     .party-ol {
         width:45%;display:inline-block;padding-left:50%;padding-bottom:0px;color: #905d5c;font-size: 20px;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;vertical-align: top;
         padding-top: 0px;
+        list-style: none;
     }
     .party-h3 {
         font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
@@ -219,29 +230,26 @@
     }
     @media screen and (max-width: 930px) {
     }
+    .party-span {
+        display:inline-block;width: 6em;background-color: #6c2626;color: #ffffff;border-radius: 10px;text-align: center;padding-top: 0.3em;padding-bottom: 0.3em;margin-right: 1em;
+    }
+    .party-h1-ourAction {
+        padding-top: 50px;
+    }
 </style>
 
 <div class="party-full-screen-width" style="">
-		<div class="party-full-content" style="">
-                <h1 class="party-h1" style="padding-top: 50px;">我們的行動</h1>
-                <ol class="party-ol" style="list-style: none;">
+		<div class="party-full-content">
+                <h1 class="party-h1 party-h1-ourAction" style="">我們的行動</h1>
+                <ol class="party-ol">
                         <h3 class="party-h3"><li class="party-li">一、拜會朝野主要政黨領袖</li></h3>
                         <h3 class="party-h3"><li class="party-li">二、要求立委簽署修法承諾書</li></h3>
                         <h3 class="party-h3"><li class="party-li">三、全國巡迴說明動員</li></h3>
                         <h3 class="party-h3"><li class="party-li">四、「318還權於民」立法院繞行包圍</li></h3>
                         <h3 class="party-h3"><li class="party-li">五、「410還權於民」立法院外人民大集結</li></h3>
                 </ol>
-                <h1 class="party-h1" style="margin-top: 0px;">近期活動</h1>
-                <ol class="party-ol" style="list-style: none;">
-                        <h3 class="party-h3"><li class="party-li"><span style="display:inline-block;width: 6em;background-color: #6c2626;color: #ffffff;border-radius: 10px;text-align: center;padding-top: 0.3em;padding-bottom: 0.3em;margin-right: 1em">2015.2.4</span>拜會民進黨立院黨團</li></h3>
-                </ol>
-                <h1 class="party-h1" style="margin-top: 0px;">行動紀錄</h1>
-                <ol class="party-ol" style="list-style: none;">
-                        <h3 class="party-h3"><li class="party-li"><span style="display:inline-block;width: 6em;background-color: #6c2626;color: #ffffff;border-radius: 10px;text-align: center;padding-top: 0.3em;padding-bottom: 0.3em;margin-right: 1em">2015.1.19</span>410還權於民行動記者會</li></h3>
-                        <h3 class="party-h3"><li class="party-li"><span style="display:inline-block;width: 6em;background-color: #6c2626;color: #ffffff;border-radius: 10px;text-align: center;padding-top: 0.3em;padding-bottom: 0.3em;margin-right: 1em">2015.1.22</span>拜會民進黨主席蔡英文</li></h3>
-                        <h3 class="party-h3"><li class="party-li"><span style="display:inline-block;width: 6em;background-color: #6c2626;color: #ffffff;border-radius: 10px;text-align: center;padding-top: 0.3em;padding-bottom: 0.3em;margin-right: 1em">2015.1.23</span>拜會台聯黨主席黃昆輝</li></h3>
-                        <h3 class="party-h3"><li class="party-li"><span style="display:inline-block;width: 6em;background-color: #6c2626;color: #ffffff;border-radius: 10px;text-align: center;padding-top: 0.3em;padding-bottom: 0.3em;margin-right: 1em">2015.1.29</span>拜會台聯黨立院黨團</li></h3>
-                </ol>
+                <div id="party-action-react">
+                </div>
         </div>
 </div>
 
@@ -287,6 +295,110 @@
 				</footer>
         </div>
 </div>
+
+<script type="text/jsx">
+    var TestData = React.createClass({
+        render: function() {
+            return (
+                <h1>hello world</h1>
+            );
+        }
+    });
+    var FetchData = React.createClass({
+        parseData: function() {
+            var newAction = [];
+            var recordedAction = [];
+            Parse.initialize("um9oVWPvPKifvhsyGfoRdbQwDvjrVJFOCcTEWTiS", "jdrKlqoQvTx8xXdyiMz8QeFxExziLa49nmqRXHNm");
+            var ParseObject = Parse.Object.extend("action");
+            console.log("abc");
+            var parseObject = new Parse.Query(ParseObject);
+            console.log("def");
+            parseObject.equalTo("visible", true);
+            parseObject.ascending("date");
+            console.log("ghi");
+            parseObject.find({
+                success: function(list) {
+                    // Successfully retrieved the object.
+                    var today = new Date();
+
+                    for (var i = 0, n = 0, r = 0; i < list.length; i++) {
+                        var object = list[i];
+                        if (object.get('date') > today) {
+                            if (object.get('link') == null || object.get('link') === "") {
+                                newAction[n] = {};
+                                newAction[n].link = "";
+                            } else {
+                                newAction[n].link = object.get('link');
+                            }
+                            newAction[n].month = object.get('date').getMonth() + 1;
+                            newAction[n].date = object.get('date').getDate();
+                            newAction[n].title = object.get('title');
+                            n ++;
+                        } else {
+                            if (object.get('link') == null || object.get('link') === "") {
+                                recordedAction[r] = {link: ""};
+                            } else {
+                                recordedAction[r] = {link: object.get('link')};
+                            }
+                            recordedAction[r].month = object.get('date').getMonth() + 1;
+                            recordedAction[r].date = object.get('date').getDate();
+                            recordedAction[r].title = object.get('title');
+                            r ++;
+                        }
+                    }
+                    for (var n = 0; n < newAction.length; n++) {
+                        console.log("n" + newAction[n].title);
+                        console.log("n" + newAction[n].month);
+                        console.log("n" + newAction[n].date);
+                    }
+                    for (var r = 0; r < recordedAction.length; r++) {
+                        console.log("r" + recordedAction[r].title);
+                        console.log("r" + recordedAction[r].month);
+                        console.log("r" + recordedAction[r].date);
+                    }
+                    this.setState({newAction: newAction, recordedAction: recordedAction});
+                }.bind(this),
+                error: function(error) {
+                    alert("資料伺服器維護中");
+                }
+            });
+        },
+        getInitialState: function() {
+            return {newAction: [], recordedAction: []};
+        },
+        componentDidMount: function() {
+            this.parseData();
+        },
+        render: function() {
+            var newActionMap = this.state.newAction.map(function (newAction) {
+                return (
+                    <h3 className="party-h3"><li className="party-li"><span className="party-span">2015.{newAction.month}.{newAction.date}</span>{newAction.title}</li></h3>
+                );
+            });
+            var recordedActionMap = this.state.recordedAction.map(function (recordedAction) {
+                return (
+                    <h3 className="party-h3"><li className="party-li"><span className="party-span">2015.{recordedAction.month}.{recordedAction.date}</span>{recordedAction.title}</li></h3>
+                ) ;
+            }.bind(this));
+            return (
+                <div>
+                    <h1 className="party-h1">近期活動</h1>
+                    <ol className="party-ol">
+                        {newActionMap}
+                    </ol>
+                    <h1 className="party-h1">行動紀錄</h1>
+                    <ol className="party-ol">
+                        {recordedActionMap}
+                    </ol>
+                </div>
+            );
+        }
+    });
+    React.render(
+        <FetchData/>,
+        document.getElementById('party-action-react')
+    );
+</script>
 
 </body>
 </html>
