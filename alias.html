@@ -432,13 +432,6 @@
     }
     @media screen and (max-width: 930px) {
     }
-    .stop-scrolling {
-        /*height: 100%;*/
-        /*overflow: hidden;*/
-    }
-    .dialog {
-        display: none;
-    }
 </style>
 
 <div class="party-full-screen-width" style="">
@@ -528,11 +521,12 @@
                     </div>
                     <img src={this.props.partySrc} alt="" className="alias-image-party"/>
                     <h3 className={this.props.nameClass}>{this.props.name}</h3>
-                    <div id={this.props.id} className="dialog" title={this.props.name + " 立委承諾書"}><img src={"https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/" + this.props.name + "承諾書.jpg"} alt=""/></div>
+                    <div id={this.props.id} className="dialog" title={this.props.name + " 立委承諾書"}></div>
                 </div>
             );
         }
     });
+//    <div id={this.props.id} className="dialog" title={this.props.name + " 立委承諾書"}><img src={"https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/" + this.props.name + "承諾書.jpg"} alt=""/></div>
     var FetchData = React.createClass({
         handleClick: function(agreeOrLocation, value) {
             console.log(agreeOrLocation);
@@ -654,9 +648,7 @@
             this.loadCommentsFromServer();
         },
         componentDidUpdate: function() {
-            //debug
             if (this.state.total == 107) {
-//                alert(this.state.total);
                 $(".dialog").dialog({
                     autoOpen: false,
                     width: 'auto',
