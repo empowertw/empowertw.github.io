@@ -5,14 +5,18 @@
 <head>
     <meta charset="UTF-8">
     <title>410還權於民·重返立院</title>
-    <script src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/react-0.12.2.js"></script>
-    <script src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/JSXTransformer-0.12.2.js"></script>
-    <script src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/jquery-2.1.3.min.js"></script>
-    <script src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/showdown.min.js"></script>
-    <script src="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/jquery.cookie.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-    <script src="//www.parsecdn.com/js/parse-1.3.4.min.js"></script>
+
+    <script src="js/react-0.12.2.js"></script>
+    <script src="js/JSXTransformer-0.12.2.js"></script>
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <!--<script src="js/jquery-1.11.2.min.js"></script>-->
+    <script src="js/showdown.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <link rel="stylesheet" href="jquery-ui.css">
+
+    <!--<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>-->
+    <script src="js/jquery-ui-min.js"></script>
+    <script src="js/parse-1.3.4.min.js"></script>
 
     <style>
         body {
@@ -204,16 +208,6 @@
                             r ++;
                         }
                     }
-                    for (var n = 0; n < newAction.length; n++) {
-                        console.log("n" + newAction[n].title);
-                        console.log("n" + newAction[n].month);
-                        console.log("n" + newAction[n].date);
-                    }
-                    for (var r = 0; r < recordedAction.length; r++) {
-                        console.log("r" + recordedAction[r].title);
-                        console.log("r" + recordedAction[r].month);
-                        console.log("r" + recordedAction[r].date);
-                    }
                     this.setState({newAction: newAction, recordedAction: recordedAction});
                 }.bind(this),
                 error: function(error) {
@@ -229,10 +223,6 @@
         },
         render: function() {
             var newActionMap = this.state.newAction.map(function (newAction) {
-                var
-                if (newAction.link.localeCompare("") == 0) {
-
-                }
                 return (
                     <h3 className="party-h3"><li className="party-li"><span className="party-span">2015.{newAction.month}.{newAction.date}</span>{newAction.title}</li></h3>
                 );
