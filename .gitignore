@@ -1,8 +1,7 @@
-node_modules
+node_modules/
+dist/
+.sass-cache/
 .tmp
-dist
-.sass-cache
-bower_components
 test.html
 backup/
 .idea/
