@@ -2,6 +2,7 @@
 
 var gulp = require('gulp');
 var del = require('del');
+var watch = require('gulp-watch');
 
 
 var path = require('path');
@@ -56,7 +57,6 @@ gulp.task('scripts', function () {
     return rebundle();
 
 });
-
 
 gulp.task('jade', function () {
     return gulp.src('app/template/*.jade')
@@ -193,7 +193,7 @@ gulp.task('bower', function() {
 });
 
 gulp.task('json', function() {
-    gulp.src('app/scripts/json/**/*.json', {base: 'app/scripts'})
+    gulp.src('app/scripts/*.json', {base: 'app/scripts'})
         .pipe(gulp.dest('dist/scripts/'));
 });
 
@@ -208,7 +208,7 @@ gulp.task('extras', function () {
 gulp.task('watch', ['html', 'bundle', 'serve'], function () {
 
     // Watch .json files
-    gulp.watch('app/scripts/**/*.json', ['json']);
+    gulp.watch('app/scripts/*.json', ['json']);
 
     // Watch .html files
     gulp.watch('app/*.html', ['html']);
@@ -225,10 +225,20 @@ gulp.task('watch', ['html', 'bundle', 'serve'], function () {
 
     // Watch image files
     gulp.watch('app/images/**/*', ['images']);
+
+    gulp.watch('app/statement/index.html', ['statement']);
+    gulp.watch('app/claim/index.html', ['claim']);
+    gulp.watch('app/action/index.html', ['action']);
+    gulp.watch('app/flyingv/index.html', ['flyingv']);
+    gulp.watch('app/alias/index.html', ['alias']);
+    gulp.watch('app/people/index.html', ['people']);
 });
 
 // Build
-gulp.task('build', ['html', 'bundle', 'images', 'extras', 'statement', 'claim', 'action', 'flyingv', 'alias', 'people', 'readme']);
+gulp.task('build', ['html', 'bundle', 'images', 'extras', 'statement', 'claim', 'action', 'flyingv', 'alias', 'people', 'readme', 'json']);
 
 // Default task
 gulp.task('default', ['clean', 'build', 'jest' ]);
+
+
+gulp.task('s', ['watch', 'build']);
