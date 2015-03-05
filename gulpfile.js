@@ -72,6 +72,14 @@ gulp.task('html', function () {
         .pipe($.size());
 });
 
+// HTML
+gulp.task('readme', function () {
+    return gulp.src('app/README.md')
+        .pipe($.useref())
+        .pipe(gulp.dest('dist'))
+        .pipe($.size());
+});
+
 // TEMPLATE novel
 gulp.task('templates', function () {
     return gulp.src('app/templates/*.html')
@@ -220,7 +228,7 @@ gulp.task('watch', ['html', 'bundle', 'serve'], function () {
 });
 
 // Build
-gulp.task('build', ['html', 'bundle', 'images', 'extras', 'statement', 'claim', 'action', 'flyingv', 'alias', 'people']);
+gulp.task('build', ['html', 'bundle', 'images', 'extras', 'statement', 'claim', 'action', 'flyingv', 'alias', 'people', 'readme']);
 
 // Default task
 gulp.task('default', ['clean', 'build', 'jest' ]);
