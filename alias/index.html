@@ -49,6 +49,27 @@
 
 <!--頁首-->
 
+<script>
+    function hoverPeople(element) {
+        element.setAttribute('src', '../images/people-hovered.svg');
+    }
+    function unhoverPeople(element) {
+        element.setAttribute('src', '../images/people.svg');
+    }
+    function hoverAlias(element) {
+        element.setAttribute('src', '../images/alias-hovered.svg');
+    }
+    function unhoverAlias(element) {
+        element.setAttribute('src', '../images/alias-selected.svg');
+    }
+    function hoverFlyingv(element) {
+        element.setAttribute('src', '../images/flyingV-hovered.svg');
+    }
+    function unhoverFlyingv(element) {
+        element.setAttribute('src', '../images/flyingV.svg');
+    }
+</script>
+
 <div class="head-full-screen-width" style="">
   <div class="head-full-content" style="">
     <img src="../images/410.svg" alt="410還權於民·重返立院" id="410logo" style="" class="head-img"/>
@@ -61,12 +82,12 @@
     </header>
     <header class="head-header" style="">
       <ul class="head-ul" style="">
-        <a href="../people/"><li class="head-nav-full-bottom head-nav-people-li" style=""><img class="head-nav-img" src="../images/people.svg"
-                                                                                                   alt="公民聲援牆"/></li></a>
-        <a href="../alias/"><li class="head-nav-full-bottom head-nav-alias-li" style=""><img class="head-nav-img" src="../images/alias-selected.svg"
-                                                                                                 alt="立委表態牆"/></li></a>
-        <a href="../flyingv/"><li class="head-nav-full-bottom head-nav-flyingV-li" style=""><img class="head-nav-img" src="../images/flyingV.svg"
-                                                                                                     alt="flyingV"/></li></a>
+          <a href="../people/"><li class="svg head-nav-full-bottom head-nav-people-li" style=""><img class="head-nav-img" id="test" src="../images/people.svg"
+                                                                                                     alt="公民聲援牆" onmouseover="hoverPeople(this);" onmouseout="unhoverPeople(this);"/></li></a>
+          <a href="../alias/"><li class="svg head-nav-full-bottom head-nav-alias-li" style=""><img class="head-nav-img" src="../images/alias-selected.svg"
+                                                                                                   alt="立委表態牆" onmouseover="hoverAlias(this);" onmouseout="unhoverAlias(this);"/></li></a>
+          <a href="../flyingv/"><li class="svg head-nav-full-bottom head-nav-flyingV-li" style=""><img class="head-nav-img" src="../images/flyingV.svg"
+                                                                                                       alt="flyingV" onmouseover="hoverFlyingv(this);" onmouseout="unhoverFlyingv(this);"/></li></a>
       </ul>
     </header>
 
@@ -672,7 +693,7 @@
     }
   });
   React.render(
-    <FetchData url="https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/congressmember.json"/>,
+    <FetchData url="../scripts/congressmember.json"/>,
     document.getElementById('party-full-content')
   );
 </script>

@@ -14,6 +14,16 @@
 
 deploy則採用deploy.sh腳本。
 
+# 開發
+
+從rehearsal新建一個branch後在該branch中開發
+
+利用指令"gulp s"與網址"localhost:9000"進行瀏覽
+
+完成後執行push、並merge到rehearsal
+
+checkout至rehearsal後執行"./deploy.sh"即可編譯網頁到master分支上
+
 # Contributor
 
 由"410還權於民網站小組"維護。

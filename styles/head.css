@@ -120,3 +120,19 @@
 .head-nav-img {
   border-color: #ffffff;
 }
+
+.head-nav-full-top:hover {
+  color: #8d5c5b;
+  background-color: #ccb7aa;
+}
+
+#current-header {
+  background-color: #6c2626;
+  color: #ffffff;
+  margin-left: 0px;
+}
+
+#current-header:hover {
+  color: #8d5c5b;
+  background-color: #ccb7aa;
+}
