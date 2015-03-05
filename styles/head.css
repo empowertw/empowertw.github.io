@@ -1,0 +1,122 @@
+.head-full-screen-width {
+  /*background-color: green;*/
+  background-color: #ffffff;
+}
+
+.head-full-content {
+  width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  height: 168px;
+  padding-top: 15px;
+}
+
+@media screen and (max-width: 1024px) {
+  .head-full-content {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    /*background-color:red;*/
+    padding-right: 15px;
+    padding-left: 15px;
+    /*height:200px;*/
+  }
+}
+@media screen and (max-width: 950px) {
+  .head-full-content {
+    width: 930px;
+    margin-left: auto;
+    margin-right: auto;
+    /*background-color:blue;*/
+    padding-right: 15px;
+    padding-left: 15px;
+    /*height:200px;*/
+  }
+}
+.head-img {
+  width: 420px;
+  float: left;
+  vertical-align: middle;
+  padding-right: 0px;
+}
+
+.head-header {
+  width: 480px;
+  display: inline-block;
+  color: #905d5c;
+  font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  float: right;
+  /*background-color:#fff;*/
+  /*height: 500px;*/
+}
+
+.head-ul {
+  list-style-type: none;
+  padding-left: 0px;
+  margin: 0px;
+  clear: left;
+}
+
+.head-nav-full-top {
+  text-decoration: none;
+  margin-left: 10px;
+  margin-right: 0px;
+  border-radius: 0.8em 0.8em 0.8em 0.8em;
+  /*standards-compliant: (IE)*/
+  text-align: center;
+  font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  background-color: #ecdbd1;
+  color: #905d5c;
+  height: 50px;
+  float: right;
+}
+
+.head-nav-action-li {
+  width: 150px;
+}
+
+.head-nav-claim-li {
+  width: 150px;
+}
+
+.head-nav-statement-li {
+  width: 130px;
+}
+
+.head-nav-h1 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.head-nav-full-bottom {
+  text-decoration: none;
+  margin-left: 10px;
+  margin-right: 0px;
+  border-radius: 0.8em 0.8em 0.8em 0.8em;
+  /*standards-compliant: (IE)*/
+  text-align: center;
+  font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  height: 70px;
+  float: right;
+  padding-top: 15px;
+}
+
+.head-nav-alias-li {
+  margin-top: 0px;
+  width: 150px;
+}
+
+.head-nav-people-li {
+  margin-top: 0px;
+  width: 150px;
+}
+
+.head-nav-flyingV-li {
+  margin-top: 0px;
+  width: 130px;
+}
+
+.head-nav-img {
+  border-color: #ffffff;
+}
