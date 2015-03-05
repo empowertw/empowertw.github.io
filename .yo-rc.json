@@ -1,0 +1,6 @@
+{
+  "generator-mocha": {},
+  "generator-react-webpack": {
+    "styles-language": "scss"
+  }
+}
