@@ -456,7 +456,7 @@
   }
 
   p img {
-    max-width: 700px;
+    width: 100%;
     height: auto;
     float: left;
     margin: 0 1em 1em 0;
@@ -528,8 +528,8 @@
             <label className="modal__bg" htmlFor={this.props.id}></label>
             <div className="modal__inner">
               <label className="modal__close" htmlFor={this.props.id}></label>
-              <h2 >{this.props.name} 立委承諾書</h2>
-              <p><img src={"https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/" + this.props.name + "承諾書.jpg"} className="party-agree-img" alt="" /></p>
+              <h2 >{this.props.agreeTitle}</h2>
+              <p><img src={this.props.agreeImgAddress} className="party-agree-img" alt="" /></p>
             </div>
           </div>
         </div>
@@ -635,12 +635,12 @@
             }
             if (d[i].location.localeCompare(location) == 0) {
               total = total + 1;
-              if (d[i].agree.localeCompare("1") == 0) {
+              if (d[i].agree.localeCompare("1") == 0 || d[i].party.localeCompare("民主進步黨") == 0 || d[i].party.localeCompare("台灣團結聯盟") == 0) {
                 sum = sum + 1;
               }
             } else if (location.localeCompare("全國") == 0) {
               total = total + 1;
-              if (d[i].agree.localeCompare("1") == 0) {
+              if (d[i].agree.localeCompare("1") == 0 || d[i].party.localeCompare("民主進步黨") == 0 || d[i].party.localeCompare("台灣團結聯盟") == 0) {
                 sum = sum + 1;
               }
             }
@@ -661,13 +661,20 @@
     render: function() {
       var aliasMemberFullMap = this.state.d.map(function (d) {
         var AliasMemberFull;
-        if (d.agree.localeCompare("1") === 0) {
+        if (d.agree.localeCompare("1") === 0 || d.party.localeCompare("民主進步黨") == 0 || d.party.localeCompare("台灣團結聯盟") == 0) {
           AliasMemberFull = AliasMemberFullAgree;
+          if (d.party.localeCompare("民主進步黨") == 0) {
+            d.agreeImgAddress = "https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/民進黨團承諾書.jpg";
+            d.agreeTitle = d.name + " 立委所屬黨團承諾書";
+          } else {
+            d.agreeImgAddress = "https://ef759e7ab8ebacebb837df58b36f0346a93140e2-www.googledrive.com/host/0B3zZU8B9RCrhY0RlbzdKUldTQXM/" + d.name + "承諾書.jpg";
+            d.agreeTitle = d.name + " 立委承諾書";
+          }
         } else {
           AliasMemberFull = AliasMemberFullNotAgree;
         }
         return (
-          <AliasMemberFull name={d.name} agree={d.agree} party={d.party} id={d.id} location={d.location} src={d.src} partySrc={d.partySrc} nameClass={d.nameClass} classWithDisplay={d.classWithDisplay}/>
+          <AliasMemberFull name={d.name} agree={d.agree} party={d.party} id={d.id} location={d.location} src={d.src} partySrc={d.partySrc} nameClass={d.nameClass} classWithDisplay={d.classWithDisplay} agreeTitle={d.agreeTitle} agreeImgAddress={d.agreeImgAddress}/>
         );
       });
       var partySidebarButtonMap = this.state.b.map(function (b) {
