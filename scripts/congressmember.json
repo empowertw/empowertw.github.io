@@ -15,7 +15,7 @@
     },
     {
         "name":"尤美女",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":3,
         "location":"不分區"
@@ -57,7 +57,7 @@
     },
     {
         "name":"田秋堇",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":9,
         "location":"不分區"
@@ -78,14 +78,14 @@
     },
     {
         "name":"何欣純",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":12,
         "location":"台中市"
     },
     {
         "name":"吳宜臻",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":13,
         "location":"不分區"
@@ -106,7 +106,7 @@
     },
     {
         "name":"吳秉叡",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":16,
         "location":"不分區"
@@ -127,14 +127,14 @@
     },
     {
         "name":"李昆澤",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":19,
         "location":"高雄市"
     },
     {
         "name":"李俊俋",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":20,
         "location":"嘉義市"
@@ -162,7 +162,7 @@
     },
     {
         "name":"李應元",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":24,
         "location":"不分區"
@@ -183,14 +183,14 @@
     },
     {
         "name":"邱志偉",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":27,
         "location":"高雄市"
     },
     {
         "name":"邱議瑩",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":28,
         "location":"高雄市"
@@ -204,7 +204,7 @@
     },
     {
         "name":"林岱樺",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":30,
         "location":"高雄市"
@@ -225,7 +225,7 @@
     },
     {
         "name":"林淑芬",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":33,
         "location":"新北市"
@@ -253,21 +253,21 @@
     },
     {
         "name":"姚文智",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":37,
         "location":"台北市"
     },
     {
         "name":"柯建銘",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":38,
         "location":"不分區"
     },
     {
         "name":"段宜康",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":39,
         "location":"不分區"
@@ -316,7 +316,7 @@
     },
     {
         "name":"陳其邁",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":46,
         "location":"不分區"
@@ -330,7 +330,7 @@
     },
     {
         "name":"陳明文",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":48,
         "location":"嘉義縣"
@@ -344,7 +344,7 @@
     },
     {
         "name":"陳唐山",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":50,
         "location":"台南市"
@@ -379,7 +379,7 @@
     },
     {
         "name":"陳節如",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":55,
         "location":"不分區"
@@ -393,7 +393,7 @@
     },
     {
         "name":"陳歐珀",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":57,
         "location":"宜蘭縣"
@@ -421,7 +421,7 @@
     },
     {
         "name":"高志鵬",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":61,
         "location":"新北市"
@@ -449,14 +449,14 @@
     },
     {
         "name":"許添財",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":65,
         "location":"台南市"
     },
     {
         "name":"許智傑",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":66,
         "location":"高雄市"
@@ -505,7 +505,7 @@
     },
     {
         "name":"黃偉哲",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":73,
         "location":"台南市"
@@ -526,7 +526,7 @@
     },
     {
         "name":"楊曜",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":76,
         "location":"澎湖縣"
@@ -568,7 +568,7 @@
     },
     {
         "name":"管碧玲",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":82,
         "location":"高雄市"
@@ -589,7 +589,7 @@
     },
     {
         "name":"蔡煌瑯",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":85,
         "location":"不分區"
@@ -610,7 +610,7 @@
     },
     {
         "name":"趙天麟",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":88,
         "location":"高雄市"
@@ -638,14 +638,14 @@
     },
     {
         "name":"劉建國",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":92,
         "location":"雲林縣"
     },
     {
         "name":"劉櫂豪",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":93,
         "location":"台東縣"
@@ -673,14 +673,14 @@
     },
     {
         "name":"蕭美琴",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":97,
         "location":"不分區"
     },
     {
         "name":"薛凌",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":98,
         "location":"不分區"
@@ -743,21 +743,21 @@
     },
     {
         "name":"蘇震清",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":107,
         "location":"屏東縣"
     },
     {
         "name":"黃國書",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":108,
         "location":"台中市"
     },
     {
         "name":"陳素月",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":109,
         "location":"彰化縣"
@@ -778,7 +778,7 @@
     },
     {
         "name":"莊瑞雄",
-        "agree":"1",
+        "agree":"0",
         "party":"民主進步黨",
         "id":112,
         "location":"屏東縣"
