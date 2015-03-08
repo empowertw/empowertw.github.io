@@ -28,9 +28,7 @@ checkout至rehearsal後執行"./deploy.sh"即可編譯網頁到master分支上
 
 由"410還權於民網站小組"維護。
 
-目前Joy Hsu擔任主視覺；Wanglin Tsai、Han Lin、王希、林祖儀等人負責專案協調；
-
-Mark Chang與Yuren Ju提供技術支援；目前程式撰寫為Novel，也歡迎其他人一同加入撰寫。
+目前Joy Hsu擔任主視覺；Wanglin Tsai、Han Lin、王希、林祖儀等人負責專案協調、程式撰寫為Novel，也歡迎其他人一同加入撰寫。
 
 # 授權方式
 
