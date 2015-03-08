@@ -670,6 +670,7 @@
           <AliasMemberFull name={d.name} agree={d.agree} party={d.party} id={d.id} location={d.location} src={d.src} partySrc={d.partySrc} nameClass={d.nameClass} classWithDisplay={d.classWithDisplay}/>
         );
       });
+
       var partySidebarButtonMap = this.state.b.map(function (b) {
         return (
           <input className={b.classString} type="button" value={b.value}  onClick={this.handleClick.bind(this, b.category, b.compare)} />
