@@ -1,19 +1,16 @@
 .leg-full-screen-width {
     background-color: #fff;
-    padding-top: 15px;
-    padding-bottom: 15px;
 }
-.leg-full-content {
-    width:1024px; margin-left:auto; margin-right:auto;
-    height:68px;
-    background-color: #fff;
+.leg-h3 {
+    font-weight: normal;
 }
 @media screen and (min-width: 1000px) /* desktop */
 {
+    .leg-full-content {
+        width:1000px; margin-left:auto; margin-right:auto;
+    }
     .leg-h3 {
         font-size: 18px;
-        background-color: #fff;
-        font-weight: normal;
     }
     .leg-h3-desktop {
         display: inline;
@@ -25,11 +22,10 @@
 @media screen and (max-width: 1000px) /* mobile */
 {
     .leg-full-content {
-        width:100%; margin-left:auto; margin-right:auto;
+        width:100%;
     }
     .leg-h3 {
-        font-size: 15px;
-        font-weight: normal;
+        font-size: 10px;
     }
     .leg-h3-desktop {
         display: none;
@@ -38,14 +34,7 @@
         display: inline;
     }
 }
-//@media screen and (max-width: 930px) {
-//    .leg-full-content {
-//        width:930px; margin-left:auto; margin-right:auto;
-//    }
-//
-//}
 footer {
     color: #905d5c;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     text-align: center;
-    background-color: #fff;
 }
