@@ -128,11 +128,8 @@
     @media screen and (max-width: 1000px) {  /*mobile */
         .party-full-content {
             width:100%; margin-left:auto; margin-right:auto;
-            background-color:blue;
-            background-color:#EBDBD0;
             padding-right: 15px;
             padding-left: 15px;
-            background-color: #ecdbd1;background-image: url(../images/hand-mobile.svg);background-position: right bottom;background-repeat: no-repeat;
         }
         .party-sidebar {
             width: 100%;
@@ -244,7 +241,17 @@
                     padding:0.25em;
                     margin:0.25em;
                 }
+                .party-h1 {
+                    font-weight: normal;
+                }
+                .party-h3 {
+                    font-weight: normal;
+                }
                 @media screen and (min-width: 1000px) { /* desktop */
+                    #hand {
+                        background-image: url(../images/hand.svg);background-position: left bottom;background-repeat: no-repeat;
+                        background-color: #ecdbd1;
+                    }
                 }
                 @media screen and (max-width: 1000px) { /* mobile */
                     .party-h1 {
@@ -253,12 +260,20 @@
                     .party-h3 {
                         font-size: 12px;
                     }
+                    #hand {
+                        background-image: url(../images/hand.svg);background-position: right bottom;background-repeat: no-repeat;
+                        background-size: 176px 210px;
+                        background-color: #ecdbd1;
+                    }
                 }
             </style>
 
+            <style>
+
+            </style>
             <div class="party-full-screen-width" style="background-color:#EBDBD0;">
-                <div class="party-full-content" style="color: #905d5c;text-align: center;background-color: #ecdbd1;background-image: url(../images/hand.svg);background-position: left bottom;background-repeat: no-repeat;">
-                    <h1 class="party-h1" style="margin: 0px;padding: 0.25em;">一、補正公投法</h1>
+                <div id="hand" class="party-full-content" style="color: #905d5c;text-align: center;">
+                    <h1 class="party-h1" style="margin: 0px;padding: 0.25em;font-weight: normal;">一、補正公投法</h1>
                     <ol class="party-ol" style="list-style: none;margin: 0px;padding: 10px;">
                         <li class="party-li" style=""><h3 class="party-h3" style="">擴大全國性公民投票之適用範圍，包括對外締結的條約及協議</h3></li>
                         <li class="party-li" style=""><h3 class="party-h3" style="">廢除公投審議委員會之設置</h3>
@@ -277,6 +292,30 @@
                     </ol>
                 </div>
             </div>
+
+            <div class="leg-full-screen-width" style="background-color: #f6ede6">
+                <div class="leg-full-content" style="min-height: 0%;">
+                    <div class="party-sidebar-size" style="background-color: #f6ede6;width: 45%;display: inline-block;">
+                        <h1 class="party-sidebar-h1" style="width: 100%;">共同發起團體</h1>
+                        <ol class="party-sidebar-ol" style="padding-left: 0px;background-color: #f6ede6;">
+                            <li><h3 class="party-sidebar-h3" style="">島國前進</h3></li>
+                            <li><h3 class="party-sidebar-h3" style="">割闌尾計劃</h3></li>
+                            <li><h3 class="party-sidebar-h3" style="">人民做主教育基金會</h3></li>
+                            <li><h3 class="party-sidebar-h3" style="">公民1985行動聯盟</h3></li>
+                        </ol>
+                    </div>
+                    <div class="party-sidebar-size" style="background-color: #f6ede6;width: 45%;display: inline-block;">
+                        <h1 class="party-sidebar-h1" style="width: 100%;">工作小組成員</h1>
+                        <ol class="party-sidebar-ol" style="padding-left: 0px;background-color: #f6ede6;text-align: left;">
+                            <li><h3 class="party-sidebar-h3" style="">王希、林祖儀、林飛帆、柳林瑋</h3></li>
+                            <li><h3 class="party-sidebar-h3" style="">陳惠敏、陳麗貴、劉明新、蔡旺霖</h3></li>
+                            <li><h3 class="party-sidebar-h3" style="">聯絡人：黃國昌</h3></li>
+                            <li><h3 class="party-sidebar-h3" style="">榮譽召集人：林義雄</h3></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
             <style>
                 @media screen and (min-width: 1000px) { /* desktop */
                     .party-sidebar {
@@ -321,39 +360,9 @@
                         padding-right: 0px;
                         font-size: 10px;
                     }
-                    .party-sidebar-mobile-hind {
-                        width: 100%;
-                        display: inline-block;
-                    }
                 }
-
             </style>
-            <div class="party-member-full-screen-width" style="background-color: #f5ebe4;">
-                <div class="party-member-full-content" style="color: #905d5c;text-align: center;padding:0px;background-color: #f5ebe4;">
-                    <div class="party-sidebar-mobile-hind" style="background-color: #f5ebe4">
-                        <div class="party-sidebar-mobile-size" style="width: 40%; margin-left: 5%;margin-right: 10%;float: left;">
-                            <h1 class="party-sidebar-h1" style="width: 100%;">共同發起團體</h1>
-                            <ol class="party-sidebar-ol" style="padding-left: 0px;">
-                                <li style="display: block;"><h3 class="party-sidebar-h3" style="padding-left: 0px;text-align: left;padding-left: 0px;">島國前進</h3></li>
-                                <li><h3 class="party-sidebar-h3" style="padding-left: 0px;text-align: left;padding-left: 0px;display: block;">割闌尾計劃</h3></li>
-                                <li><h3 class="party-sidebar-h3" style="padding-left: 0px;text-align: left;padding-left: 0px;display: block;">人民做主教育基金會</h3></li>
-                                <li><h3 class="party-sidebar-h3" style="padding-left: 0px;text-align: left;padding-left: 0px;">公民1985行動聯盟</h3></li>
-                            </ol>
-                        </div>
-                        <!--</h3>-->
-                        <div class="party-sidebar-mobile-size" style="width: 40%;margin-right: 5%;float: left;">
-                            <h1 class="party-sidebar-h1" style="width: 100%;">工作小組成員</h1>
-                            <ol class="party-sidebar-ol" style="padding-left: 0px;">
-                                <li><h3 class="party-sidebar-h3" style="padding-left: 0px;text-align: left;padding-left: 0px;">王希、林祖儀、林飛帆、柳林瑋</h3></li>
-                                <li><h3 class="party-sidebar-h3" style="padding-left: 0px;text-align: left;padding-left: 0px;">陳惠敏、陳麗貴、劉明新、蔡旺霖</h3></li>
-                                <li><h3 class="party-sidebar-h3" style="padding-left: 0px;text-align: left;padding-left: 0px;">聯絡人：黃國昌</h3></li>
-                                <li><h3 class="party-sidebar-h3" style="padding-left: 0px;text-align: left;padding-left: 0px;">榮譽召集人：林義雄</h3></li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="leg-full-screen-width">
+            <div class="leg-full-screen-width" style="">
                 <div class="leg-full-content" style="min-height: 0%;">
                     <footer style="min-height: 0%;">
                         <h3 class="leg-h3" style="">聯絡所：島國前進<span class="leg-h3-desktop">丨</span>電話：02-2358-1008<span class="leg-h3-desktop">丨</span><br class="leg-h3-mobile" />地址：台北市中正區仁愛路二段34號2樓之一<br />E-mail：empower.taiwan@gmail.com<span class="leg-h3-desktop">丨</span><br class="leg-h3-mobile" />410還權於民·重返立院</h3>
