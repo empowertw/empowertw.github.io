@@ -3,6 +3,8 @@
 }
 .head-ul {
     list-style-type:none;
+    display: inline;
+    padding-left: 0px;
 }
 @media screen and (min-width: 1000px) /* desktop */
 {
@@ -16,7 +18,7 @@
         margin-bottom: 30px;
         margin-left:auto;
         margin-right:auto;
-        //    background-color: #ff0000;
+//        background-color: #ff0000;
     }
     .head-img-desktop {
         float:left;
@@ -25,14 +27,20 @@
         display: none;
     }
     .head-header {
+        padding-left: 14px;
         float: right;
+        width: 420px;
+        height: 115px;
+//        background-color: #ffff00;
     }
     .head-nav-li {
         display: inline-block;
     }
     .head-nav-img {
-        margin-top: 60px;
-        width: 110px;
+//        display: inline;
+        float: right;
+        margin-top: 0px;
+        width: 200px;
     }
 }
 @media screen and (max-width: 1000px) /* mobile */
