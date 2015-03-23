@@ -6,6 +6,9 @@
 }
 @media screen and (min-width: 1000px) /* desktop */
 {
+    .head-nav-for-mobile {
+        display: none;
+    }
     .head-full-content {
         width:1000px;
         height:130px;
@@ -34,6 +37,9 @@
 }
 @media screen and (max-width: 1000px) /* mobile */
 {
+    .head-full-screen-width {
+        display: none;
+    }
     .head-full-content {
         width:100%;
     }
@@ -41,13 +47,9 @@
         display: none;
     }
     .head-img-mobile {
-        width:100%;
-    }
-    .head-nav-li {
-        float: left;
+//        width:100%;
     }
 }
-
 
 @media screen and (min-width: 1000px) /* desktop */
 {
@@ -72,7 +74,7 @@
         display: inline-block;
     }
     .cd-nav-trigger {
-        top: 18px;
+        top: 11px;
         right: 5%;
         height: 44px;
         width: 44px;

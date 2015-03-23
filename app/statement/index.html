@@ -57,24 +57,30 @@
         element.setAttribute('src', '../images/statement-hovered.svg');
     }
     function unhoverStatement(element) {
-        element.setAttribute('src', '../images/statement.svg');
+        element.setAttribute('src', '../images/statement-selected.svg');
     }
 </script>
-
 <div class="head-full-screen-width" style="">
     <div class="head-full-content" style="">
         <a href="../statement/"><img src="../images/410-desktop.svg" alt="410還權於民·重返立院" class="head-img-desktop" href="../statement/"/></a>
-        <object data="../images/410-mobile.svg" alt="410還權於民·重返立院" style="" class="head-img-mobile" type="image/svg+xml"></object>
-        <header class="head-header">
+        <nav class="head-header">
             <ul class="head-ul cd-primary-nav" style="">
-                <a href="../statement/"><li id="current-header" class="head-nav-li" style=""><img class="head-nav-img" src="../images/statement-selected.svg" alt="訴求與聲明" onmouseover="hoverStatement(this);" onmouseout="unhoverStatement(this);"/></li></a>
-                <a href="../action/"><li class="head-nav-li" style=""><img class="head-nav-img" src="../images/action.svg" alt="行動與紀錄" onmouseover="hoverAction(this);" onmouseout="unhoverAction(this);"/></li></a>
-                <a href="../people/"><li class="head-nav-li" style=""><img class="head-nav-img" src="../images/people.svg" alt="公民表態牆" onmouseover="hoverPeople(this);" onmouseout="unhoverPeople(this);"/></li></a>
-                <a href="../alias/"><li class="head-nav-li" style=""><img class="head-nav-img" src="../images/alias.svg" alt="立委聲援牆" onmouseover="hoverAlias(this);" onmouseout="unhoverAlias(this);"/></li></a>
+                <a href="../statement/"><li class="head-nav-li" style=""><img class="head-nav-img" src="../images/statement-selected.svg" alt="訴求與聲明" onmouseover="hoverStatement(this);" onmouseout="unhoverStatement(this);" style=""/></li></a>
+                <a href="../action/"><li class="head-nav-li" style=""><img class="head-nav-img" src="../images/action.svg" alt="行動與紀錄" onmouseover="hoverAction(this);" onmouseout="unhoverAction(this);" style=""/></li></a>
+                <a href="../people/"><li class="head-nav-li" style=""><img class="head-nav-img" src="../images/people.svg" alt="公民表態牆" onmouseover="hoverPeople(this);" onmouseout="unhoverPeople(this);" style=""/></li></a>
+                <a href="../alias/"><li class="head-nav-li" style=""><img class="head-nav-img" src="../images/alias.svg" alt="立委聲援牆" onmouseover="hoverAlias(this);" onmouseout="unhoverAlias(this);" style=""/></li></a>
             </ul>
-        </header>
+        </nav>
     </div>
 </div>
+<nav class="head-nav-for-mobile">
+    <ul class="cd-primary-nav" style="list-style: none">
+        <li class="" style=""><a href="../statement/"><img class="" src="../images/statement-selected.svg" alt="訴求與聲明" onmouseover="hoverStatement(this);" onmouseout="unhoverStatement(this);" style=""/></a></li>
+        <li class="" style=""><a href="../action/"><img class="" src="../images/action.svg" alt="行動與紀錄" onmouseover="hoverAction(this);" onmouseout="unhoverAction(this);" style=""/></a></li>
+        <li class="" style=""><a href="../people/"><img class="" src="../images/people.svg" alt="公民表態牆" onmouseover="hoverPeople(this);" onmouseout="unhoverPeople(this);" style=""/></a></li>
+        <li class="" style=""><a href="../alias/"><img class="" src="../images/alias.svg" alt="立委聲援牆" onmouseover="hoverAlias(this);" onmouseout="unhoverAlias(this);" style=""/></a></li>
+    </ul>
+</nav>
 
 <div class="cd-overlay-nav">
     <!--span to nav-->
@@ -86,7 +92,7 @@
     <span></span>
 </div>
 
-<a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
+<a href="#0" class="cd-nav-trigger" style="padding-top: 0px;margin-top: 0px;">Menu<span class="cd-icon"></span></a>
 
 <script src="../scripts/jquery-2.1.3.min.js"></script>
 <script src="../scripts/velocity.min.js"></script>
@@ -98,12 +104,6 @@
 
 <style>
     .party-full-screen-width {
-        background-color:#EBDBD0;
-        /*background-color:blue;*/
-        width: 100%;
-    }
-    .party-member-full-screen-width {
-        background-color:#a2a2a2;
         /*background-color:blue;*/
         width: 100%;
     }
@@ -115,44 +115,13 @@
         .party-full-content {
             width:1000px;
             margin-left:auto; margin-right:auto;
-            background-color:green;
             padding-top: 15px;
-            background-color: #ecdbd1;background-image: url(../images/hand.svg);background-position: left bottom;background-repeat: no-repeat;
         }
         .party-member-full-content {
             width:1000px;
             margin-left:auto; margin-right:auto;
-            background-color:green;
             padding-top: 15px;
             background-color: #ecdbd1;
-        }
-        .party-sidebar {
-            /*background-color: yellow;*/
-            width: 41%;
-            float: left;
-            padding-left: 3%;
-            padding-top: 25px;
-            text-align: right;display: inline-block; color: #905d5c;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-            vertical-align: top;
-        }
-        .party-sidebar-h1 {
-            float: left;
-            font-size: 40px;
-            margin-bottom: 0px;
-            color: #905d5c;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-            font-weight: normal;
-        }
-        .party-sidebar-h3 {
-
-            font-size: 20px;
-            margin-bottom: 0px;
-            margin-top: 0px;
-            color: #905d5c;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-            font-weight: normal;
-        }
-        .party-sidebar-ol {
-            float: left;
-            list-style: none;
         }
     }
 
@@ -213,68 +182,53 @@
             /*padding-left: 80px;font-size: 20px;*/
         /*}*/
     /*}*/
-    @media screen and (max-width: 10000px) {  /*mobile*/
-        .party-content {
-            padding-top: 20px;
-        }
-        .party-sidebar {
-            display: none;
-        }
-        .party-content {
-            /*background-color: #003366;*/
-            width: 100%;
-        }
-        .party-article {
-            padding-left: 0px;
-            padding-right: 0px;
-            font-size: 10px;
-        }
-        .party-sidebar-mobile-hind {
-            width: 100%;
-            display: inline-block;
-        }
-    }
 </style>
 
 
 
 
+<style>
+</style>
 
 
 <main class="cd-main-content">
     <div class="cd-fixed-bg cd-bg-1">
+        <div style="background-color: white"><object data="../images/410-mobile.svg" alt="410還權於民·重返立院" style="" class="head-img-mobile" type="image/svg+xml"></object></div>
         <h1 style="color: #CA6C33;font-weight: bold">410 重返立院 還權於民</h1>
     </div> <!-- cd-fixed-bg -->
 
-    <div class="cd-scrolling-bg cd-color-2" style="padding-top: 2em;padding-bottom: 2em;">
-        <div class="cd-container">
-                            <article class="" style="color: #a2a2a2">
-                                自1991年終止動員戡亂時期以來，台灣歷經了七次憲法修正、五次總統直選、二次政黨輪替，雖然曾經締造民主的奇蹟，對自由人權的保障亦逐漸強化，惟台灣的民主一方面依然尚未完全鞏固，一方面亦不斷遭逢新的挑戰。在過去數年的民主實踐中，從核四續建爭議、反媒體壟斷立法、會計法修正、九月政爭、到黑箱服貿協議，我們一次又一次地見證「代議民主失靈」的現象。由人民透過選舉賦予權力、付託責任的代議士，原本應該踐行承諾、尊重民意，卻在實際的政治權力行使上，屢屢出現背棄承諾、踐踏民意的失控惡行，迫使人民必須一次又一次地走上街頭、發出怒吼，力圖阻止這些失控的代議士，傷害台灣得來不易的民主。
-                            </article>
-                            <br />
-                            <article class="" style="color: #a2a2a2">
-                                台灣民主需要進行再一次的全盤改革。目前，要求憲政改革的呼聲已逐漸興起，各種不同的憲改方案，亦紛紛出現。我們全力支持、也深信台灣需要一個真正由下而上、以人民為本的憲政改革運動。在另一方面，同樣重要的是，用以矯正「代議民主失靈」的憲法直接民權，必須還給人民。
-                            </article>
-                            <br />
-                            <article class="" style="color: #a2a2a2">
-                                具體而言，針對代議民主失靈的問題，憲法實際上早已提供了人民對抗的基本權利：就背棄民意的代議士，賦予人民罷免權；就違反民意的政策，賦予人民創制複決的公民投票權。一個「對人」、一個「對事」的直接民權，兩相結合不僅具有事先預防政客胡作非為的嚇阻功能，也有事後改正的矯治功能。
-                            </article>
-                            <br />
-                            <article class="" style="color: #a2a2a2">
-                                然而，長久以來，這兩種直接民權之所以近乎形同虛設，無法發揮有效作用，問題並非在憲法的層次，而是在法律的層次。也就是現行「公民投票法」與「罷免法制」利用極不合理的超高門檻，讓人民無法行使公投權利、也讓人民難以罷免失控政客。這些惡法導致人民憲法權利的實質剝奪，徹底地空洞化憲法所設置的直接民主機制。
-                            </article>
-                            <br />
-                            <article class="" style="color: #a2a2a2">
-                                也正是因為如此，在「人民作主」千里苦行運動的堅持下，「補正公投法」的呼聲早已持續多年；修正罷免法制的訴求，也伴隨「憲法133」及「割闌尾運動」的進行，取得公民廣泛的支持。前年十月十日「公民1985」在立法院外所舉行的「天下為公」集會，更是聚集了超過六萬名公民，再度要求國會補正公投法、修改選罷法，讓「還權於民」的吶喊震撼了博愛特區的天空。
-                            </article>
-                            <br />
-                            <article class="" style="color: #a2a2a2">
-                                憲政改革必須積極進行。然而，憲政改革絕不能成為轉移焦點的煙霧彈，更不應成為迴避修法改革的藉口。因此，為了實踐「人民作主」的理念，我們決定發起新一波的「還權於民」運動，在立法院推動「公投法的補正」與「罷免法制的修正」，號召所有的台灣公民，共同加入要求代議士修正不合理的法律，將憲法直接民權還給人民的行列，透過積極的行動，奪回屬於國家主人的權利。
-                            </article>
-                        </div>
-        </div> <!-- cd-container -->
-    </div> <!-- cd-scrolling-bg -->
-
+    <!--<div class="">-->
+        <!--<div class="" style="color: #905d5c;text-align: center;">-->
+            <div class="cd-scrolling-bg cd-color-2 party-full-screen-width" style="padding-top: 2em;padding-bottom: 2em;">
+                <div class="cd-container party-full-content" style="">
+                    <article class="" style="color: #a2a2a2">
+                        自1991年終止動員戡亂時期以來，台灣歷經了七次憲法修正、五次總統直選、二次政黨輪替，雖然曾經締造民主的奇蹟，對自由人權的保障亦逐漸強化，惟台灣的民主一方面依然尚未完全鞏固，一方面亦不斷遭逢新的挑戰。在過去數年的民主實踐中，從核四續建爭議、反媒體壟斷立法、會計法修正、九月政爭、到黑箱服貿協議，我們一次又一次地見證「代議民主失靈」的現象。由人民透過選舉賦予權力、付託責任的代議士，原本應該踐行承諾、尊重民意，卻在實際的政治權力行使上，屢屢出現背棄承諾、踐踏民意的失控惡行，迫使人民必須一次又一次地走上街頭、發出怒吼，力圖阻止這些失控的代議士，傷害台灣得來不易的民主。
+                    </article>
+                    <br />
+                    <article class="" style="color: #a2a2a2">
+                        台灣民主需要進行再一次的全盤改革。目前，要求憲政改革的呼聲已逐漸興起，各種不同的憲改方案，亦紛紛出現。我們全力支持、也深信台灣需要一個真正由下而上、以人民為本的憲政改革運動。在另一方面，同樣重要的是，用以矯正「代議民主失靈」的憲法直接民權，必須還給人民。
+                    </article>
+                    <br />
+                    <article class="" style="color: #a2a2a2">
+                        具體而言，針對代議民主失靈的問題，憲法實際上早已提供了人民對抗的基本權利：就背棄民意的代議士，賦予人民罷免權；就違反民意的政策，賦予人民創制複決的公民投票權。一個「對人」、一個「對事」的直接民權，兩相結合不僅具有事先預防政客胡作非為的嚇阻功能，也有事後改正的矯治功能。
+                    </article>
+                    <br />
+                    <article class="" style="color: #a2a2a2">
+                        然而，長久以來，這兩種直接民權之所以近乎形同虛設，無法發揮有效作用，問題並非在憲法的層次，而是在法律的層次。也就是現行「公民投票法」與「罷免法制」利用極不合理的超高門檻，讓人民無法行使公投權利、也讓人民難以罷免失控政客。這些惡法導致人民憲法權利的實質剝奪，徹底地空洞化憲法所設置的直接民主機制。
+                    </article>
+                    <br />
+                    <article class="" style="color: #a2a2a2">
+                        也正是因為如此，在「人民作主」千里苦行運動的堅持下，「補正公投法」的呼聲早已持續多年；修正罷免法制的訴求，也伴隨「憲法133」及「割闌尾運動」的進行，取得公民廣泛的支持。前年十月十日「公民1985」在立法院外所舉行的「天下為公」集會，更是聚集了超過六萬名公民，再度要求國會補正公投法、修改選罷法，讓「還權於民」的吶喊震撼了博愛特區的天空。
+                    </article>
+                    <br />
+                    <article class="" style="color: #a2a2a2">
+                        憲政改革必須積極進行。然而，憲政改革絕不能成為轉移焦點的煙霧彈，更不應成為迴避修法改革的藉口。因此，為了實踐「人民作主」的理念，我們決定發起新一波的「還權於民」運動，在立法院推動「公投法的補正」與「罷免法制的修正」，號召所有的台灣公民，共同加入要求代議士修正不合理的法律，將憲法直接民權還給人民的行列，透過積極的行動，奪回屬於國家主人的權利。
+                    </article>
+                </div>
+                </div> <!-- cd-container -->
+            </div> <!-- cd-scrolling-bg -->
+        <!--</div>-->
+    <!--</div>-->
     <div class="cd-fixed-bg cd-bg-2">
         <h2 style="color: #CA6C33;font-weight: bold">我們的訴求</h2>
     </div> <!-- cd-fixed-bg -->
@@ -284,25 +238,28 @@
             <!--頁中-->
 
             <style>
+                .party-ol h3
+                {
+                    border-bottom:1px solid #fff;
+                    padding:0.25em;
+                    margin:0.25em;
+                }
                 @media screen and (min-width: 1000px) { /* desktop */
                 }
                 @media screen and (max-width: 1000px) { /* mobile */
+                    .party-h1 {
+                        font-size: 30px;
+                    }
+                    .party-h3 {
+                        font-size: 12px;
+                    }
                 }
             </style>
 
-            <div class="party-full-screen-width">
-                <div class="party-full-content" style="color: #905d5c;text-align: center;">
-                    <style>
-                        .party-ol h3
-                        {
-                            border-bottom:1px solid #fff;
-                            padding:5px;
-                            margin:2px;
-
-                        }
-                    </style>
-                    <h1 class="party-h1" style="">一、補正公投法</h1>
-                    <ol class="party-ol" style="list-style: none;margin-top: 25px;padding-left: 0px;">
+            <div class="party-full-screen-width" style="background-color:#EBDBD0;">
+                <div class="party-full-content" style="color: #905d5c;text-align: center;background-color: #ecdbd1;background-image: url(../images/hand.svg);background-position: left bottom;background-repeat: no-repeat;">
+                    <h1 class="party-h1" style="margin: 0px;padding: 0.25em;">一、補正公投法</h1>
+                    <ol class="party-ol" style="list-style: none;margin: 0px;padding: 10px;">
                         <li class="party-li" style=""><h3 class="party-h3" style="">擴大全國性公民投票之適用範圍，包括對外締結的條約及協議</h3></li>
                         <li class="party-li" style=""><h3 class="party-h3" style="">廢除公投審議委員會之設置</h3>
                         <li class="party-li" style=""><h3 class="party-h3" style="">公民投票提案門檻降至萬分之一</h3>
@@ -310,8 +267,8 @@
                         <li class="party-li" style=""><h3 class="party-h3" style="">建立電子提案及連署系統</h3>
                         <li class="party-li" style=""><h3 class="party-h3" style="">廢除百分之五十投票門檻，改採簡單多數決</h3>
                     </ol>
-                    <h1 class="party-h1" style="margin-top: 10px;">二、修改選罷法</h1>
-                    <ol class="party-ol" style="list-style: none;margin-bottom: 0px;padding-bottom: 40px;">
+                    <h1 class="party-h1" style="margin: 0px;padding: 0.25em;">二、修改選罷法</h1>
+                    <ol class="party-ol" style="list-style: none;margin: 0px;padding: 10px;">
                         <li class="party-li" style=""><h3 class="party-h3" style="margin-top: 5px;">罷免提案門檻降至百分之一。刪除軍公職不得提議之規定</h3></li>
                         <li class="party-li" style=""><h3 class="party-h3" style="">罷免連署門檻降至百分之十，連署期間延長為三個月</h3>
                         <li class="party-li" style=""><h3 class="party-h3" style="">建立電子提案及連署系統</h3>
@@ -320,10 +277,60 @@
                     </ol>
                 </div>
             </div>
+            <style>
+                @media screen and (min-width: 1000px) { /* desktop */
+                    .party-sidebar {
+                        /*background-color: yellow;*/
+                        width: 41%;
+                        float: left;
+                        padding-left: 3%;
+                        padding-top: 25px;
+                        text-align: right;display: inline-block; color: #905d5c;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+                        vertical-align: top;
+                    }
+                    .party-sidebar-h1 {
+                        float: left;
+                        font-size: 40px;
+                        margin-bottom: 0px;
+                        color: #905d5c;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+                        font-weight: normal;
+                    }
+                    .party-sidebar-h3 {
 
-            <div class="party-member-full-screen-width" style="background-color: #a2a2a2;">
-                <div class="party-member-full-content" style="color: #905d5c;text-align: center;padding:0px;background-color: #a2a2a2;">
-                    <div class="party-sidebar-mobile-hind" style="background-color: #a2a2a2">
+                        font-size: 20px;
+                        margin-bottom: 0px;
+                        margin-top: 0px;
+                        color: #905d5c;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+                        font-weight: normal;
+                    }
+                    .party-sidebar-ol {
+                        float: left;
+                        list-style: none;
+                    }
+                }
+                @media screen and (max-width: 1000px) { /* mobile */
+                    .party-sidebar {
+                        display: none;
+                    }
+                    .party-content {
+                        /*background-color: #003366;*/
+                        width: 100%;
+                    }
+                    .party-article {
+                        padding-left: 0px;
+                        padding-right: 0px;
+                        font-size: 10px;
+                    }
+                    .party-sidebar-mobile-hind {
+                        width: 100%;
+                        display: inline-block;
+                    }
+                }
+
+            </style>
+            <div class="party-member-full-screen-width" style="background-color: #f5ebe4;">
+                <div class="party-member-full-content" style="color: #905d5c;text-align: center;padding:0px;background-color: #f5ebe4;">
+                    <div class="party-sidebar-mobile-hind" style="background-color: #f5ebe4">
                         <div class="party-sidebar-mobile-size" style="width: 40%; margin-left: 5%;margin-right: 10%;float: left;">
                             <h1 class="party-sidebar-h1" style="width: 100%;">共同發起團體</h1>
                             <ol class="party-sidebar-ol" style="padding-left: 0px;">

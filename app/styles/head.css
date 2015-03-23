@@ -37,7 +37,7 @@
 }
 .head-ul {
     list-style-type:none; padding-left: 0px;margin: 0px;
-    clear: left;
+    /*clear: left;*/
 }
 .head-nav-full-top {
     text-decoration: none;
