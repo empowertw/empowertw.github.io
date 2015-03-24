@@ -124,26 +124,22 @@
         background-color:#EBDBD0;
         width: 100%;
     }
-    .party-full-content {
-        width:1024px;
-        margin-left:auto; margin-right:auto;
-        /*background-color:green;*/
-        padding-top: 15px;
-        background-color: #ecdbd1;background-image: url(../images/hand.svg);background-position: left bottom;background-repeat: no-repeat;
-        padding-bottom: 30px;
-    }
-    @media screen and (max-width: 1024px) {
+    @media screen and (min-width: 1000px) {
         .party-full-content {
-            width:100%;
-            /*background-color:red;*/
-            background-color:#EBDBD0;
-            background-color: #ecdbd1;background-image: url(../images/hand.svg);background-position: right bottom;background-repeat: no-repeat;
+            width:1000px;
+            margin-left:auto; margin-right:auto;
+            background-color:green;
+            padding-top: 15px;
+            background-color: #ecdbd1;background-image: url(../images/hand.svg);background-position: left bottom;background-repeat: no-repeat;
+            padding-bottom: 30px;
         }
     }
-    @media screen and (max-width: 930px) {
+    @media screen and (max-width: 1000px) {
         .party-full-content {
-            width:930px; margin-left:auto; margin-right:auto;
-            /*background-color:blue;*/
+            width:100%;
+            margin-left:auto;
+            margin-right:auto;
+            background-color:red;
             background-color:#EBDBD0;
             background-color: #ecdbd1;background-image: url(../images/hand.svg);background-position: right bottom;background-repeat: no-repeat;
         }
@@ -155,7 +151,7 @@
         text-align: right;display: inline-block; color: #905d5c;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
         vertical-align: top;
         margin-right: 0px;
-        margin-left: 20px;
+        margin-left: 0px;
         /*background-color: yellow;*/
     }
     .party-sidebar-h1 {
@@ -203,11 +199,11 @@
     .party-sidebar-button-unselected {
         background-color: #AC917E;color: #FFFFFF;
     }
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1000px) {
         .party-sidebar {
             width: 100%;
             text-align: left;
-            padding-left: 35px;
+            padding-left: 0px;
             margin-left: 0px;
             margin-right: 10px;
             /*background-color: midnightblue;*/
@@ -225,36 +221,37 @@
             display:inline-block;width: 100px;text-align: center;
         }
     }
-    @media screen and (max-width: 930px) {
-    }
     /*頁中的立委欄*/
-    .party-content {
-        width: 600px;
-        margin-left: 50px;
-        padding-top: 60px;
-        text-align: left;
-        display: inline-block;
-        color: #905d5c;
-        font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-        font-weight: bold;
-        /*background-color: greenyellow;*/
-        padding-bottom: 140px;
-    }
-    @media screen and (max-width: 1024px) {
+    @media screen and (min-width: 1000px) {
         .party-content {
-            width: 900px;
-            margin-left: 50px;
+            width: 700px;
+            margin-left: auto;
+            margin-right: auto;
             padding-top: 60px;
             text-align: left;
             display: inline-block;
             color: #905d5c;
             font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
             font-weight: bold;
-            /*background-color: #003366;*/
-            padding-bottom: 70px;
+            /*background-color: greenyellow;*/
+            padding-bottom: 140px;
         }
     }
-    @media screen and (max-width: 930px) {
+
+    @media screen and (max-width: 1000px) {
+        .party-content {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 60px;
+            text-align: left;
+            display: inline-block;
+            color: #905d5c;
+            font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+            font-weight: bold;
+            /*background-color: greenyellow;*/
+            padding-bottom: 140px;
+        }
     }
 </style>
 
@@ -375,11 +372,21 @@
             width: 180px;
         }
     }
-    @media screen and (max-width: 930px) {
-    }
 </style>
 
 <style>
+    /*點擊立委框框可閱讀同意書*/
+    .party-content-hint-for-click {
+        font-size: 25px;
+        padding-left: 20px;
+    }
+    @media screen and (max-width: 1000px) {
+        .party-content-hint-for-click {
+            font-size: 18px;
+            padding-left: 18px;
+        }
+
+    }
     /*彈出式視窗*/
     .modal {
         opacity: 0;
@@ -472,18 +479,21 @@
         }
     }
 
-    body {
-        padding: 1%;
-        font: 1.5em sans-serif;
-        text-align: center;
-    }
-
     p img {
         width: 100%;
         height: auto;
         float: left;
         margin: 0 1em 1em 0;
     }
+    .alias-clickable-div:hover, .party-sidebar-button-normal:hover{
+        opacity: 0.8;
+    }
+    .alias-clickable-div, .party-sidebar-button-normal {
+        cursor: pointer; cursor: hand;
+    }
+    /*.party-sidebar-button-normal {*/
+        /*cursor: pointer; cursor: hand;*/
+    /*}*/
 </style>
 
 <div class="party-full-screen-width" style="">
@@ -538,12 +548,14 @@
             return (
                 <div>
                     <label htmlFor={this.props.id}>
-                        <div className={this.props.classWithDisplay} title={this.props.id}>
-                            <div className="alias-image-background">
-                                <img src={this.props.src} alt="" className="alias-image-photo"/>
+                        <div className="alias-clickable-div">
+                            <div className={this.props.classWithDisplay} title={this.props.id}>
+                                <div className="alias-image-background">
+                                    <img src={this.props.src} alt="" className="alias-image-photo"/>
+                                </div>
+                                <img src={this.props.partySrc} alt="" className="alias-image-party"/>
+                                <h3 className={this.props.nameClass}>{this.props.name}</h3>
                             </div>
-                            <img src={this.props.partySrc} alt="" className="alias-image-party"/>
-                            <h3 className={this.props.nameClass}>{this.props.name}</h3>
                         </div>
                     </label>
                     <input className="modal-state" id={this.props.id} type="checkbox" />
@@ -705,21 +717,39 @@
                     <input className={b.classString} type="button" value={b.value}  onClick={this.handleClick.bind(this, b.category, b.compare)} />
                 );
             }.bind(this));
-            return (
-                <div>
-                    <div className="party-sidebar">
-                        <div>
-                            <h1 className="party-sidebar-h1">立委表態牆</h1>
-                            <h3 className="party-sidebar-h3">最新表態率：{this.state.sum}/{this.state.total}</h3>
-
+            console.log(this.state.b);
+            if ($.cookie('agree') === "1") {
+                return (
+                    <div>
+                        <div className="party-sidebar">
+                            <div>
+                                <h1 className="party-sidebar-h1">立委表態牆</h1>
+                                <h3 className="party-sidebar-h3">最新表態率：{this.state.sum}/{this.state.total}</h3>
                                 {partySidebarButtonMap}
+                            </div>
+                        </div>
+                        <div className="party-content">
+                            <h1 className="party-content-hint-for-click">☆點擊立委框框可閱讀同意書</h1>
+                            {aliasMemberFullMap}
                         </div>
                     </div>
-                    <div className="party-content">
+                );
+            } else {
+                return (
+                    <div>
+                        <div className="party-sidebar">
+                            <div>
+                                <h1 className="party-sidebar-h1">立委表態牆</h1>
+                                <h3 className="party-sidebar-h3">最新表態率：{this.state.sum}/{this.state.total}</h3>
+                                {partySidebarButtonMap}
+                            </div>
+                        </div>
+                        <div className="party-content">
                             {aliasMemberFullMap}
+                        </div>
                     </div>
-                </div>
-            );
+                );
+            }
         }
     });
     React.render(
