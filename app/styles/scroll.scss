@@ -84,14 +84,17 @@ Main components
     font-size: 1.875rem;
     text-shadow: 0 5px 5px rgba(0, 0, 0, 0.8);
 }
-.cd-fixed-bg.cd-bg-1 {
+.cd-fixed-bg.cd-bg-1.cd-bg-statement {
     background-image: url("../images/cd-background-1.jpg");
 }
-.cd-fixed-bg.cd-bg-2 {
+.cd-fixed-bg.cd-bg-2.cd-bg-statement {
     background-image: url("../images/cd-background-2.jpg");
 }
-.cd-fixed-bg.cd-bg-3 {
+.cd-fixed-bg.cd-bg-3.cd-bg-statement {
     background-image: url("../images/cd-background-3.jpg");
+}
+.cd-fixed-bg.cd-bg-1.cd-bg-action {
+    background-image: url("../images/cd-background-1.jpg");
 }
 @media only screen and (min-width: 768px) {
     .cd-fixed-bg h1, .cd-fixed-bg h2 {
