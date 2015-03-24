@@ -547,9 +547,9 @@
         render: function() {
             return (
                 <div>
-                    <label htmlFor={this.props.id}>
+                    <label htmlFor={this.props.name+"立委訴求承諾書"}>
                         <div className="alias-clickable-div">
-                            <div className={this.props.classWithDisplay} title={this.props.id}>
+                            <div className={this.props.classWithDisplay} title={this.props.name+"立委訴求承諾書"}>
                                 <div className="alias-image-background">
                                     <img src={this.props.src} alt="" className="alias-image-photo"/>
                                 </div>
@@ -558,11 +558,11 @@
                             </div>
                         </div>
                     </label>
-                    <input className="modal-state" id={this.props.id} type="checkbox" />
+                    <input className="modal-state" id={this.props.name+"立委訴求承諾書"} type="checkbox" />
                     <div className="modal">
-                        <label className="modal__bg" htmlFor={this.props.id}></label>
+                        <label className="modal__bg" htmlFor={this.props.name+"立委訴求承諾書"}></label>
                         <div className="modal__inner">
-                            <label className="modal__close" htmlFor={this.props.id}></label>
+                            <label className="modal__close" htmlFor={this.props.name+"立委訴求承諾書"}></label>
                             <h2 >{this.props.agreeTitle}</h2>
                             <p><img src={this.props.agreeImgAddress} className="party-agree-img" alt="" /></p>
                         </div>
@@ -729,7 +729,7 @@
                             </div>
                         </div>
                         <div className="party-content">
-                            <h1 className="party-content-hint-for-click">☆點擊立委框框可閱讀同意書</h1>
+                            <h1 className="party-content-hint-for-click">☆點擊立委框框可閱讀立委訴求承諾書</h1>
                             {aliasMemberFullMap}
                         </div>
                     </div>
