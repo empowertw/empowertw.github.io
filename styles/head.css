@@ -5,6 +5,10 @@
 }
 
 @media screen and (min-width: 1000px) {
+  #fb-like-mobile {
+    display: none;
+  }
+
   .head-nav-for-mobile {
     display: none;
   }
