@@ -93,8 +93,18 @@ Main components
 .cd-fixed-bg.cd-bg-3.cd-bg-statement {
     background-image: url("../images/cd-background-3.jpg");
 }
-.cd-fixed-bg.cd-bg-1.cd-bg-action {
-    background-image: url("../images/cd-background-1.jpg");
+@media only screen and (min-width: 1000px) {
+    .cd-fixed-bg.cd-bg-1.cd-bg-action {
+        background-color: #000000;
+//        background-image: url("../images/619");
+        background-image: url("../images/169328.svg");
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .cd-fixed-bg.cd-bg-1.cd-bg-action {
+        background-color: #000;
+        background-image: url("../images/916328.svg");
+    }
 }
 @media only screen and (min-width: 768px) {
     .cd-fixed-bg h1, .cd-fixed-bg h2 {
