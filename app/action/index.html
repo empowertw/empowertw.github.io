@@ -47,6 +47,36 @@
 
 </head>
 
+<body>
+
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '920369321316807',
+            xfbml      : true,
+            version    : 'v2.3'
+        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=920369321316807&version=v2.3";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <!--頁首-->
 
 <script>
@@ -86,6 +116,7 @@
                 <a href="../action/"><li class="head-nav-li" style=""><img class="head-nav-img" src="../images/action-selected.svg" alt="行動與紀錄" onmouseover="hoverAction(this);" onmouseout="unhoverAction(this);" style=""/></li></a>
                 <a href="../people/"><li class="head-nav-li" style=""><img class="head-nav-img" src="../images/people.svg" alt="公民表態牆" onmouseover="hoverPeople(this);" onmouseout="unhoverPeople(this);" style=""/></li></a>
                 <a href="../alias/"><li class="head-nav-li" style=""><img class="head-nav-img" src="../images/alias.svg" alt="立委聲援牆" onmouseover="hoverAlias(this);" onmouseout="unhoverAlias(this);" style=""/></li></a>
+                <div class="fb-like" data-href="http://empower.tw" data-width="100" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" style="float: right; padding-top: 3px;padding-right: 35px;"></div>
             </ul>
         </nav>
     </div>
@@ -129,7 +160,7 @@
     <div class="cd-fixed-bg cd-bg-1 cd-bg-action" style="background-color: #000000">
         <!--<div class="test" style="background-color: blue;background-image: url(../images/road.jpg);">-->
         <div style="background-color: white"><object data="../images/410-mobile.svg" alt="410還權於民·重返立院" style="" class="head-img-mobile" type="image/svg+xml"></object></div>
-        </div>
+        <div id="fb-like-mobile" class="fb-like fb-like-mobile" data-href="http://empower.tw" data-width="100" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" style="float: left; padding-top: 1%;padding-left: 1%;"></div>
     </div> <!-- cd-fixed-bg -->
     <div class="cd-scrolling-bg cd-color-3" style="padding-top: 0em;padding-bottom: 0em;margin: 0em;">
         <div class="cd-container" style="width:100%;margin: 0px;">
