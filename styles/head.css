@@ -55,6 +55,11 @@
   .head-img-desktop {
     display: none;
   }
+
+  .head-img-mobile {
+    padding-left: 1%;
+    padding-top: 1%;
+  }
 }
 @media screen and (min-width: 1000px) {
   .cd-nav-trigger {
@@ -76,7 +81,7 @@
   }
 
   .cd-nav-trigger {
-    top: 11px;
+    top: 8px;
     right: 5%;
     height: 44px;
     width: 44px;
