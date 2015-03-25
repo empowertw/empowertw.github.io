@@ -72,6 +72,14 @@ gulp.task('html', function () {
         .pipe($.size());
 });
 
+// JS by novel
+gulp.task('scripts', function () {
+    return gulp.src('app/scripts/*.js')
+        .pipe($.useref())
+        .pipe(gulp.dest('dist'))
+        .pipe($.size());
+});
+
 // HTML
 gulp.task('readme', function () {
     return gulp.src('app/README.md')
@@ -215,8 +223,10 @@ gulp.task('watch', ['html', 'bundle', 'serve'], function () {
 
 
     // Watch .scss files
-    gulp.watch('app/styles/**/*.scss', ['styles']);
+    gulp.watch('app/styles/*.scss', ['styles']);
 
+    // new by novel
+    gulp.watch('app/scripts/*.js', ['scripts']);
 
 
     // Watch .jade files
@@ -235,7 +245,7 @@ gulp.task('watch', ['html', 'bundle', 'serve'], function () {
 });
 
 // Build
-gulp.task('build', ['html', 'bundle', 'images', 'extras', 'statement', 'claim', 'action', 'flyingv', 'alias', 'people', 'readme', 'json']);
+gulp.task('build', ['html', 'bundle', 'images', 'extras', 'statement', 'claim', 'action', 'flyingv', 'alias', 'people', 'readme', 'json', 'scripts']);
 
 // Default task
 gulp.task('default', ['clean', 'build', 'jest' ]);
