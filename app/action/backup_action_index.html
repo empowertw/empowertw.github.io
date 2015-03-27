@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="zh-cmn-Hant" class="no-js">
 <!--頭-->
 
 <head>
@@ -43,8 +43,39 @@
 
     <link rel="stylesheet" href="../styles/head.css"/>
     <link rel="stylesheet" href="../styles/leg.css"/>
+    <link rel="stylesheet" href="../styles/scroll.css"/>
 
 </head>
+
+<body>
+
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '920369321316807',
+            xfbml      : true,
+            version    : 'v2.3'
+        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=920369321316807&version=v2.3";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <!--頁首-->
 
@@ -83,14 +114,15 @@
             <ul class="head-ul" style="">
                 <a href="../statement/"><li class="head-nav-li" style=""><img class="head-nav-img" src="../images/statement.svg" alt="訴求與聲明" onmouseover="hoverStatement(this);" onmouseout="unhoverStatement(this);" style=""/></li></a>
                 <a href="../action/"><li class="head-nav-li" style=""><img class="head-nav-img" src="../images/action-selected.svg" alt="行動與紀錄" onmouseover="hoverAction(this);" onmouseout="unhoverAction(this);" style=""/></li></a>
-                <a href="../people/"><li class="head-nav-li" style=""><img class="head-nav-img" src="../images/people.svg" alt="公民表態牆" onmouseover="hoverPeople(this);" onmouseout="unhoverPeople(this);" style=""/></li></a>
-                <a href="../alias/"><li class="head-nav-li" style=""><img class="head-nav-img" src="../images/alias.svg" alt="立委聲援牆" onmouseover="hoverAlias(this);" onmouseout="unhoverAlias(this);" style=""/></li></a>
+                <a href="../people/"><li class="head-nav-li" style=""><img class="head-nav-img" src="../images/people.svg" alt="公民聲援牆" onmouseover="hoverPeople(this);" onmouseout="unhoverPeople(this);" style=""/></li></a>
+                <a href="../alias/"><li class="head-nav-li" style=""><img class="head-nav-img" src="../images/alias.svg" alt="立委表態牆" onmouseover="hoverAlias(this);" onmouseout="unhoverAlias(this);" style=""/></li></a>
+                <div class="fb-like" data-href="http://empower.tw" data-width="100" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false" style="float: right; padding-top: 9px;padding-right: 1%;"></div>
             </ul>
         </nav>
     </div>
 </div>
 <!--mobile-->
-<div style="background-color: white"><object data="../images/410-mobile.svg" alt="410還權於民·重返立院" style="" class="head-img-mobile" type="image/svg+xml"></object></div>
+<!--<div style="background-color: white"><object data="../images/410-mobile.svg" alt="410還權於民·重返立院" style="" class="head-img-mobile" type="image/svg+xml"></object></div>-->
 <nav class="head-nav-for-mobile">
     <ul class="cd-primary-nav" style="list-style: none">
         <li class="" style=""><a href="../statement/"><img class="" src="../images/statement.svg" alt="訴求與聲明" onmouseover="hoverStatement(this);" onmouseout="unhoverStatement(this);" style=""/></a></li>
@@ -117,104 +149,540 @@
 
 <!--頁中-->
 
-<!--<style>-->
-<!--.party-full-screen-width {-->
-<!--background-color:#EBDBD0;-->
-<!--width: 100%;-->
-<!--}-->
-<!--.party-full-content {-->
-<!--width:1024px;-->
-<!--margin-left:auto; margin-right:auto;-->
-<!--/*background-color:green;*/-->
-<!--padding-top: 15px;-->
-<!--background-color: #ecdbd1;background-image: url(../images/hand.svg);background-position: right bottom;background-repeat: no-repeat;-->
-<!--padding-bottom: 30px;-->
-<!--}-->
-<!--@media screen and (max-width: 1024px) {-->
-<!--.party-full-content {-->
-<!--width:100%; margin-left:auto; margin-right:auto;-->
-<!--/*background-color:red;*/-->
-<!--background-color:#EBDBD0;-->
-<!--padding-right: 15px;-->
-<!--padding-left: 15px;-->
-<!--background-color: #ecdbd1;background-image: url(../images/hand.svg);background-position: right bottom;background-repeat: no-repeat;-->
-<!--}-->
-<!--}-->
-<!--@media screen and (max-width: 930px) {-->
-<!--.party-full-content {-->
-<!--width:930px; margin-left:auto; margin-right:auto;-->
-<!--/*background-color:blue;*/-->
-<!--background-color:#EBDBD0;-->
-<!--padding-right: 15px;-->
-<!--padding-left: 15px;-->
-<!--background-color: #ecdbd1;background-image: url(../images/hand.svg);background-position: right bottom;background-repeat: no-repeat;-->
-<!--}-->
-<!--}-->
-<!--.party-h1 {-->
-<!--width:85%;display:inline-block;padding-left:7.5%;padding-top:25px;padding-bottom: 0px;color: #905d5c;font-size: 40px;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;vertical-align: top;-->
-<!--margin-bottom: 0px;-->
-<!--margin-top: 0px;-->
-<!--}-->
-<!--.party-ol {-->
-<!--width:85%;display:inline-block;padding-left:7.5%;padding-bottom:0px;color: #905d5c;font-size: 20px;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;vertical-align: top;-->
-<!--padding-top: 0px;-->
-<!--list-style: none;-->
-<!--}-->
-<!--.party-h3 {-->
-<!--font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;-->
-<!--padding-left: 0px;-->
-<!--margin-bottom: 10px;-->
-<!--margin-top: 0px;-->
-<!--}-->
-<!--.party-li {-->
-<!--font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;-->
-<!--}-->
-<!--@media screen and (min-width: 1024px) {-->
-<!--}-->
-<!--@media screen and (max-width: 1024px) {-->
-<!--.party-h1 {-->
-<!--padding-left:5%;-->
-<!--width:80%;-->
-<!--}-->
-<!--.party-ol {-->
-<!--padding-left:5%;-->
-<!--width:80%;-->
-<!--}-->
-<!--}-->
-<!--@media screen and (max-width: 930px) {-->
-<!--}-->
-<!--.party-span {-->
-<!--display:inline-block;width: 6em;background-color: #6c2626;color: #ffffff;border-radius: 10px;text-align: center;padding-top: 0.3em;padding-bottom: 0.3em;margin-right: 1em;-->
-<!--}-->
-<!--.party-h1-ourAction {-->
-<!--padding-top: 50px;-->
-<!--}-->
-<!--</style>-->
 
-<!--<div class="party-full-screen-width" style="">-->
-<!--<div class="party-full-content">-->
-<!--<h1 class="party-h1 party-h1-ourAction" style="">我們的行動</h1>-->
-<!--<ol class="party-ol">-->
-<!--<h3 class="party-h3"><li class="party-li">一、拜會朝野主要政黨領袖</li></h3>-->
-<!--<h3 class="party-h3"><li class="party-li">二、要求立委簽署修法承諾書</li></h3>-->
-<!--<h3 class="party-h3"><li class="party-li">三、全國巡迴說明動員</li></h3>-->
-<!--<h3 class="party-h3"><li class="party-li">四、「318還權於民」立法院繞行包圍</li></h3>-->
-<!--<h3 class="party-h3"><li class="party-li">五、「410還權於民」立法院外人民大集結</li></h3>-->
-<!--</ol>-->
-<!--<div id="party-action-react">-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
+<style>
+    .party-span {
+        display:inline-block;width: 6em;background-color: #6c2626;color: #ffffff;border-radius: 10px;text-align: center;padding-top: 0.3em;padding-bottom: 0.3em;margin-right: 1em;
+    }
+</style>
 
-<!--頁尾-->
+<style>
+    @media screen and (min-width: 1000px) /* desktop */ {
+        .fb-like-mobile {
+            display: none;
+        }
+    }
+</style>
 
-<div class="leg-full-screen-width" style="">
-    <div class="leg-full-content" style="min-height: 0%;">
-        <footer style="min-height: 0%;">
-            <h3 class="leg-h3" style="">聯絡所：島國前進<span class="leg-h3-desktop">丨</span>電話：02-2358-1008<span class="leg-h3-desktop">丨</span><br class="leg-h3-mobile" />地址：台北市中正區仁愛路二段34號2樓之一<br />E-mail：empower.taiwan@gmail.com<span class="leg-h3-desktop">丨</span><br class="leg-h3-mobile" />410還權於民·重返立院</h3>
-        </footer>
-    </div>
-</div>
+<main class="cd-main-content">
+    <div class="cd-fixed-bg cd-bg-1 cd-bg-action" style="background-color: #000000">
+        <!--<div class="test" style="background-color: blue;background-image: url(../images/road.jpg);">-->
+        <div style="background-color: white"><object data="../images/410-mobile.svg" alt="410還權於民·重返立院" style="" class="head-img-mobile" type="image/svg+xml"></object></div>
+        <div id="fb-like-mobile" class="fb-like fb-like-mobile" data-href="http://empower.tw" data-width="100" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false" style="float: left; padding-top: 1%;padding-left: 1%;"></div>
+    </div> <!-- cd-fixed-bg -->
+    <div class="cd-scrolling-bg cd-color-3" style="padding-top: 0em;padding-bottom: 0em;margin: 0em;">
+        <div class="cd-container" style="width:100%;margin: 0px;">
+
+            <style>
+                .party-sidebar-h1 {
+                    width: 100%;
+                    float: left;
+                    font-size: 40px;
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                    color: #905d5c;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+                    font-weight: normal;
+                }
+                .party-sidebar-h3 {
+                    font-size: 20px;
+                    margin-bottom: 1em;
+                    margin-top: 0px;
+                    color: #905d5c;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+                    font-weight: normal;
+                }
+                .party-sidebar-ol {
+                    float: left;
+                    list-style: none;
+                    padding-left: 0px;
+                }
+                @media screen and (min-width: 1000px) { /* desktop */
+                    .party-sidebar {
+                        /*background-color: yellow;*/
+                        width: 41%;
+                        float: left;
+                        padding-left: 3%;
+                        padding-top: 25px;
+                        text-align: right;display: inline-block; color: #905d5c;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+                        vertical-align: top;
+                    }
+                }
+                @media screen and (max-width: 1000px) { /* mobile */
+                    .party-sidebar {
+                        width: 100%;
+                    }
+                    .party-content {
+                        width: 100%;
+                    }
+                    .party-article {
+                        padding-left: 0px;
+                        padding-right: 0px;
+                        font-size: 10px;
+                    }
+                    .party-sidebar-h1 {
+                        font-size: 35px;
+                        padding-top: 0.25em;
+                    }
+                    .party-sidebar-h3 {
+                        font-size: 16px;
+                        margin-bottom: 1em;
+                        margin-top: 0px;
+                        color: #905d5c;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+                        font-weight: normal;
+                        float: none;
+                    }
+                    .party-sidebar-ol {
+                        width: 100%;
+                    }
+                }
+            </style>
+            <style>
+                .party-action-our_action_and_recent_movement {
+                    /*display: inline-block;*/
+                    background-color: #d5bfb1;
+                    padding-top: 20px;
+                }
+                .party-action-recent_record {
+                    display: inline-block;
+                    background-color: #eddcd2;
+                    padding-top: 10px;
+                }
+                @media screen and (min-width: 1000px) { /* desktop */
+                    .party-action-our_action_and_recent_movement {
+                        display: inline-block;
+                    }
+                    .party-action-parallel-div {
+                        width: 48%;
+                    }
+                    .party-action-recent_movement {
+                        display: inline-block;
+                    }
+                }
+                @media screen and (max-width: 1000px) { /* mobile */
+                    .party-action-parallel-div {
+                        width: 98%;
+                        padding-left: 1%;
+                        padding-right: 1%;
+                    }
+                    .party-action-our_action_and_recent_movement {
+                    }
+                    .party-action-recent_movement {
+                        display: inline-block;
+                        background-color: #d5bfb1;
+                    }
+                    .party-action-recent_record {
+                        display: inline-block;
+                        background-color: #eddcd2;
+                        padding-top: 0px;
+                        padding-left: 1%;
+                        padding-right: 1%;
+
+                    }
+                }
+            </style>
+            <div id="party-action-react">
+            </div>
+            <!--<div class="leg-full-screen-width party-action-our_action_and_recent_movement">-->
+            <!--<div class="leg-full-content">-->
+            <!--<div class="party-action-parallel-div" style="">-->
+            <!--<h1 class="party-sidebar-h1" style="">我們的行動</h1>-->
+            <!--<ol class="party-sidebar-ol" style="">-->
+            <!--<li><h3 class="party-sidebar-h3">一、拜會朝野主要政黨領袖</h3></li>-->
+            <!--<li><h3 class="party-sidebar-h3">二、要求立委簽署修法承諾書</h3></li>-->
+            <!--<li><h3 class="party-sidebar-h3">三、全國巡迴說明動員</h3></li>-->
+            <!--<li><h3 class="party-sidebar-h3">四、「318還權於民」立法院繞行包圍</h3></li>-->
+            <!--<li><h3 class="party-sidebar-h3">五、「410還權於民」立法院外人民大集結</h3></li>-->
+            <!--</ol>-->
+            <!--</div>-->
+            <!--<div class="party-action-parallel-div party-action-recent_movement" >-->
+            <!--<h1 class="party-sidebar-h1"style="">近期活動</h1>-->
+            <!--<ol class="party-sidebar-ol"style="">-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>3</span>-->
+            <!--<span>.</span>-->
+            <!--<span>28</span>-->
+            <!--</span>-->
+            <!--<span>臺北/全國街頭宣傳(16:00-18:00)</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--</ol>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="leg-full-screen-width party-action-recent_record">-->
+            <!--<div class="leg-full-screen-width party-action-recent_record">-->
+            <!--<div class="leg-full-content">-->
+            <!--<h1 class="party-sidebar-h1">行動紀錄</h1>-->
+            <!--<ol class="party-sidebar-ol">-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>19</span>-->
+            <!--</span>-->
+            <!--<span>410還權於民行動記者會</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>22</span>-->
+            <!--</span>-->
+            <!--<span>拜會民進黨主席蔡英文</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>19</span>-->
+            <!--</span>-->
+            <!--<span>410還權於民行動記者會</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>22</span>-->
+            <!--</span>-->
+            <!--<span>拜會民進黨主席蔡英文</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>19</span>-->
+            <!--</span>-->
+            <!--<span>410還權於民行動記者會</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>22</span>-->
+            <!--</span>-->
+            <!--<span>拜會民進黨主席蔡英文</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>19</span>-->
+            <!--</span>-->
+            <!--<span>410還權於民行動記者會</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>22</span>-->
+            <!--</span>-->
+            <!--<span>拜會民進黨主席蔡英文</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>19</span>-->
+            <!--</span>-->
+            <!--<span>410還權於民行動記者會</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>22</span>-->
+            <!--</span>-->
+            <!--<span>拜會民進黨主席蔡英文</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>19</span>-->
+            <!--</span>-->
+            <!--<span>410還權於民行動記者會</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>22</span>-->
+            <!--</span>-->
+            <!--<span>拜會民進黨主席蔡英文</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>19</span>-->
+            <!--</span>-->
+            <!--<span>410還權於民行動記者會</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>22</span>-->
+            <!--</span>-->
+            <!--<span>拜會民進黨主席蔡英文</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>19</span>-->
+            <!--</span>-->
+            <!--<span>410還權於民行動記者會</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>22</span>-->
+            <!--</span>-->
+            <!--<span>拜會民進黨主席蔡英文</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>19</span>-->
+            <!--</span>-->
+            <!--<span>410還權於民行動記者會</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>22</span>-->
+            <!--</span>-->
+            <!--<span>拜會民進黨主席蔡英文</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>19</span>-->
+            <!--</span>-->
+            <!--<span>410還權於民行動記者會</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>22</span>-->
+            <!--</span>-->
+            <!--<span>拜會民進黨主席蔡英文</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>19</span>-->
+            <!--</span>-->
+            <!--<span>410還權於民行動記者會</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>22</span>-->
+            <!--</span>-->
+            <!--<span>拜會民進黨主席蔡英文</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>19</span>-->
+            <!--</span>-->
+            <!--<span>410還權於民行動記者會</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>22</span>-->
+            <!--</span>-->
+            <!--<span>拜會民進黨主席蔡英文</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>19</span>-->
+            <!--</span>-->
+            <!--<span>410還權於民行動記者會</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>22</span>-->
+            <!--</span>-->
+            <!--<span>拜會民進黨主席蔡英文</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+
+            <!--</ol>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="leg-full-screen-width party-action-our_action_and_recent_movement">-->
+            <!--<div class="leg-full-content">-->
+            <!--<div class="party-action-parallel-div">-->
+            <!--<h1 class="party-sidebar-h1">我們的行動</h1>-->
+            <!--<ol class="party-sidebar-ol">-->
+            <!--<li><h3 class="party-sidebar-h3">一、拜會朝野主要政黨領袖</h3></li>-->
+            <!--<li><h3 class="party-sidebar-h3">二、要求立委簽署修法承諾書</h3></li>-->
+            <!--<li><h3 class="party-sidebar-h3">三、全國巡迴說明動員</h3></li>-->
+            <!--<li><h3 class="party-sidebar-h3">四、「318還權於民」立法院繞行包圍</h3></li>-->
+            <!--<li><h3 class="party-sidebar-h3">五、「410還權於民」立法院外人民大集結</h3></li>-->
+            <!--</ol>-->
+            <!--</div>-->
+            <!--<div class="party-action-parallel-div party-action-recent_movement">-->
+            <!--<h1 class="party-sidebar-h1">近期活動</h1>-->
+            <!--<ol class="party-sidebar-ol">-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>3</span>-->
+            <!--<span>.</span>-->
+            <!--<span>28</span>-->
+            <!--</span>-->
+            <!--<span>臺北/全國街頭宣傳(16:00-18:00)</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--</ol>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="leg-full-screen-width party-action-recent_record">-->
+            <!--<div class="leg-full-screen-width party-action-recent_record">-->
+            <!--<div class="leg-full-content">-->
+            <!--<h1 class="party-sidebar-h1">行動紀錄</h1>-->
+            <!--<ol class="party-sidebar-ol">-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>19</span>-->
+            <!--</span>-->
+            <!--<span>410還權於民行動記者會</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--<h3 class="party-sidebar-h3">-->
+            <!--<li class="party-li">-->
+            <!--<span class="party-span">-->
+            <!--<span>2015.</span>-->
+            <!--<span>1</span>-->
+            <!--<span>.</span>-->
+            <!--<span>22</span>-->
+            <!--</span>-->
+            <!--<span>拜會民進黨主席蔡英文</span>-->
+            <!--</li>-->
+            <!--</h3>-->
+            <!--</ol>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+
+            <!--頁尾-->
+
+            <div class="leg-full-screen-width" style="">
+                <div class="leg-full-content" style="min-height: 0%;">
+                    <footer style="min-height: 0%;">
+                        <h3 class="leg-h3" style="">聯絡所：島國前進<span class="leg-h3-desktop">丨</span>電話：02-2358-1008<span class="leg-h3-desktop">丨</span><br class="leg-h3-mobile" />地址：台北市中正區仁愛路二段34號2樓之一<br />E-mail：empower.taiwan@gmail.com<span class="leg-h3-desktop">丨</span><br class="leg-h3-mobile" />410還權於民·重返立院</h3>
+                    </footer>
+                </div>
+            </div>
+        </div> <!-- cd-container -->
+    </div> <!-- cd-scrolling-bg -->
+</main> <!-- cd-main-content -->
+
 
 <script type="text/jsx">
     var FetchData = React.createClass({
@@ -225,7 +693,7 @@
             var ParseObject = Parse.Object.extend("action");
             var parseObject = new Parse.Query(ParseObject);
             parseObject.equalTo("visible", true);
-            parseObject.ascending("date");
+            parseObject.descending("date");
             parseObject.find({
                 success: function(list) {
                     // Successfully retrieved the object.
@@ -271,24 +739,47 @@
         render: function() {
             var newActionMap = this.state.newAction.map(function (newAction) {
                 return (
-                    <h3 className="party-h3"><li className="party-li"><span className="party-span">2015.{newAction.month}.{newAction.date}</span>{newAction.title}</li></h3>
+                    <h3 className="party-sidebar-h3"><li className="party-li"><span className="party-span">2015.{newAction.month}.{newAction.date}</span>{newAction.title}</li></h3>
                 );
             });
             var recordedActionMap = this.state.recordedAction.map(function (recordedAction) {
                 return (
-                    <h3 className="party-h3"><li className="party-li"><span className="party-span">2015.{recordedAction.month}.{recordedAction.date}</span>{recordedAction.title}</li></h3>
+                    <h3 className="party-sidebar-h3"><li className="party-li"><span className="party-span">2015.{recordedAction.month}.{recordedAction.date}</span>{recordedAction.title}</li></h3>
                 ) ;
             }.bind(this));
             return (
                 <div>
-                    <h1 className="party-h1">近期活動</h1>
-                    <ol className="party-ol">
-                        {newActionMap}
-                    </ol>
-                    <h1 className="party-h1">行動紀錄</h1>
-                    <ol className="party-ol">
-                        {recordedActionMap}
-                    </ol>
+                    <div className="leg-full-screen-width party-action-our_action_and_recent_movement">
+                        <div className="leg-full-content">
+                            <div className="party-action-parallel-div">
+                                <h1 className="party-sidebar-h1">我們的行動</h1>
+                                <ol className="party-sidebar-ol">
+                                    <li><h3 className="party-sidebar-h3">一、拜會朝野主要政黨領袖</h3></li>
+                                    <li><h3 className="party-sidebar-h3">二、要求立委簽署修法承諾書</h3></li>
+                                    <li><h3 className="party-sidebar-h3">三、全國巡迴說明動員</h3></li>
+                                    <li><h3 className="party-sidebar-h3">四、「318還權於民」立法院繞行包圍</h3></li>
+                                    <li><h3 className="party-sidebar-h3">五、「410還權於民」立法院外人民大集結</h3></li>
+                                </ol>
+                            </div>
+                            <div className="party-action-parallel-div party-action-recent_movement">
+                                <h1 className="party-sidebar-h1">近期活動</h1>
+                                <ol className="party-sidebar-ol">
+                            {newActionMap}
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="leg-full-screen-width party-action-recent_record">
+                        <div className="leg-full-screen-width">
+                            <div className="leg-full-content">
+
+                                <h1 className="party-sidebar-h1">行動紀錄</h1>
+                                <ol className="party-sidebar-ol">
+                            {recordedActionMap}
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             );
         }
