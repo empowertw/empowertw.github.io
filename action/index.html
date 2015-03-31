@@ -648,6 +648,128 @@
     </div> <!-- cd-scrolling-bg -->
 </main> <!-- cd-main-content -->
 
+<style>
+    /*點擊立委框框可閱讀同意書*/
+    .party-content-hint-for-click {
+        font-size: 25px;
+        padding-left: 20px;
+    }
+    @media screen and (max-width: 1000px) {
+        .party-content-hint-for-click {
+            font-size: 18px;
+            padding-left: 18px;
+        }
+
+    }
+    /*彈出式視窗*/
+    .modal {
+        opacity: 0;
+        visibility: hidden;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        text-align: left;
+        background: rgba(0,0,0, .5);
+        transition: opacity .25s ease;
+    }
+
+    .modal__bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        cursor: pointer;
+    }
+
+    .modal-state {
+        display: none;
+    }
+
+    .modal-state:checked + .modal {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .modal-state:checked + .modal .modal__inner {
+        top: 0;
+    }
+
+    .modal__inner {
+        transition: top .25s ease;
+        position: absolute;
+        top: -20%;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        margin: auto;
+        overflow: auto;
+        background: #fff;
+        border-radius: 5px;
+        padding: 1em 2em;
+        height: 80%;
+    }
+
+    .modal__close {
+        position: absolute;
+        right: 1em;
+        top: 1em;
+        width: 1.1em;
+        height: 1.1em;
+        cursor: pointer;
+    }
+
+    .modal__close:after,
+    .modal__close:before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 1.5em;
+        background: #ccc;
+        display: block;
+        transform: rotate(45deg);
+        left: 50%;
+        margin: -3px 0 0 -1px;
+        top: 0;
+    }
+
+    .modal__close:hover:after,
+    .modal__close:hover:before {
+        background: #aaa;
+    }
+
+    .modal__close:before {
+        transform: rotate(-45deg);
+    }
+
+    @media screen and (max-width: 768px) {
+        .modal__inner {
+            width: 90%;
+            height: 90%;
+            box-sizing: border-box;
+        }
+    }
+
+    p img {
+        width: 100%;
+        height: auto;
+        float: left;
+        margin: 0 1em 1em 0;
+    }
+    .alias-clickable-div:hover, .party-sidebar-button-normal:hover{
+        opacity: 0.8;
+    }
+    .alias-clickable-div, .party-sidebar-button-normal {
+        cursor: pointer; cursor: hand;
+    }
+    /*.party-sidebar-button-normal {*/
+    /*cursor: pointer; cursor: hand;*/
+    /*}*/
+</style>
+
 
 <script type="text/jsx">
     var FetchData = React.createClass({
@@ -679,16 +801,19 @@
                             n ++;
                         } else {
                             recordedAction[r] = {};
-                            if (object.get('link') == null || object.get('link') === "") {
-                                recordedAction[r].link = "";
-                                recordedAction[r].img = "";
-                            } else {
+                            if (object.get('link') == null || object.get('link') === "") { //load 圖片
+                                recordedAction[r].link = object.get('photo').url();
+                                recordedAction[r].img = object.get('photo').url();
+                            } else { //load 影片
                                 recordedAction[r].link = object.get('link');
                                 recordedAction[r].img = "http://img.youtube.com/vi/" + recordedAction[r].link.substring(32, 43) + "/hqdefault.jpg";
+                                recordedAction[r].link = "http://www.youtube.com/embed/" + object.get('link').substring(32, 43) + "?autoplay=false";
                             }
                             recordedAction[r].month = object.get('date').getMonth() + 1;
                             recordedAction[r].date = object.get('date').getDate();
                             recordedAction[r].title = object.get('title');
+                            recordedAction[r].width = object.get('width');
+                            recordedAction[r].height = object.get('height');
                             r ++;
                         }
                     }
@@ -712,32 +837,39 @@
             });
             var recordedActionMap = this.state.recordedAction.map(function (recordedAction) {
                 return (
+//            <div className="party-action_record-dialog-div">
+//                <img className="party-action_record-dialog-img" src={recordedAction.img} width="300px;" />
+//                <div className="party-action_record-dialog-text_div">
+//                    <span>2015.{recordedAction.month}.{recordedAction.date}.{recordedAction.title}</span>
+//                </div>
+//            </div>
                     <div className="party-action_record-dialog-div">
-                        <img className="party-action_record-dialog-img" src={recordedAction.img} width="300px;" />
-                        <div className="party-action_record-dialog-text_div">
-                            <span>2015.{recordedAction.month}.{recordedAction.date}.{recordedAction.title}</span>
+                        <label htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}>
+                            <div className="alias-clickable-div">
+                                <div className={this.props.classWithDisplay} title={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}>
+                                    <div className="alias-image-background">
+                                        <img className="party-action_record-dialog-img" src={recordedAction.img} width="300px;" />
+                                        <div className="party-action_record-dialog-text_div">
+                                            <span>2015.{recordedAction.month}.{recordedAction.date}.{recordedAction.title}</span>
+                                        </div>
+                                    </div>
+                                    <img src={this.props.partySrc} alt="" className="alias-image-party"/>
+                                    <h3 className={this.props.nameClass}>{this.props.name}</h3>
+                                </div>
+                            </div>
+                        </label>
+                        <input className="modal-state" id={"2015" + recordedAction.month + recordedAction.date + recordedAction.title} type="checkbox" />
+                        <div className="modal">
+                            <label className="modal__bg" htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}></label>
+                            <div className="modal__inner party-action_record-dialog-text_div">
+                                <label className="modal__close" htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}></label>
+                                <h2>{"2015" + recordedAction.month + recordedAction.date + recordedAction.title}</h2>
+                                <embed width={recordedAction.width} height={recordedAction.height}
+                                    src={recordedAction.link}>
+                                </embed>
+                            </div>
                         </div>
                     </div>
-
-//          <h3 className="party-sidebar-h3"><li className="party-li"><span className="party-span">2015.{recordedAction.month}.{recordedAction.date}</span>{recordedAction.title}<img src={recordedAction.img} /></li></h3>
-
-//            /*
-//            <div className="" styles="width:100px;display:inline-block;clear:both">
-//            <li className="" styles="width:100px;">
-//
-//                    <img src={recordedAction.img} width="100px;" styles="float:left;"/>
-//                    <div styles="width:100px;display:inline-block;background-color:#f00;">
-//                        <span className="" styles="width:100px;background-color:#0f0">2015.{recordedAction.month}.{recordedAction.date}</span>
-//                        <span className="" styles="width:100px;">{recordedAction.title}</span>
-//                    </div>
-//
-//            </li>
-//            </div>
-//*/
-
-
-
-
                 ) ;
             }.bind(this));
             return (
