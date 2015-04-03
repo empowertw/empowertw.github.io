@@ -11,29 +11,42 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-59388263-6', 'auto');
-    ga('send', 'pageview');
 
-  </script>
 
+
+
+    <script src="../scripts/jquery-2.1.3.min.js"></script>
+    <script src="../scripts/react-0.12.2.js"></script>
+    <script src="../scripts/JSXTransformer-0.12.2.js"></script>
+    <script src="../scripts/showdown.min.js"></script>
+    <script src="../scripts/jquery.cookie.js"></script>
+    <link rel="stylesheet" href="../styles/jquery-ui.css">
+    <script src="../scripts/jquery-ui-min.js"></script>
+    <script src="../scripts/parse-1.3.4.min.js"></script>
+
+
+
+
+
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-59388263-6', 'auto');
+        ga('send', 'pageview');
+    </script>
     <style>
         body {
             margin: 0px;
             padding: 0px;
         }
     </style>
-
-
     <link rel="stylesheet" href="../styles/head.css"/>
-  <link rel="stylesheet" href="../styles/leg.css"/>
-    <script src="../scripts/jquery-2.1.3.min.js"></script>
-
+    <link rel="stylesheet" href="../styles/leg.css"/>
 </head>
 
 <body>
@@ -148,81 +161,449 @@
 
 <!--頁中-->
 
-<style>
-  .party-full-screen-width {
-    background-color:#EBDBD0;
-    width: 100%;
-  }
-  @media screen and (min-width: 1000px) {  /*desktop */
-      .party-full-screen-width {
-          /*background-color:red;*/
-      }
-      .party-full-content {
-          width:1000px;
-          height: 800px;
-          margin-left:auto; margin-right:auto;
-          padding-top: 15px;
-      }
-  }
 
-    @media screen and (max-width: 1000px) { /* desktop */
+
+<style>
+    .party-full-screen-width {
+        background-color:#EBDBD0;
+        width: 100%;
+    }
+    @media screen and (min-width: 1000px) {
         .party-full-content {
-            width:100%; margin-left:auto; margin-right:auto;
-            /*background-color:red;*/
-            background-color:#EBDBD0;
-            padding-right: 15px;
-            padding-left: 15px;
+            width:1000px;
+            margin-left:auto; margin-right:auto;
+            background-color:green;
+            padding-top: 15px;
+            background-color: #ecdbd1;background-image: url(../images/hand.svg);background-position: left bottom;background-repeat: no-repeat;
+            padding-bottom: 30px;
         }
     }
-  .party-h1 {
-    display:inline-block;padding-left:110px;padding-top:25px;padding-bottom: 0px;color: #905d5c;font-size: 40px;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;vertical-align: top;
-    margin-bottom: 0px;
-  }
-  .party-ol {
-    width:60%;display:inline-block;padding-left:110px;padding-bottom:0px;color: #905d5c;font-size: 20px;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;vertical-align: top;
-    padding-top: 0px;
-  }
-  .party-h3 {
-    font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-    padding-left: 0px;
-    margin-bottom: 10px;
-    margin-top: 0px;
-    display: none;
-  }
-  .party-li {
-    font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  }
-  .party-img {
-    /*float: right;*/
-  }
-  @media screen and (min-width: 1000px) {
-  }
-  @media screen and (max-width: 1000px) {
-    .party-h1 {
-      padding-left:5%;
-      width:80%;
+    @media screen and (max-width: 1000px) {
+        .party-full-content {
+            width:100%;
+            margin-left:auto;
+            margin-right:auto;
+            background-color:red;
+            background-color:#EBDBD0;
+            background-color: #ecdbd1;background-image: url(../images/hand.svg);background-position: right bottom;background-repeat: no-repeat;
+        }
     }
-    .party-ol {
-      padding-left:5%;
-      width:80%;
+    /*頁中的側邊欄*/
+    .party-sidebar {
+        width: 280px;
+        padding-top: 25px;
+        text-align: right;display: inline-block; color: #905d5c;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        vertical-align: top;
+        margin-right: 0px;
+        margin-left: 0px;
+        /*background-color: yellow;*/
     }
-    .party-img {
-      /*float: left;*/
-        width: 200px;
+    .party-sidebar-h1 {
+        font-size: 40px;
+        margin-bottom: 0px;
+        color: #905d5c;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     }
+    .party-sidebar-h3 {
+        /*float: right;*/
+        font-size: 25px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        color: #905d5c;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    }
+    @media screen and (max-width: 1000px) {
+        .party-sidebar {
+            width: 100%;
+            text-align: left;
+            padding-left: 0px;
+            margin-left: 0px;
+            margin-right: 10px;
+            /*background-color: midnightblue;*/
+        }
+    }
+    /*頁中的公民欄*/
+    @media screen and (min-width: 1000px) {
+        .party-content {
+            width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+            display: inline-block;
+            color: #905d5c;
+            font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+            font-weight: bold;
+            /*background-color: greenyellow;*/
+        }
+    }
+    @media screen and (max-width: 1000px) {
+        .party-content {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+            display: inline-block;
+            color: #905d5c;
+            font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+            font-weight: bold;
+            /*background-color: greenyellow;*/
+        }
+    }
+</style>
 
-  }
+<!--影片-->
+<style>
+    @media screen and (min-width: 1000px) {
+        .people-video-jumbotron {
+            width: 920px;
+            height: 630px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        .party-h1 {
+            margin-left: 80px;
+        }
+        div.people-video-ring {
+            width: 280px;
+            display: inline-block;
+            margin-left: 10px;
+            margin-bottom: 30px;
+        }
+        img.people-video-ring {
+            width: 260px;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        div.people-video-ring-info {
+            width: 260px;
+            height: 2.5em;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #d0b8a8;
+            -webkit-border-bottom-left-radius: 10px;
+            -webkit-border-bottom-right-radius: 10px;
+            -moz-border-radius-bottomleft: 10px;
+            -moz-border-radius-bottomright: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        .people-video-ring {
+            -webkit-border-top-left-radius: 10px;
+            -webkit-border-top-right-radius: 10px;
+            -moz-border-radius-topleft: 10px;
+            -moz-border-radius-topright: 10px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .party-h3 {
+            margin-top: 0px;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            padding-top: 8px;
+        }
+        .party-people-ring {
+            width: 90%;
+            display: block;
+            padding-left: 3%;
+        }
+    }
 </style>
 
 <div class="party-full-screen-width" style="">
-  <div class="party-full-content" style="">
-    <h1 class="party-h1" style="padding-top: 50px;">公民聲援牆</h1>
-    <ol class="party-ol" style="list-style: none;">
-      <h3 class="party-h3"><li class="party-li">最新聲援數：0</li></h3>
-    </ol>
-    <img class="party-img" src="../images/comingsoon.svg" style="">
-  </div>
+    <div id="party-action-react">
+    </div>
+    <!--<div class="party-full-content" style="">-->
+        <!--<div class="party-content">-->
+            <!--<ol class="party-ol" style="list-style: none;">-->
+                <!--<embed class="people-video-jumbotron" src="http://www.youtube.com/embed/y71FaawmCsc?autoplay=false">-->
+            <!--</ol>-->
+            <!--<h1 class="party-h1" style="float: left;">公民聲援牆x</h1>-->
+            <!--<h3 class="party-h3" style="float: left;">xxx</h3>-->
+        <!--</div>-->
+        <!--<div class="party-content party-people-ring" style="margin-left: auto;  margin-right: auto;  padding-left: auto;  padding-right: auto;">-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="people-video-ring">-->
+                <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                <!--<div class="people-video-ring-info">-->
+                    <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+
+        <!--</div>-->
+    <!--</div>-->
 </div>
+
+
+<script type="text/jsx" src="people.js"></script>
+<!--<script type="text/jsx">-->
+    <!--var FetchData = React.createClass({-->
+        <!--parseData: function() {-->
+            <!--var newAction = [];-->
+            <!--var recordedAction = [];-->
+            <!--Parse.initialize("um9oVWPvPKifvhsyGfoRdbQwDvjrVJFOCcTEWTiS", "jdrKlqoQvTx8xXdyiMz8QeFxExziLa49nmqRXHNm");-->
+            <!--var ParseObject = Parse.Object.extend("people");-->
+            <!--var parseObject = new Parse.Query(ParseObject);-->
+            <!--parseObject.equalTo("visible", true);-->
+            <!--parseObject.descending("date");-->
+            <!--parseObject.find({-->
+                <!--success: function(list) {-->
+                    <!--// Successfully retrieved the object.-->
+                    <!--var today = new Date();-->
+
+                    <!--for (var i = 0, n = 0, r = 0; i < list.length; i++) {-->
+                        <!--var object = list[i];-->
+                        <!--if (object.get('date') > today) {-->
+                            <!--newAction[n] = {};-->
+                            <!--if (object.get('link') == null || object.get('link') === "") {-->
+                                <!--newAction[n].link = "";-->
+                            <!--} else {-->
+                                <!--newAction[n].link = object.get('link');-->
+                            <!--}-->
+                            <!--newAction[n].link = object.get('link');-->
+                            <!--newAction[n].img = "http://img.youtube.com/vi/" + newAction[n].link.substring(16, 27) + "/hqdefault.jpg";-->
+                            <!--newAction[n].link = "http://www.youtube.com/embed/" + object.get('link').substring(16, 27) + "?autoplay=false";-->
+                            <!--n ++;-->
+                        <!--}-->
+                    <!--}-->
+                    <!--this.setState({newAction: newAction});-->
+                <!--}.bind(this),-->
+                <!--error: function(error) {-->
+                <!--}-->
+            <!--});-->
+        <!--},-->
+        <!--getInitialState: function() {-->
+            <!--return {newAction: [], recordedAction: []};-->
+        <!--},-->
+        <!--componentDidMount: function() {-->
+            <!--this.parseData();-->
+        <!--},-->
+        <!--render: function() {-->
+            <!--var newActionMap = this.state.newAction.map(function (newAction) {-->
+                <!--return (-->
+                    <!--<div class="people-video-ring">-->
+                        <!--<img src="http://img.youtube.com/vi/ce2tjrUSemw/hqdefault.jpg" alt="" class="people-video-ring"/>-->
+                        <!--<div class="people-video-ring-info">-->
+                            <!--<h3 class="party-h3" style="float: left;">標題一二三四五六七八九十</h3>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--);-->
+            <!--});-->
+            <!--var recordedActionMap = this.state.recordedAction.map(function (recordedAction) {-->
+                <!--return (-->
+                    <!--<div className="party-action_record-dialog-div">-->
+                        <!--<label htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}>-->
+                            <!--<div className="alias-clickable-div">-->
+                                <!--<div className={this.props.classWithDisplay} title={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}>-->
+                                    <!--<div className="alias-image-background">-->
+                                        <!--<img className="party-action_record-dialog-img" src={recordedAction.img} width="300px;" />-->
+                                        <!--<div className="party-action_record-dialog-text_div">-->
+                                            <!--<span>2015.{recordedAction.month}.{recordedAction.date}.{recordedAction.title}</span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<img src={this.props.partySrc} alt="" className="alias-image-party"/>-->
+                                    <!--<h3 className={this.props.nameClass}>{this.props.name}</h3>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</label>-->
+                        <!--<input className="modal-state" id={"2015" + recordedAction.month + recordedAction.date + recordedAction.title} type="checkbox" />-->
+                        <!--<div className="modal">-->
+                            <!--<label className="modal__bg" htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}></label>-->
+                            <!--<div className="modal__inner party-action_record-dialog-text_div">-->
+                                <!--<label className="modal__close" htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}></label>-->
+                                <!--<h2>{"2015" + recordedAction.month + recordedAction.date + recordedAction.title}</h2>-->
+                                <!--<embed width={recordedAction.width} height={recordedAction.height}-->
+                                    <!--src={recordedAction.link}>-->
+                                <!--</embed>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--) ;-->
+            <!--}.bind(this));-->
+            <!--return (-->
+                <!--<div className="party-full-content">-->
+                    <!--<div className="party-content">-->
+                        <!--<embed className="people-video-jumbotron" src="http://www.youtube.com/embed/y71FaawmCsc?autoplay=false" />-->
+                        <!--<h1 className="party-h1" styles="float: left;">公民聲援牆x</h1>-->
+                        <!--<h3 className="party-h3" styles="float: left;">xxx</h3>-->
+                    <!--</div>-->
+                    <!--<div className="party-content party-people-ring" styles="margin-left: auto;  margin-right: auto;  padding-left: auto;  padding-right: auto;">-->
+                        <!--{newActionMap}-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--);-->
+        <!--}-->
+    <!--});-->
+    <!--React.render(-->
+        <!--<FetchData/>,-->
+        <!--document.getElementById('party-action-react')-->
+    <!--);-->
+<!--</script>-->
+
+
+
 
 <!--頁尾-->
 
