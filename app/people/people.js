@@ -67,7 +67,7 @@ var FetchData = React.createClass({
         $.cookie("jumbotronID", index);
         console.log("jumbotronID: " + $.cookie("jumbotronID"));
         this.parseData();
-        location.reload();
+        //location.reload();
     },
     componentDidMount: function() {
         this.parseData();
@@ -76,7 +76,7 @@ var FetchData = React.createClass({
         var jumbotronVideoMap = this.state.jumbotronVideo.map(function (jumbotronVideo) {
             return (
                 <div className="party-content">
-                    <embed className="people-video-jumbotron" src={jumbotronVideo.link} />
+                    <iframe className="people-video-jumbotron" src={jumbotronVideo.link} />
                     <h1 className="party-h1" styles="float: left;">{jumbotronVideo.title}</h1>
                 </div>
             );
