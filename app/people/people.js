@@ -28,7 +28,7 @@ var FetchData = React.createClass({
                 } else {
                     jumbotronVideo[0].link = object.get('link');
                 }
-                //console.log("jumbotronVideo.link:" + jumbotronVideo.link);
+                console.log("jumbotronVideo[0].link:" + jumbotronVideo[0].link);
                 jumbotronVideo[0].img = "http://img.youtube.com/vi/" + jumbotronVideo[0].link.substring(32, 43) + "/hqdefault.jpg";
                 jumbotronVideo[0].link = "http://www.youtube.com/embed/" + jumbotronVideo[0].link.substring(32, 43) + "?autoplay=false";
                 jumbotronVideo[0].title = object.get('title');
@@ -37,13 +37,14 @@ var FetchData = React.createClass({
                 for (var i = 1, n = 0; i < list.length; i++) {
                     peopleVideo[n] = {};
                     var object = list[(i + parseInt(jumbotronID) + list.length) % list.length];
+                    peopleVideo[n].index = (i + parseInt(jumbotronID) + list.length) % list.length;
                     if (object.get('link') == null || object.get('link') === "") {
                         peopleVideo[n].link = "";
                     } else {
                         peopleVideo[n].link = object.get('link');
                     }
                     peopleVideo[n].link = object.get('link');
-                    console.log("peopleVideo[n].link: " + peopleVideo[n].link);
+                    //console.log("peopleVideo[n].link: " + peopleVideo[n].link);
                     peopleVideo[n].img = "http://img.youtube.com/vi/" + peopleVideo[n].link.substring(32, 43) + "/hqdefault.jpg";
                     peopleVideo[n].link = "http://www.youtube.com/embed/" + peopleVideo[n].link.substring(32, 43) + "?autoplay=false";
                     peopleVideo[n].title = object.get('title');
@@ -61,6 +62,13 @@ var FetchData = React.createClass({
     getInitialState: function() {
         return {peopleVideo: [], jumbotronVideo: []};
     },
+    handleClick: function(index) {
+        console.log(index);
+        $.cookie("jumbotronID", index);
+        console.log("jumbotronID: " + $.cookie("jumbotronID"));
+        this.parseData();
+        location.reload();
+    },
     componentDidMount: function() {
         this.parseData();
     },
@@ -75,7 +83,7 @@ var FetchData = React.createClass({
         }.bind(this));
         var peopleVideoMap = this.state.peopleVideo.map(function (peopleVideo) {
             return (
-                <div className="people-video-ring">
+                <div className="people-video-ring" onClick={this.handleClick.bind(this, peopleVideo.index)}>
                     <img src={peopleVideo.img} alt={peopleVideo.title} className="people-video-ring"/>
                     <div className="people-video-ring-info">
                         <h3 className="party-h3">{peopleVideo.title}</h3>
