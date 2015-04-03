@@ -79,7 +79,7 @@ var FetchData = React.createClass({
                                             <span>2015.{recordedAction.month}.{recordedAction.date}.{recordedAction.title}</span>
                                         </div>
                                     </div>
-                                    <img src={this.props.partySrc} alt="" className="alias-image-party"/>
+                                    <img width={recordedAction.width} height={recordedAction.height} src={this.props.partySrc} alt="" className="alias-image-party"/>
                                     <h3 className={this.props.nameClass}>{this.props.name}</h3>
                                 </div>
                             </div>
@@ -119,8 +119,7 @@ var FetchData = React.createClass({
                                 <label className="modal__close" htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}></label>
                                 <h2>{"2015" + recordedAction.month + recordedAction.date + recordedAction.title}</h2>
                                 <div className="video-container">
-                                    <iframe width={recordedAction.width} height={recordedAction.height}
-                                        src={recordedAction.link}>
+                                    <iframe src={recordedAction.link}>
                                     </iframe>
                                 </div>
                             </div>
