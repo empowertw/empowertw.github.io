@@ -98,31 +98,23 @@ gulp.task('templates', function () {
 
 //  STATEMENT novel
 gulp.task('statement', function () {
-    return gulp.src('app/statement/*.html')
+    return gulp.src('app/statement/index.html')
         .pipe($.useref())
         .pipe(gulp.dest('dist/statement'))
         .pipe($.size());
 });
 
-//  CLAIM novel
-gulp.task('claim', function () {
-    return gulp.src('app/claim/*.html')
-        .pipe($.useref())
-        .pipe(gulp.dest('dist/claim'))
-        .pipe($.size());
-});
-
-//  FLYINGV novel
-gulp.task('flyingv', function () {
-    return gulp.src('app/flyingv/*.html')
-        .pipe($.useref())
-        .pipe(gulp.dest('dist/flyingv'))
-        .pipe($.size());
-});
-
 //  ALIAS novel
 gulp.task('alias', function () {
-    return gulp.src('app/alias/*.html')
+    return gulp.src('app/alias/index.html')
+        .pipe($.useref())
+        .pipe(gulp.dest('dist/alias'))
+        .pipe($.size());
+});
+
+//  ALIASJS novel
+gulp.task('aliasjs', function () {
+    return gulp.src('app/alias/alias.js')
         .pipe($.useref())
         .pipe(gulp.dest('dist/alias'))
         .pipe($.size());
@@ -130,7 +122,15 @@ gulp.task('alias', function () {
 
 //  PEOPLE novel
 gulp.task('people', function () {
-    return gulp.src('app/people/*.html')
+    return gulp.src('app/people/index.html')
+        .pipe($.useref())
+        .pipe(gulp.dest('dist/people'))
+        .pipe($.size());
+});
+
+//  PEOPLEJS novel
+gulp.task('peoplejs', function () {
+    return gulp.src('app/people/people.js')
         .pipe($.useref())
         .pipe(gulp.dest('dist/people'))
         .pipe($.size());
@@ -138,7 +138,15 @@ gulp.task('people', function () {
 
 //  ACTION novel
 gulp.task('action', function () {
-    return gulp.src('app/action/*.html')
+    return gulp.src('app/action/index.html')
+        .pipe($.useref())
+        .pipe(gulp.dest('dist/action'))
+        .pipe($.size());
+});
+
+//  ACTIONJS novel
+gulp.task('actionjs', function () {
+    return gulp.src('app/action/action.js')
         .pipe($.useref())
         .pipe(gulp.dest('dist/action'))
         .pipe($.size());
@@ -237,15 +245,16 @@ gulp.task('watch', ['html', 'bundle', 'serve'], function () {
     gulp.watch('app/images/**/*', ['images']);
 
     gulp.watch('app/statement/index.html', ['statement']);
-    gulp.watch('app/claim/index.html', ['claim']);
     gulp.watch('app/action/index.html', ['action']);
-    gulp.watch('app/flyingv/index.html', ['flyingv']);
+    gulp.watch('app/action/action.js', ['actionjs']);
     gulp.watch('app/alias/index.html', ['alias']);
+    gulp.watch('app/alias/alias.js', ['aliasjs']);
     gulp.watch('app/people/index.html', ['people']);
+    gulp.watch('app/people/people.js', ['peoplejs']);
 });
 
 // Build
-gulp.task('build', ['html', 'bundle', 'images', 'extras', 'statement', 'claim', 'action', 'flyingv', 'alias', 'people', 'readme', 'json', 'scripts']);
+gulp.task('build', ['html', 'bundle', 'images', 'extras', 'statement', 'action', 'actionjs', 'alias', 'aliasjs', 'people', 'peoplejs', 'readme', 'json', 'scripts']);
 
 // Default task
 gulp.task('default', ['clean', 'build', 'jest' ]);
