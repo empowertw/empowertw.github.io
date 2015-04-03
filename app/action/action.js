@@ -33,10 +33,12 @@ var FetchData = React.createClass({
                         if (object.get('link') == null || object.get('link') === "") { //load 圖片
                             recordedAction[r].link = object.get('photo').url();
                             recordedAction[r].img = object.get('photo').url();
+                            recordedAction[r].content = "img";
                         } else { //load 影片
                             recordedAction[r].link = object.get('link');
                             recordedAction[r].img = "http://img.youtube.com/vi/" + recordedAction[r].link.substring(32, 43) + "/hqdefault.jpg";
                             recordedAction[r].link = "http://www.youtube.com/embed/" + object.get('link').substring(32, 43) + "?autoplay=false";
+                            recordedAction[r].content = "video";
                         }
                         recordedAction[r].month = object.get('date').getMonth() + 1;
                         recordedAction[r].date = object.get('date').getDate();
@@ -65,41 +67,68 @@ var FetchData = React.createClass({
             );
         });
         var recordedActionMap = this.state.recordedAction.map(function (recordedAction) {
-            return (
-//            <div className="party-action_record-dialog-div">
-//                <img className="party-action_record-dialog-img" src={recordedAction.img} width="300px;" />
-//                <div className="party-action_record-dialog-text_div">
-//                    <span>2015.{recordedAction.month}.{recordedAction.date}.{recordedAction.title}</span>
-//                </div>
-//            </div>
-                <div className="party-action_record-dialog-div">
-                    <label htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}>
-                        <div className="alias-clickable-div">
-                            <div className={this.props.classWithDisplay} title={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}>
-                                <div className="alias-image-background">
-                                    <img className="party-action_record-dialog-img" src={recordedAction.img} width="300px;" />
-                                    <div className="party-action_record-dialog-text_div">
-                                        <span>2015.{recordedAction.month}.{recordedAction.date}.{recordedAction.title}</span>
+            if (recordedAction.content.localeCompare("img") == 0) {
+                return (
+                    <div className="party-action_record-dialog-div">
+                        <label htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}>
+                            <div className="alias-clickable-div">
+                                <div className={this.props.classWithDisplay} title={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}>
+                                    <div className="alias-image-background">
+                                        <img className="party-action_record-dialog-img" src={recordedAction.img} width="300px;" />
+                                        <div className="party-action_record-dialog-text_div">
+                                            <span>2015.{recordedAction.month}.{recordedAction.date}.{recordedAction.title}</span>
+                                        </div>
                                     </div>
+                                    <img src={this.props.partySrc} alt="" className="alias-image-party"/>
+                                    <h3 className={this.props.nameClass}>{this.props.name}</h3>
                                 </div>
-                                <img src={this.props.partySrc} alt="" className="alias-image-party"/>
-                                <h3 className={this.props.nameClass}>{this.props.name}</h3>
+                            </div>
+                        </label>
+                        <input className="modal-state" id={"2015" + recordedAction.month + recordedAction.date + recordedAction.title} type="checkbox" />
+                        <div className="modal">
+                            <label className="modal__bg" htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}></label>
+                            <div className="modal__inner party-action_record-dialog-text_div">
+                                <label className="modal__close" htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}></label>
+                                <h2>{"2015" + recordedAction.month + recordedAction.date + recordedAction.title}</h2>
+                                <img width="100%" height="auto" src={recordedAction.link} />
                             </div>
                         </div>
-                    </label>
-                    <input className="modal-state" id={"2015" + recordedAction.month + recordedAction.date + recordedAction.title} type="checkbox" />
-                    <div className="modal">
-                        <label className="modal__bg" htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}></label>
-                        <div className="modal__inner party-action_record-dialog-text_div">
-                            <label className="modal__close" htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}></label>
-                            <h2>{"2015" + recordedAction.month + recordedAction.date + recordedAction.title}</h2>
-                            <embed width={recordedAction.width} height={recordedAction.height}
-                                src={recordedAction.link}>
-                            </embed>
+                    </div>
+                ) ;
+            } else {
+                return (
+                    <div className="party-action_record-dialog-div">
+                        <label htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}>
+                            <div className="alias-clickable-div">
+                                <div className={this.props.classWithDisplay} title={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}>
+                                    <div className="alias-image-background">
+                                        <img className="party-action_record-dialog-img" src={recordedAction.img} width="300px;" />
+                                        <div className="party-action_record-dialog-text_div">
+                                            <span>2015.{recordedAction.month}.{recordedAction.date}.{recordedAction.title}</span>
+                                        </div>
+                                    </div>
+                                    <img src={this.props.partySrc} alt="" className="alias-image-party"/>
+                                    <h3 className={this.props.nameClass}>{this.props.name}</h3>
+                                </div>
+                            </div>
+                        </label>
+                        <input className="modal-state" id={"2015" + recordedAction.month + recordedAction.date + recordedAction.title} type="checkbox" />
+                        <div className="modal">
+                            <label className="modal__bg" htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}></label>
+                            <div className="modal__inner party-action_record-dialog-text_div">
+                                <label className="modal__close" htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}></label>
+                                <h2>{"2015" + recordedAction.month + recordedAction.date + recordedAction.title}</h2>
+                                <div className="video-container">
+                                    <iframe width={recordedAction.width} height={recordedAction.height}
+                                        src={recordedAction.link}>
+                                    </iframe>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            ) ;
+                ) ;
+            }
+
         }.bind(this));
         return (
             <div>
