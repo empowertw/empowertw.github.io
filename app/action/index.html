@@ -986,6 +986,14 @@
         };
 
     })();
+    var header = $('.head-full-content');
+    var range = 30;
+    $(window).on('scroll', function () {
+        var scrolling = $(this).scrollTop();
+        header.each(function () {
+            $(this).css({ 'opacity': 1 - (scrolling) / 120 });
+        });
+    });
 </script>
 
 </body>
