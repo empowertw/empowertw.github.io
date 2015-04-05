@@ -279,6 +279,34 @@
                     }
                 }
             </style>
+            <style>
+                .party-action_record-dialog-div {
+                    width: 300px;
+                    background-color: #d4beb0;
+                    font-size: 16px;
+                    float: left;
+                    margin-left: 10px;
+                    margin-bottom: 10px;
+                    border-radius: 10px;
+                    /*line-height: 1.5em;*/
+                    vertical-align: top;
+                }
+                .party-action_record-dialog-img {
+                    -webkit-border-top-left-radius: 10px;
+                    -webkit-border-top-right-radius: 10px;
+                    -moz-border-radius-topleft: 10px;
+                    -moz-border-radius-topright: 10px;
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                }
+                .party-action_record-dialog-text_div {
+                    color: #966362;
+                    margin-left: 8px;
+                    margin-right: 8px;
+                    margin-bottom: 8px;
+                    height: 1em;
+                }
+            </style>
             <div id="party-action-react">
             </div>
             <!--<div class="leg-full-screen-width party-action-our_action_and_recent_movement">-->
@@ -607,69 +635,6 @@
             <!--</div>-->
             <!--</div>-->
             <!--</div>-->
-
-            <!--<div class="leg-full-screen-width party-action-our_action_and_recent_movement">-->
-            <!--<div class="leg-full-content">-->
-            <!--<div class="party-action-parallel-div">-->
-            <!--<h1 class="party-sidebar-h1">我們的行動</h1>-->
-            <!--<ol class="party-sidebar-ol">-->
-            <!--<li><h3 class="party-sidebar-h3">一、拜會朝野主要政黨領袖</h3></li>-->
-            <!--<li><h3 class="party-sidebar-h3">二、要求立委簽署修法承諾書</h3></li>-->
-            <!--<li><h3 class="party-sidebar-h3">三、全國巡迴說明動員</h3></li>-->
-            <!--<li><h3 class="party-sidebar-h3">四、「318還權於民」立法院繞行包圍</h3></li>-->
-            <!--<li><h3 class="party-sidebar-h3">五、「410還權於民」立法院外人民大集結</h3></li>-->
-            <!--</ol>-->
-            <!--</div>-->
-            <!--<div class="party-action-parallel-div party-action-recent_movement">-->
-            <!--<h1 class="party-sidebar-h1">近期活動</h1>-->
-            <!--<ol class="party-sidebar-ol">-->
-            <!--<h3 class="party-sidebar-h3">-->
-            <!--<li class="party-li">-->
-            <!--<span class="party-span">-->
-            <!--<span>2015.</span>-->
-            <!--<span>3</span>-->
-            <!--<span>.</span>-->
-            <!--<span>28</span>-->
-            <!--</span>-->
-            <!--<span>臺北/全國街頭宣傳(16:00-18:00)</span>-->
-            <!--</li>-->
-            <!--</h3>-->
-            <!--</ol>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="leg-full-screen-width party-action-recent_record">-->
-            <!--<div class="leg-full-screen-width party-action-recent_record">-->
-            <!--<div class="leg-full-content">-->
-            <!--<h1 class="party-sidebar-h1">行動紀錄</h1>-->
-            <!--<ol class="party-sidebar-ol">-->
-            <!--<h3 class="party-sidebar-h3">-->
-            <!--<li class="party-li">-->
-            <!--<span class="party-span">-->
-            <!--<span>2015.</span>-->
-            <!--<span>1</span>-->
-            <!--<span>.</span>-->
-            <!--<span>19</span>-->
-            <!--</span>-->
-            <!--<span>410還權於民行動記者會</span>-->
-            <!--</li>-->
-            <!--</h3>-->
-            <!--<h3 class="party-sidebar-h3">-->
-            <!--<li class="party-li">-->
-            <!--<span class="party-span">-->
-            <!--<span>2015.</span>-->
-            <!--<span>1</span>-->
-            <!--<span>.</span>-->
-            <!--<span>22</span>-->
-            <!--</span>-->
-            <!--<span>拜會民進黨主席蔡英文</span>-->
-            <!--</li>-->
-            <!--</h3>-->
-            <!--</ol>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-
             <!--頁尾-->
 
             <div class="leg-full-screen-width" style="">
@@ -683,112 +648,290 @@
     </div> <!-- cd-scrolling-bg -->
 </main> <!-- cd-main-content -->
 
-
-<script type="text/jsx">
-    var FetchData = React.createClass({
-        parseData: function() {
-            var newAction = [];
-            var recordedAction = [];
-            Parse.initialize("um9oVWPvPKifvhsyGfoRdbQwDvjrVJFOCcTEWTiS", "jdrKlqoQvTx8xXdyiMz8QeFxExziLa49nmqRXHNm");
-            var ParseObject = Parse.Object.extend("action");
-            var parseObject = new Parse.Query(ParseObject);
-            parseObject.equalTo("visible", true);
-            parseObject.descending("date");
-            parseObject.find({
-                success: function(list) {
-                    // Successfully retrieved the object.
-                    var today = new Date();
-
-                    for (var i = 0, n = 0, r = 0; i < list.length; i++) {
-                        var object = list[i];
-                        if (object.get('date') > today) {
-                            if (object.get('link') == null || object.get('link') === "") {
-                                newAction[n] = {};
-                                newAction[n].link = "";
-                            } else {
-                                newAction[n].link = object.get('link');
-                            }
-                            newAction[n].month = object.get('date').getMonth() + 1;
-                            newAction[n].date = object.get('date').getDate();
-                            newAction[n].title = object.get('title');
-                            n ++;
-                        } else {
-                            if (object.get('link') == null || object.get('link') === "") {
-                                recordedAction[r] = {link: ""};
-                            } else {
-                                recordedAction[r] = {link: object.get('link')};
-                            }
-                            recordedAction[r].month = object.get('date').getMonth() + 1;
-                            recordedAction[r].date = object.get('date').getDate();
-                            recordedAction[r].title = object.get('title');
-                            r ++;
-                        }
-                    }
-                    this.setState({newAction: newAction, recordedAction: recordedAction});
-                }.bind(this),
-                error: function(error) {
-                }
-            });
-        },
-        getInitialState: function() {
-            return {newAction: [], recordedAction: []};
-        },
-        componentDidMount: function() {
-            this.parseData();
-        },
-        render: function() {
-            var newActionMap = this.state.newAction.map(function (newAction) {
-                return (
-                    <h3 className="party-sidebar-h3"><li className="party-li"><span className="party-span">2015.{newAction.month}.{newAction.date}</span>{newAction.title}</li></h3>
-                );
-            });
-            var recordedActionMap = this.state.recordedAction.map(function (recordedAction) {
-                return (
-                    <h3 className="party-sidebar-h3"><li className="party-li"><span className="party-span">2015.{recordedAction.month}.{recordedAction.date}</span>{recordedAction.title}</li></h3>
-                ) ;
-            }.bind(this));
-            return (
-                <div>
-                    <div className="leg-full-screen-width party-action-our_action_and_recent_movement">
-                        <div className="leg-full-content">
-                            <div className="party-action-parallel-div">
-                                <h1 className="party-sidebar-h1">我們的行動</h1>
-                                <ol className="party-sidebar-ol">
-                                    <li><h3 className="party-sidebar-h3">一、拜會朝野主要政黨領袖</h3></li>
-                                    <li><h3 className="party-sidebar-h3">二、要求立委簽署修法承諾書</h3></li>
-                                    <li><h3 className="party-sidebar-h3">三、全國巡迴說明動員</h3></li>
-                                    <li><h3 className="party-sidebar-h3">四、「318還權於民」立法院繞行包圍</h3></li>
-                                    <li><h3 className="party-sidebar-h3">五、「410還權於民」立法院外人民大集結</h3></li>
-                                </ol>
-                            </div>
-                            <div className="party-action-parallel-div party-action-recent_movement">
-                                <h1 className="party-sidebar-h1">近期活動</h1>
-                                <ol className="party-sidebar-ol">
-                            {newActionMap}
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="leg-full-screen-width party-action-recent_record">
-                        <div className="leg-full-screen-width">
-                            <div className="leg-full-content">
-
-                                <h1 className="party-sidebar-h1">行動紀錄</h1>
-                                <ol className="party-sidebar-ol">
-                            {recordedActionMap}
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            );
+<style>
+    /*點擊立委框框可閱讀同意書*/
+    .party-content-hint-for-click {
+        font-size: 25px;
+        padding-left: 20px;
+    }
+    @media screen and (max-width: 1000px) {
+        .party-content-hint-for-click {
+            font-size: 18px;
+            padding-left: 18px;
         }
-    });
-    React.render(
-        <FetchData/>,
-        document.getElementById('party-action-react')
-    );
-</script>
+
+    }
+    /*彈出式視窗*/
+    .modal {
+        opacity: 0;
+        visibility: hidden;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        text-align: left;
+        background: rgba(0,0,0, .5);
+        transition: opacity .25s ease;
+    }
+
+    .modal__bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        cursor: pointer;
+    }
+
+    .modal-state {
+        display: none;
+    }
+
+    .modal-state:checked + .modal {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .modal-state:checked + .modal .modal__inner {
+        top: 0;
+    }
+
+    .modal__inner {
+        transition: top .25s ease;
+        position: absolute;
+        top: -20%;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        margin: auto;
+        overflow: auto;
+        background: #fff;
+        border-radius: 5px;
+        padding: 1em 2em;
+        height: 80%;
+    }
+
+    .modal__close {
+        position: absolute;
+        right: 1em;
+        top: 1em;
+        width: 1.1em;
+        height: 1.1em;
+        cursor: pointer;
+    }
+
+    .modal__close:after,
+    .modal__close:before {
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 1.5em;
+        background: #ccc;
+        display: block;
+        transform: rotate(45deg);
+        left: 50%;
+        margin: -3px 0 0 -1px;
+        top: 0;
+    }
+
+    .modal__close:hover:after,
+    .modal__close:hover:before {
+        background: #aaa;
+    }
+
+    .modal__close:before {
+        transform: rotate(-45deg);
+    }
+
+    @media screen and (max-width: 768px) {
+        .modal__inner {
+            width: 90%;
+            height: 90%;
+            box-sizing: border-box;
+        }
+    }
+
+    p img {
+        width: 100%;
+        height: auto;
+        float: left;
+        margin: 0 1em 1em 0;
+    }
+    .alias-clickable-div:hover, .party-sidebar-button-normal:hover{
+        opacity: 0.8;
+    }
+    .alias-clickable-div, .party-sidebar-button-normal {
+        cursor: pointer; cursor: hand;
+    }
+    /*.party-sidebar-button-normal {*/
+    /*cursor: pointer; cursor: hand;*/
+    /*}*/
+    .video-container {
+        position:relative;
+        padding-bottom:40%;
+        padding-top:30px;
+        height:0;
+        overflow:hidden;
+        width: 90%;
+        max-width: 560px;
+        margin: 100px auto;
+    }
+    .video-container iframe, .video-container object, .video-container embed {
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        max-height: 320px;
+        border: none;
+    }
+</style>
+
+<script type="text/jsx" src="action.js"></script>
+<!--<script type="text/jsx">-->
+<!--var FetchData = React.createClass({-->
+<!--parseData: function() {-->
+<!--var newAction = [];-->
+<!--var recordedAction = [];-->
+<!--Parse.initialize("um9oVWPvPKifvhsyGfoRdbQwDvjrVJFOCcTEWTiS", "jdrKlqoQvTx8xXdyiMz8QeFxExziLa49nmqRXHNm");-->
+<!--var ParseObject = Parse.Object.extend("action");-->
+<!--var parseObject = new Parse.Query(ParseObject);-->
+<!--parseObject.equalTo("visible", true);-->
+<!--parseObject.descending("date");-->
+<!--parseObject.find({-->
+<!--success: function(list) {-->
+<!--// Successfully retrieved the object.-->
+<!--var today = new Date();-->
+
+<!--for (var i = 0, n = 0, r = 0; i < list.length; i++) {-->
+<!--var object = list[i];-->
+<!--if (object.get('date') > today) {-->
+<!--newAction[n] = {};-->
+<!--if (object.get('link') == null || object.get('link') === "") {-->
+<!--newAction[n].link = "";-->
+<!--} else {-->
+<!--newAction[n].link = object.get('link');-->
+<!--}-->
+<!--newAction[n].month = object.get('date').getMonth() + 1;-->
+<!--newAction[n].date = object.get('date').getDate();-->
+<!--newAction[n].title = object.get('title');-->
+<!--n ++;-->
+<!--} else {-->
+<!--recordedAction[r] = {};-->
+<!--if (object.get('link') == null || object.get('link') === "") { //load 圖片-->
+<!--recordedAction[r].link = object.get('photo').url();-->
+<!--recordedAction[r].img = object.get('photo').url();-->
+<!--} else { //load 影片-->
+<!--recordedAction[r].link = object.get('link');-->
+<!--recordedAction[r].img = "http://img.youtube.com/vi/" + recordedAction[r].link.substring(32, 43) + "/hqdefault.jpg";-->
+<!--recordedAction[r].link = "http://www.youtube.com/embed/" + object.get('link').substring(32, 43) + "?autoplay=false";-->
+<!--}-->
+<!--recordedAction[r].month = object.get('date').getMonth() + 1;-->
+<!--recordedAction[r].date = object.get('date').getDate();-->
+<!--recordedAction[r].title = object.get('title');-->
+<!--recordedAction[r].width = object.get('width');-->
+<!--recordedAction[r].height = object.get('height');-->
+<!--r ++;-->
+<!--}-->
+<!--}-->
+<!--this.setState({newAction: newAction, recordedAction: recordedAction});-->
+<!--}.bind(this),-->
+<!--error: function(error) {-->
+<!--}-->
+<!--});-->
+<!--},-->
+<!--getInitialState: function() {-->
+<!--return {newAction: [], recordedAction: []};-->
+<!--},-->
+<!--componentDidMount: function() {-->
+<!--this.parseData();-->
+<!--},-->
+<!--render: function() {-->
+<!--var newActionMap = this.state.newAction.map(function (newAction) {-->
+<!--return (-->
+<!--<h3 className="party-sidebar-h3"><li className="party-li"><span className="party-span">2015.{newAction.month}.{newAction.date}</span>{newAction.title}</li></h3>-->
+<!--);-->
+<!--});-->
+<!--var recordedActionMap = this.state.recordedAction.map(function (recordedAction) {-->
+<!--return (-->
+<!--//            <div className="party-action_record-dialog-div">-->
+<!--//                <img className="party-action_record-dialog-img" src={recordedAction.img} width="300px;" />-->
+<!--//                <div className="party-action_record-dialog-text_div">-->
+<!--//                    <span>2015.{recordedAction.month}.{recordedAction.date}.{recordedAction.title}</span>-->
+<!--//                </div>-->
+<!--//            </div>-->
+<!--<div className="party-action_record-dialog-div">-->
+<!--<label htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}>-->
+<!--<div className="alias-clickable-div">-->
+<!--<div className={this.props.classWithDisplay} title={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}>-->
+<!--<div className="alias-image-background">-->
+<!--<img className="party-action_record-dialog-img" src={recordedAction.img} width="300px;" />-->
+<!--<div className="party-action_record-dialog-text_div">-->
+<!--<span>2015.{recordedAction.month}.{recordedAction.date}.{recordedAction.title}</span>-->
+<!--</div>-->
+<!--</div>-->
+<!--<img src={this.props.partySrc} alt="" className="alias-image-party"/>-->
+<!--<h3 className={this.props.nameClass}>{this.props.name}</h3>-->
+<!--</div>-->
+<!--</div>-->
+<!--</label>-->
+<!--<input className="modal-state" id={"2015" + recordedAction.month + recordedAction.date + recordedAction.title} type="checkbox" />-->
+<!--<div className="modal">-->
+<!--<label className="modal__bg" htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}></label>-->
+<!--<div className="modal__inner party-action_record-dialog-text_div">-->
+<!--<label className="modal__close" htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}></label>-->
+<!--<h2>{"2015" + recordedAction.month + recordedAction.date + recordedAction.title}</h2>-->
+<!--<embed width={recordedAction.width} height={recordedAction.height}-->
+<!--src={recordedAction.link}>-->
+<!--</embed>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--) ;-->
+<!--}.bind(this));-->
+<!--return (-->
+<!--<div>-->
+<!--<div className="leg-full-screen-width party-action-our_action_and_recent_movement">-->
+<!--<div className="leg-full-content">-->
+<!--<div className="party-action-parallel-div">-->
+<!--<h1 className="party-sidebar-h1">我們的行動</h1>-->
+<!--<ol className="party-sidebar-ol">-->
+<!--<li><h3 className="party-sidebar-h3">一、拜會朝野主要政黨領袖</h3></li>-->
+<!--<li><h3 className="party-sidebar-h3">二、要求立委簽署修法承諾書</h3></li>-->
+<!--<li><h3 className="party-sidebar-h3">三、全國巡迴說明動員</h3></li>-->
+<!--<li><h3 className="party-sidebar-h3">四、「318還權於民」立法院繞行包圍</h3></li>-->
+<!--<li><h3 className="party-sidebar-h3">五、「410還權於民」立法院外人民大集結</h3></li>-->
+<!--</ol>-->
+<!--</div>-->
+<!--<div className="party-action-parallel-div party-action-recent_movement">-->
+<!--<h1 className="party-sidebar-h1">近期活動</h1>-->
+<!--<ol className="party-sidebar-ol">-->
+<!--{newActionMap}-->
+<!--</ol>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div className="leg-full-screen-width party-action-recent_record">-->
+<!--<div className="leg-full-screen-width">-->
+<!--<div className="leg-full-content">-->
+<!--<h1 className="party-sidebar-h1">行動紀錄</h1>-->
+<!--<ol className="party-sidebar-ol">-->
+<!--{recordedActionMap}-->
+<!--</ol>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--);-->
+<!--}-->
+<!--});-->
+<!--React.render(-->
+<!--<FetchData/>,-->
+<!--document.getElementById('party-action-react')-->
+<!--);-->
+<!--</script>-->
 
 </body>
 </html>
