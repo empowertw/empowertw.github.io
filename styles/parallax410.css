@@ -1,0 +1,33 @@
+/* ============================================================
+  PRIMARY STRUCTURE
+============================================================ */
+.parallax-vertical-container {
+  width: 100%;
+}
+
+/* ============================================================
+  SECTIONS
+============================================================ */
+section.parallax-vertical-module:last-child {
+  margin-bottom: 0;
+}
+
+section.parallax-vertical-module h2 {
+  margin-bottom: 40px;
+}
+
+section.parallax-vertical-module p {
+  margin-bottom: 40px;
+}
+
+section.parallax-vertical-module p:last-child {
+  margin-bottom: 0;
+}
+
+section.parallax-vertical-module.parallax-vertical-content {
+  padding: 40px 0;
+}
+
+section.parallax-vertical-module.parallax-vertical-parallax {
+  background-position: 0 0px;
+}

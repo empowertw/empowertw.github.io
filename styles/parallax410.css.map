@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";;;AAGA,4BAA6B;EAGzB,KAAK,EAAE,IAAI;;;;;;AAOf,2CAA4C;EACxC,aAAa,EAAE,CAAC;;;AAEpB,mCAAoC;EAChC,aAAa,EAAE,IAAI;;;AAEvB,kCAAmC;EAC/B,aAAa,EAAE,IAAI;;;AAEvB,6CAA8C;EAC1C,aAAa,EAAE,CAAC;;;AAEpB,0DAA2D;EACvD,OAAO,EAAE,MAAM;;;AAEnB,2DAA4D;EAExD,mBAAmB,EAAE,KAAK",
+"sources": ["../parallax410.scss"],
+"names": [],
+"file": "parallax410.css"
+}
