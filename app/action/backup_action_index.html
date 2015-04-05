@@ -43,8 +43,8 @@
 
     <link rel="stylesheet" href="../styles/head.css"/>
     <link rel="stylesheet" href="../styles/leg.css"/>
-    <link rel="stylesheet" href="../styles/scroll.css"/>
-
+    <!--<link rel="stylesheet" href="../styles/scroll.css"/>-->
+    <link rel="stylesheet" href="../styles/parallax410.css"/>
 </head>
 
 <body>
@@ -106,21 +106,6 @@
     }
 </script>
 
-<!--desktop-->
-<div class="head-full-screen-width" style="">
-    <div class="head-full-content" style="">
-        <a href="../statement/"><img src="../images/410-desktop.svg" alt="410還權於民·重返立院" class="head-img-desktop" href="../statement/"/></a>
-        <nav class="head-header">
-            <ul class="head-ul" style="">
-                <a href="../statement/"><li class="head-nav-li" style=""><img class="head-nav-img" src="../images/statement.svg" alt="訴求與聲明" onmouseover="hoverStatement(this);" onmouseout="unhoverStatement(this);" style=""/></li></a>
-                <a href="../action/"><li class="head-nav-li" style=""><img class="head-nav-img" src="../images/action-selected.svg" alt="行動與紀錄" onmouseover="hoverAction(this);" onmouseout="unhoverAction(this);" style=""/></li></a>
-                <a href="../people/"><li class="head-nav-li" style=""><img class="head-nav-img" src="../images/people.svg" alt="公民聲援牆" onmouseover="hoverPeople(this);" onmouseout="unhoverPeople(this);" style=""/></li></a>
-                <a href="../alias/"><li class="head-nav-li" style=""><img class="head-nav-img" src="../images/alias.svg" alt="立委表態牆" onmouseover="hoverAlias(this);" onmouseout="unhoverAlias(this);" style=""/></li></a>
-                <div class="fb-like" data-href="http://empower.tw" data-width="100" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false" style="float: right; padding-top: 9px;padding-right: 1%;"></div>
-            </ul>
-        </nav>
-    </div>
-</div>
 <!--mobile-->
 <!--<div style="background-color: white"><object data="../images/410-mobile.svg" alt="410還權於民·重返立院" style="" class="head-img-mobile" type="image/svg+xml"></object></div>-->
 <nav class="head-nav-for-mobile">
@@ -165,14 +150,83 @@
 </style>
 
 <main class="cd-main-content">
-    <div class="cd-fixed-bg cd-bg-1 cd-bg-action" style="background-color: #000000">
-        <!--<div class="test" style="background-color: blue;background-image: url(../images/road.jpg);">-->
-        <div style="background-color: white"><object data="../images/410-mobile.svg" alt="410還權於民·重返立院" style="" class="head-img-mobile" type="image/svg+xml"></object></div>
-        <div id="fb-like-mobile" class="fb-like fb-like-mobile" data-href="http://empower.tw" data-width="100" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false" style="float: left; padding-top: 1%;padding-left: 1%;"></div>
-    </div> <!-- cd-fixed-bg -->
-    <div class="cd-scrolling-bg cd-color-3" style="padding-top: 0em;padding-bottom: 0em;margin: 0em;">
-        <div class="cd-container" style="width:100%;margin: 0px;">
 
+    <div class="" style="">
+        <div style="background-color: white"><object data="../images/410-mobile-new.svg" alt="410還權於民·重返立院" style="" class="head-img-mobile" type="image/svg+xml"></object></div>
+        <div class="party-410action-mobile" style="margin: 0px;padding: 0px;">
+            <div id="fb-like-mobile" class="fb-like fb-like-mobile" data-href="http://empower.tw" data-width="100" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false" style="float: left; padding-top: 1%;padding-left: 1%;padding-bottom: 1%;position: absolute;"></div>
+            <img src="../images/410action-mobile.jpg" alt="" style="" class="party-410action-mobile"/>
+        </div>
+    </div>
+    <style>
+        /*mobile*/
+        @media screen and (max-width: 1000px) {
+            img.party-410action-mobile {
+                width: 100%;
+                padding-top: 2px;
+                display: block;
+            }
+            section.parallax-vertical-module{
+                display: none;
+            }
+        }
+        /*desktop*/
+        @media screen and (min-width: 1000px) {
+            .party-410action-mobile {
+                display: none;
+            }
+        }
+    </style>
+
+    <section class="parallax-vertical-module parallax-vertical-parallax-1" style="background-color: #e1d3bd">
+        <!--3D-->
+
+        <div class="" style="overflow: hidden;width: 100%;height: 100%;position:absolute;">
+            <ul id="scene" class="scene" style="margin: 0px;padding: 0px;">
+                <li class="layer" data-depth="0.1   ">
+                    <img class="parallax-vertical-parallax" src="../images/410-action-header.jpg" alt="410" style="position: absolute;top: 0px;margin: 0 auto;width: 120%;left: -10%;"/></li>
+                <li class="layer" data-depth="0.35">
+                    <img class="" src="../images/410action-shading.svg" alt="410" style="position: absolute;top: 90px;margin: 0 auto;width: 1000px;left: 0;right: 0;"/></li>
+                <li class="layer" data-depth="-0.13">
+                    <img class="" src="../images/410action-text.svg" alt="410" style="position: absolute;top:90px;margin: 0 auto;width: 1000px;left: 0;right: 0;"/></li>
+                <li class="layer" data-depth="0">
+                    <div style="position: absolute;top: 900px;margin: 0 auto;width: 100%;left: 0;right: 0;background-color: #4d3a28;height: 70px;"></div></li>
+                <li class="layer" data-depth="-0.12">
+                    <img class="" src="../images/410-people-action.svg" alt="410" style="position: absolute;top: 890px;margin: 0 auto;width: 1000px;left: 0;right: 0;"/></li>
+            </ul>
+        </div>
+        <script src="../scripts/jquery.parallax.min.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $('#scene').parallax();
+            });
+        </script>
+        <div class="parallax-vertical-container" style="">
+            <!--desktop-->
+            <div class="head-full-screen-width" style="">
+                <div class="head-full-content" style="height: 500px;margin-bottom: 0px;" id="dynamic-height">
+                    <a href="../statement/"><img src="../images/410-desktop-new.svg" alt="410還權於民·重返立院" class="head-img-desktop" href="../statement/" style="position: relative;"/></a>
+                    <nav class="head-header">
+                        <ul class="head-ul" style="position:relative;">
+                            <a href="../statement/" style=""><li class="head-nav-li" style=""><img class="head-nav-img" src="../images/statement.svg" alt="訴求與聲明" onmouseover="hoverStatement(this);" onmouseout="unhoverStatement(this);" style=""/></li></a>
+                            <a href="../action/"><li class="head-nav-li" style=""><img class="head-nav-img" src="../images/action-selected.svg" alt="行動與紀錄" onmouseover="hoverAction(this);" onmouseout="unhoverAction(this);" style="z-index: 10;"/></li></a>
+                            <a href="../people/"><li class="head-nav-li" style=""><img class="head-nav-img" src="../images/people.svg" alt="公民聲援牆" onmouseover="hoverPeople(this);" onmouseout="unhoverPeople(this);" style=""/></li></a>
+                            <a href="../alias/"><li class="head-nav-li" style=""><img class="head-nav-img" src="../images/alias.svg" alt="立委表態牆" onmouseover="hoverAlias(this);" onmouseout="unhoverAlias(this);" style=""/></li></a>
+                            <div class="fb-like" data-href="http://empower.tw" data-width="100" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false" style="float: right; padding-top: 9px;padding-right: 1%;"></div>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!--<img class="" src="../images/410-action-header.jpg" alt="410" style="position: absolute;top: 0px;margin: 0 auto;width: 120%;left: -10%;"/>-->
+            <script>
+                (function(){
+                    document.getElementById("dynamic-height").style.height = (screen.width * 960 / 1920) + "px";
+                })();
+            </script>
+        </div>
+    </section>
+    <section class="module parallax-vertical-content" style="padding-top: 0em;padding-bottom: 0em;margin: 0em;">
+        <div class="parallax-vertical-container" style="width:100%;margin: 0px;">
             <style>
                 .party-sidebar-h1 {
                     width: 100%;
@@ -644,8 +698,8 @@
                     </footer>
                 </div>
             </div>
-        </div> <!-- cd-container -->
-    </div> <!-- cd-scrolling-bg -->
+        </div>
+    </section>
 </main> <!-- cd-main-content -->
 
 <style>
@@ -932,6 +986,37 @@
 <!--document.getElementById('party-action-react')-->
 <!--);-->
 <!--</script>-->
+
+<script>
+    //    for 410 action scrolling
+    (function(){
+
+        var parallax = document.querySelectorAll(".parallax-vertical-parallax"),
+            speed = 0.5;
+
+        window.onscroll = function(){
+            [].slice.call(parallax).forEach(function(el,i){
+
+                var windowYOffset = window.pageYOffset,
+                    elBackgrounPos = "50% " + (windowYOffset * speed) + "px";
+
+//                el.style.backgroundPosition = elBackgrounPos;
+//                el.style.top = elBackgrounPos;
+                el.style.top = (windowYOffset * speed) + "px";
+
+            });
+        };
+
+    })();
+    var header = $('.head-full-content');
+    var range = 30;
+    $(window).on('scroll', function () {
+        var scrolling = $(this).scrollTop();
+        header.each(function () {
+            $(this).css({ 'opacity': 1 - (scrolling) / 120 });
+        });
+    });
+</script>
 
 </body>
 </html>
