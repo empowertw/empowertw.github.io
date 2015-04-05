@@ -32,7 +32,8 @@ section.parallax-vertical-module.parallax-vertical-parallax {
 }
 @media screen and (min-width: 1000px) /* desktop */ {
     section.parallax-vertical-module.parallax-vertical-parallax-1 {
-        background: url("../images/410-action-header.jpg") no-repeat center top;
+//        background: url("../images/410-action-header.jpg") no-repeat center top;
+//        background-size: 120% auto;
     }
 }
 //@media screen and (max-width: 1000px) /* mobile */ {
