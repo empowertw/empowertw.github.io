@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="../styles/head.css"/>
     <link rel="stylesheet" href="../styles/leg.css"/>
     <link rel="stylesheet" href="../styles/reset.css"/>
+    <script src="../scripts/fb.js"></script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -30,38 +31,7 @@
 </head>
 
 <body>
-
-<script>
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId      : '920369321316807',
-            xfbml      : true,
-            version    : 'v2.3'
-        });
-    };
-
-    (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
-
-
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=920369321316807&version=v2.3";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
-<!--頁首-->
-
 <script>
     function hoverPeople(element) {
         element.setAttribute('src', '../images/people-hovered.svg');
@@ -89,7 +59,7 @@
     }
 </script>
 
-<!--desktop-->
+<!--desktop nav-->
 <div class="head-full-screen-width" style="">
     <div class="head-full-content" style="">
         <a href="../statement/"><img src="../images/410-desktop.svg" alt="410還權於民·重返立院" class="head-img-desktop" href="../statement/"/></a>
@@ -104,7 +74,8 @@
         </nav>
     </div>
 </div>
-<!--mobile-->
+
+<!--mobile nav-->
 <style>
     @media screen and (min-width: 1000px) /* desktop */ {
         .fb-like-mobile {
@@ -122,26 +93,19 @@
         <li class="" style=""><a href="../alias/"><img class="" src="../images/alias.svg" alt="立委聲援牆" onmouseover="hoverAlias(this);" onmouseout="unhoverAlias(this);" style=""/></a></li>
     </ul>
 </nav>
-
-
 <div class="cd-overlay-nav">
     <!--span to nav-->
     <span></span>
 </div>
-
 <div class="cd-overlay-content">
     <!--span to normal-->
     <span></span>
 </div>
-
 <a href="#0" class="cd-nav-trigger" style="padding-top: 0px;margin-top: 0px;">Menu<span class="cd-icon"></span></a>
-
 <script src="../scripts/velocity.min.js"></script>
 <script src="../scripts/main.js"></script>
 
 <!--頁中-->
-
-
 
 <style>
     .party-full-screen-width {

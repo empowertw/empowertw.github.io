@@ -64,7 +64,7 @@ var FetchData = React.createClass({
     render: function() {
         var newActionMap = this.state.newAction.map(function (newAction) {
             return (
-                <h3 className="party-sidebar-h3"><li className="party-li"><span className="party-span">2015.{newAction.month}.{newAction.date}</span>{newAction.title}</li></h3>
+                <h3 className="party-sidebar-h3"><li className="party-li"><span className="party-span">2015.{newAction.month}.{newAction.date}</span><div className="party-span-div-content">{newAction.title}</div></li></h3>
             );
         });
         var popActionMap = this.state.recordedAction.map(function (recordedAction) {
