@@ -121,11 +121,31 @@
             </div>
         </div>
         <script>
-            document.getElementById('head-action-100height').style.height = window.innerHeight + "px";
-            document.getElementById('save-410-action-mobile').style.left = (window.innerWidth - (window.innerHeight * 1430 / 1080))/2 + "px";
-            window.onresize = function(event) {
+            var fixedHeight = window.innerHeight + "px";
+            var fixedLeft = (window.innerWidth - (window.innerHeight * 1430 / 1080))/2 + "px";
+            if( navigator.userAgent.match(/Android/i)
+                || navigator.userAgent.match(/webOS/i)
+                || navigator.userAgent.match(/iPhone/i)
+                || navigator.userAgent.match(/iPad/i)
+                || navigator.userAgent.match(/iPod/i)
+                || navigator.userAgent.match(/BlackBerry/i)
+                || navigator.userAgent.match(/Windows Phone/i))
+            {
+                document.getElementById('head-action-100height').style.height = fixedHeight;
+                document.getElementById('save-410-action-mobile').style.left = fixedLeft;
+                alert(0);
+            } else {
+                document.getElementById('head-action-100height').style.height = window.innerHeight + "px";
                 document.getElementById('save-410-action-mobile').style.left = (window.innerWidth - (window.innerHeight * 1430 / 1080))/2 + "px";
-            };
+                window.onresize = function(event) {
+                    document.getElementById('head-action-100height').style.height = window.innerHeight + "px";
+                    document.getElementById('save-410-action-mobile').style.left = (window.innerWidth - (window.innerHeight * 1430 / 1080))/2 + "px";
+                };
+            }
+
+//            window.onscroll = function(event) {
+//                document.getElementById('save-410-action-mobile').style.left = (window.innerWidth - (window.innerHeight * 1430 / 1080))/2 + "px";
+//            };
         </script>
         <!--手機版標題-->
     </div>
