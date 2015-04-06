@@ -67,10 +67,24 @@ var FetchData = React.createClass({
                 <h3 className="party-sidebar-h3"><li className="party-li"><span className="party-span">2015.{newAction.month}.{newAction.date}</span>{newAction.title}</li></h3>
             );
         });
-        var popActionMap = this.state.recordedAction.map(function (recordedAction) {
+        var recordedActionMap = this.state.recordedAction.map(function (recordedAction) {
             if (recordedAction.content.localeCompare("img") == 0) {
                 return (
-                    <div>
+                    <div className="party-action_record-dialog-div" style={{"height" : recordedAction.div_height}}>
+                        <label htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}>
+                            <div className="alias-clickable-div">
+                                <div className={this.props.classWithDisplay} title={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}>
+                                    <div className="alias-image-background">
+                                        <img className="party-action_record-dialog-img" src={recordedAction.img} width="320px;" />
+                                        <div className="party-action_record-dialog-text_div">
+                                            <span>2015.{recordedAction.month}.{recordedAction.date}.{recordedAction.title}</span>
+                                        </div>
+                                    </div>
+                                    <img width={recordedAction.width} height={recordedAction.height} src={this.props.partySrc} alt="" className="alias-image-party"/>
+                                    <h3 className={this.props.nameClass}>{this.props.name}</h3>
+                                </div>
+                            </div>
+                        </label>
                         <input className="modal-state" id={"2015" + recordedAction.month + recordedAction.date + recordedAction.title} type="checkbox" />
                         <div className="modal">
                             <label className="modal__bg" htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}></label>
@@ -84,7 +98,21 @@ var FetchData = React.createClass({
                 ) ;
             } else {
                 return (
-                    <div>
+                    <div className="party-action_record-dialog-div" style={{"height" : recordedAction.div_height}}>
+                        <label htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}>
+                            <div className="alias-clickable-div">
+                                <div className={this.props.classWithDisplay} title={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}>
+                                    <div className="alias-image-background">
+                                        <img className="party-action_record-dialog-img" src={recordedAction.img} width="320px;" />
+                                        <div className="party-action_record-dialog-text_div">
+                                            <span>2015.{recordedAction.month}.{recordedAction.date}.{recordedAction.title}</span>
+                                        </div>
+                                    </div>
+                                    <img src={this.props.partySrc} alt="" className="alias-image-party"/>
+                                    <h3 className={this.props.nameClass}>{this.props.name}</h3>
+                                </div>
+                            </div>
+                        </label>
                         <input className="modal-state" id={"2015" + recordedAction.month + recordedAction.date + recordedAction.title} type="checkbox" />
                         <div className="modal">
                             <label className="modal__bg" htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}></label>
@@ -100,48 +128,6 @@ var FetchData = React.createClass({
                     </div>
                 ) ;
             }
-        });
-        var recordedActionMap = this.state.recordedAction.map(function (recordedAction) {
-            if (recordedAction.content.localeCompare("img") == 0) {
-                return (
-                    <div className="party-action_record-dialog-div test-water" style={{"height" : recordedAction.div_height}}>
-                        <label htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}>
-                            <div className="alias-clickable-div">
-                                <div className={this.props.classWithDisplay} title={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}>
-                                    <div className="alias-image-background">
-                                        <img className="party-action_record-dialog-img" src={recordedAction.img} width="320px;" />
-                                        <div className="party-action_record-dialog-text_div">
-                                            <span>2015.{recordedAction.month}.{recordedAction.date}.{recordedAction.title}</span>
-                                        </div>
-                                    </div>
-                                    <img width={recordedAction.width} height={recordedAction.height} src={this.props.partySrc} alt="" className="alias-image-party"/>
-                                    <h3 className={this.props.nameClass}>{this.props.name}</h3>
-                                </div>
-                            </div>
-                        </label>
-                    </div>
-                ) ;
-            } else {
-                return (
-                    <div className="party-action_record-dialog-div test-water" style={{"height" : recordedAction.div_height}}>
-                        <label htmlFor={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}>
-                            <div className="alias-clickable-div">
-                                <div className={this.props.classWithDisplay} title={"2015" + recordedAction.month + recordedAction.date + recordedAction.title}>
-                                    <div className="alias-image-background">
-                                        <img className="party-action_record-dialog-img" src={recordedAction.img} width="320px;" />
-                                        <div className="party-action_record-dialog-text_div">
-                                            <span>2015.{recordedAction.month}.{recordedAction.date}.{recordedAction.title}</span>
-                                        </div>
-                                    </div>
-                                    <img src={this.props.partySrc} alt="" className="alias-image-party"/>
-                                    <h3 className={this.props.nameClass}>{this.props.name}</h3>
-                                </div>
-                            </div>
-                        </label>
-                    </div>
-                ) ;
-            }
-
         }.bind(this));
         return (
             <div>
@@ -162,6 +148,16 @@ var FetchData = React.createClass({
                             <ol className="party-sidebar-ol">
                             {newActionMap}
                             </ol>
+                        </div>
+                    </div>
+                </div>
+                <div className="leg-full-screen-width <party></party>-action-recent_record">
+                    <div className="leg-full-screen-width">
+                        <div className="leg-full-content">
+                            <h1 className="party-sidebar-h1">行動紀錄</h1>
+                            <div className="party-sidebar-ol test js-masonry" data-masonry-options='{ "columnWidth": 10, "gutter": 5 }'>
+                            {recordedActionMap}
+                            </div>
                         </div>
                     </div>
                 </div>
