@@ -895,7 +895,6 @@
         background: rgba(0,0,0, .5);
         transition: opacity .25s ease;
     }
-
     .modal__bg {
         position: absolute;
         top: 0;
@@ -933,7 +932,13 @@
         padding: 1em 2em;
         height: 80%;
     }
-
+    /*mobile*/
+    @media screen and (max-width: 1000px) {
+        .modal__inner {
+            width: 70%;
+            height: 70%;
+        }
+    }
     .modal__close {
         position: absolute;
         right: 1em;
@@ -966,13 +971,13 @@
         transform: rotate(-45deg);
     }
 
-    @media screen and (max-width: 768px) {
-        .modal__inner {
-            width: 90%;
-            height: 90%;
-            box-sizing: border-box;
-        }
-    }
+    /*@media screen and (max-width: 768px) {*/
+        /*.modal__inner {*/
+            /*width: 90%;*/
+            /*height: 50%;*/
+            /*box-sizing: border-box;*/
+        /*}*/
+    /*}*/
 
     p img {
         width: 100%;
