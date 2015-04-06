@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hant" class="no-js">
-<!--頭-->
-
 <head>
     <meta charset="UTF-8">
-    <title>410還權於民·重返立院 訴求與聲明</title>
-
+    <title>410還權於民·重返立院</title>
     <meta name="description" content="">
-    <meta name="author" content="PM: appy, 1985, Taiwan March, ...; Programming: Chun-Yi Kuo (novel); Art: Joy Hsu;">
+    <meta name="author" content="PM: appy, 1985, Taiwan March, 人民作主; Programming: Chun-Yi Kuo (novel); Art: Joy Hsu;">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,52 +16,16 @@
         ga('create', 'UA-59388263-1', 'auto');
         ga('send', 'pageview');
     </script>
+    <script src="../scripts/jquery-2.1.3.min.js"></script>
+    <script src="../scripts/fb.js"></script>
+    <link rel="stylesheet" href="../styles/reset.css"/>
     <link rel="stylesheet" href="../styles/head.css"/>
     <link rel="stylesheet" href="../styles/leg.css"/>
     <link rel="stylesheet" href="../styles/scroll.css"/>
-    <script src="../scripts/jquery-2.1.3.min.js"></script>
 </head>
 
 <body>
-
-<script>
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId      : '920369321316807',
-            xfbml      : true,
-            version    : 'v2.3'
-        });
-    };
-
-    (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
-
-
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=920369321316807&version=v2.3";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<style>
-    body {
-        margin: 0px;
-        padding: 0px;
-    }
-</style>
-
-
-<!--頁首-->
-
 <script>
     function hoverPeople(element) {
         element.setAttribute('src', '../images/people-hovered.svg');
@@ -91,7 +52,8 @@
         element.setAttribute('src', '../images/statement-selected.svg');
     }
 </script>
-<!--desktop-->
+
+<!--desktop nav-->
 <div class="head-full-screen-width" style="">
     <div class="head-full-content" style="">
         <a href="../statement/"><img src="../images/410-desktop.svg" alt="410還權於民·重返立院" class="head-img-desktop" href="../statement/"/></a>
@@ -106,7 +68,8 @@
         </nav>
     </div>
 </div>
-<!--mobile-->
+
+<!--mobile nav-->
 <nav class="head-nav-for-mobile">
     <ul class="cd-primary-nav" style="list-style: none">
         <li class="" style=""><a href="../statement/"><img class="" src="../images/statement-selected.svg" alt="訴求與聲明" onmouseover="hoverStatement(this);" onmouseout="unhoverStatement(this);" style=""/></a></li>
@@ -115,62 +78,36 @@
         <li class="" style=""><a href="../alias/"><img class="" src="../images/alias.svg" alt="立委聲援牆" onmouseover="hoverAlias(this);" onmouseout="unhoverAlias(this);" style=""/></a></li>
     </ul>
 </nav>
-
 <div class="cd-overlay-nav">
     <!--span to nav-->
     <span></span>
 </div>
-
 <div class="cd-overlay-content">
     <!--span to normal-->
     <span></span>
 </div>
-
 <a href="#0" class="cd-nav-trigger" style="padding-top: 0px;margin-top: 0px;">Menu<span class="cd-icon"></span></a>
-
 <script src="../scripts/velocity.min.js"></script>
 <script src="../scripts/main.js"></script>
 
-
 <!--頁中-->
-
 
 <style>
     .party-full-screen-width {
-        /*background-color:blue;*/
         width: 100%;
     }
-
     @media screen and (min-width: 1000px) {  /*desktop */
-        .party-full-screen-width {
-            /*background-color:red;*/
-        }
         .party-full-content {
             width:1000px;
             margin-left:auto; margin-right:auto;
             padding-top: 15px;
         }
-        .party-member-full-content {
-            width:1000px;
-            margin-left:auto; margin-right:auto;
-            padding-top: 15px;
-            background-color: #ecdbd1;
-        }
     }
-
     @media screen and (max-width: 1000px) {  /*mobile */
         .party-full-content {
             width:100%; margin-left:auto; margin-right:auto;
             padding-right: 15px;
             padding-left: 15px;
-        }
-        .party-sidebar {
-            width: 100%;
-            float: left;
-            padding-left: 3%;
-            padding-top: 25px;
-            text-align: right;display: inline-block; color: #905d5c;font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-            vertical-align: top;
         }
         .party-sidebar-h1 {
             float: left;
@@ -191,12 +128,6 @@
             float: left;
             list-style: none;
         }
-    }
-    .party-content {
-        /*background-color: #003366;*/
-        color: #905d5c;
-        font-family: Microsoft JhengHei, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-        /*font-weight: bold;*/
     }
 </style>
 
