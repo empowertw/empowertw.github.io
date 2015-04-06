@@ -93,16 +93,41 @@
         .fb-like-mobile {
             display: none;
         }
+        .head-action-mobile {
+            display: none;
+        }
     }
 </style>
 
 <main class="cd-main-content">
-    <div class="" style="">
-        <div style="background-color: white"><object data="../images/410-mobile-new.svg" alt="410還權於民·重返立院" style="" class="head-img-mobile" type="image/svg+xml"></object></div>
-        <div class="party-410action-mobile" style="margin: 0px;padding: 0px;">
-            <div id="fb-like-mobile" class="fb-like fb-like-mobile" data-href="http://empower.tw" data-width="100" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false" style="float: left; padding-top: 1%;padding-left: 1%;padding-bottom: 1%;position: absolute;"></div>
-            <img src="../images/410action-mobile.jpg" alt="" style="" class="party-410action-mobile"/>
+    <div class="" style="height: 100%;">
+        <style>
+            .head-action-mobile {
+                background-image: url("../images/410-action-header-mobile.jpg");
+                height: 100%;
+                background-repeat: no-repeat;
+                background-size: 100% auto;
+                /*background-position: center center;*/
+            }
+        </style>
+        <div class="head-action-mobile" style="min-height: 100% !important;height: 100%;" id="head-action-100height">
+            <object data="../images/410-mobile-new.svg" alt="410還權於民·重返立院" style="" class="head-img-mobile" type="image/svg+xml"></object>
+            <div class="party-410action-mobile" style="margin: 0px;padding: 0px;">
+                <div id="fb-like-mobile" class="fb-like fb-like-mobile" data-href="http://empower.tw" data-width="100" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false" style="float: left; padding-top: 1%;padding-left: 1%;padding-bottom: 1%;position: absolute;"></div>
+            </div>
+            <div style="height: 100%;width: 100%;overflow: hidden;position: relative;top: -60px;left: 0px;right: 0px;">
+                <!--<object data="../images/410-action-mobile.svg" alt="410還權於民·重返立院" style="height: 100%;display: block;left: 300px;" class="head-svg-410-action-mobile" type="image/svg+xml"></object>-->
+                <img src="../images/410-action-mobile.png" alt="410還權於民·重返立院" style="height: 100%;position: relative;top:-15px;" id="save-410-action-mobile"/>
+            </div>
         </div>
+        <script>
+            document.getElementById('head-action-100height').style.height = window.innerHeight + "px";
+            document.getElementById('save-410-action-mobile').style.left = (window.innerWidth - (window.innerHeight * 1000 / 1080))/2 + "px";
+            window.onresize = function(event) {
+                document.getElementById('save-410-action-mobile').style.left = (window.innerWidth - (window.innerHeight * 1000 / 1080))/2 + "px";
+            };
+        </script>
+        <!--手機版標題-->
     </div>
     <style>
         /*mobile*/
@@ -127,7 +152,8 @@
     <section class="parallax-vertical-module parallax-vertical-parallax-1" style="background-color: #e1d3bd">
         <!--3D-->
 
-        <div class="" style="overflow: hidden;width: 100%;height: 100%;position:absolute;">
+        <!--行動版標題-->
+        <div class="" style="overflow-y:inherit;overflow-x: hidden;width: 100%;height: 1080px;position:absolute;">
             <ul id="scene" class="scene" style="margin: 0px;padding: 0px;">
                 <li class="layer" data-depth="0.1   ">
                     <img class="parallax-vertical-parallax" src="../images/410-action-header.jpg" alt="410" style="position: absolute;top: 0px;margin: 0 auto;width: 120%;left: -10%;"/></li>
