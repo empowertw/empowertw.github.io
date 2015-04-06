@@ -510,15 +510,16 @@
     .modal__close:before {
         transform: rotate(-45deg);
     }
-
-    @media screen and (max-width: 768px) {
+    /*mobile*/
+    @media screen and (max-width: 1000px) {
         .modal__inner {
             width: 90%;
-            height: 90%;
-            box-sizing: border-box;
+            height: 60%;
+        }
+        .modal__close {
+            display: none;
         }
     }
-
     p img {
         width: 100%;
         height: auto;
