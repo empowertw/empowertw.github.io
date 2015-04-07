@@ -217,7 +217,9 @@ var FetchData = React.createClass({
                         </div>
                     </div>
                     <div className="party-content">
+                        <div className="party-content-inner">
         {aliasMemberFullMap}
+                        </div>
                     </div>
                 </div>
             );
